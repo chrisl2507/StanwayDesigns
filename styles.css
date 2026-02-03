@@ -1,0 +1,855 @@
+/* ============================================
+   STANWAY DESIGNS — Styles
+   Single shared stylesheet · Mobile-first
+   ============================================ */
+
+
+/* ============================================
+   1. VARIABLES
+   ============================================ */
+:root {
+    /* Colours */
+    --charcoal:   #1C1C1C;
+    --walnut:     #3D2B1F;
+    --brass:      #B8955A;
+    --warm-white: #F7F5F2;
+    --linen:      #EEEBE5;
+    --aged-oak:   #C4A882;
+    --soft-black: #2C2C2C;
+    --white:      #FFFFFF;
+
+    /* Section padding — proven scale */
+    --section-pad-sm: 4rem 5%;
+    --section-pad-md: 6rem 5%;
+    --section-pad-lg: 8rem 5%;
+
+    /* Fluid type — proven scale */
+    --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw,  0.85rem);
+    --text-sm:   clamp(0.875rem, 0.8rem  + 0.375vw, 1rem);
+    --text-base: clamp(1rem,     0.95rem + 0.25vw,  1.125rem);
+    --text-lg:   clamp(1.125rem, 1rem    + 0.625vw, 1.5rem);
+    --text-xl:   clamp(1.5rem,   1.3rem  + 1vw,     2rem);
+    --text-2xl:  clamp(2rem,     1.6rem  + 2vw,     3rem);
+    --text-3xl:  clamp(2.5rem,   2rem    + 2.5vw,   4rem);
+
+    /* Warm shadows — amber/brown cast, never cool grey */
+    --shadow-sm: 0 2px 12px  rgba(61, 43, 31, 0.10);
+    --shadow-md: 0 4px 24px  rgba(61, 43, 31, 0.14);
+    --shadow-lg: 0 8px 40px  rgba(61, 43, 31, 0.22);
+}
+
+
+/* ============================================
+   2. RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin:     0;
+    padding:    0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:            'Montserrat', sans-serif;
+    font-weight:            300;
+    color:                  var(--soft-black);
+    background:             var(--warm-white);
+    line-height:            1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x:             hidden;
+}
+
+img {
+    max-width: 100%;
+    height:    auto;
+    display:   block;
+}
+
+a {
+    color:           inherit;
+    text-decoration: none;
+}
+
+
+/* ============================================
+   3. NAVIGATION
+   ============================================ */
+
+/* Fixed bar */
+nav {
+    position: fixed;
+    top:      0;
+    left:     0;
+    right:    0;
+    z-index:  1000;
+    background: var(--charcoal);
+}
+
+/* Inner row — logo + toggle (mobile) or logo + links (desktop) */
+.nav-container {
+    position:        relative;
+    z-index:         2;                    /* above the slide-out panel */
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+    padding:         1.25rem 5%;
+    max-width:       1200px;
+    margin:          0 auto;
+}
+
+/* ── Logo ── */
+.logo-text {
+    font-family:     'Playfair Display', serif;
+    font-weight:     700;
+    font-size:       var(--text-xl);
+    color:           var(--white);
+    letter-spacing:  3px;
+    text-transform:  uppercase;
+}
+
+/* ── Hamburger button ── */
+.nav-toggle {
+    background: none;
+    border:     none;
+    cursor:     pointer;
+    padding:    0.5rem;
+    position:   relative;
+    z-index:    2;
+}
+
+.nav-toggle span {
+    display:          block;
+    width:            26px;
+    height:           2px;
+    background:       var(--white);
+    margin:           5px 0;
+    transition:       transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger → X */
+.nav-toggle.nav-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.nav-active span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.nav-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile nav panel (slides in from right) ── */
+nav ul {
+    list-style: none;
+    position:   fixed;
+    top:        0;
+    right:      -100%;           /* off-screen */
+    width:      280px;
+    height:     100vh;
+    background: var(--charcoal);
+    padding:    5.5rem 2.5rem 2rem;
+    z-index:    1;               /* below .nav-container */
+    transition: right 0.35s ease;
+}
+
+nav ul.nav-open {
+    right: 0;
+}
+
+nav ul li {
+    margin-bottom: 1.75rem;
+}
+
+nav ul a {
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-sm);
+    color:          var(--white);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition:     color 0.3s ease;
+}
+
+nav ul a:hover {
+    color: var(--brass);
+}
+
+/* ── Backdrop overlay ── */
+.nav-overlay {
+    position:       fixed;
+    inset:          0;
+    background:     rgba(28, 28, 28, 0.55);
+    z-index:        998;
+    opacity:        0;
+    pointer-events: none;
+    transition:     opacity 0.35s ease;
+}
+
+.nav-overlay.overlay-visible {
+    opacity:        1;
+    pointer-events: auto;
+}
+
+
+/* ============================================
+   4. HERO
+   ============================================ */
+.hero {
+    position:       relative;
+    height:         100vh;
+    min-height:     520px;
+    display:        flex;
+    align-items:    center;
+    justify-content:center;
+    overflow:       hidden;
+}
+
+/* Full-bleed image + gradient overlay */
+.hero-image-wrap {
+    position:   absolute;
+    inset:      0;
+    background: var(--charcoal);   /* fallback colour when image is missing */
+}
+
+.hero-image-wrap img {
+    width:           100%;
+    height:          100%;
+    object-fit:      cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position:   absolute;
+    inset:      0;
+    background: linear-gradient(
+        180deg,
+        rgba(28, 28, 28, 0.35)  0%,
+        rgba(28, 28, 28, 0.55) 50%,
+        rgba(28, 28, 28, 0.82) 100%
+    );
+}
+
+/* Centred text + CTA */
+.hero-content {
+    position: relative;
+    z-index:  1;
+    text-align: center;
+    padding:    0 5%;
+}
+
+.hero-content h1 {
+    font-family:    'Playfair Display', serif;
+    font-weight:    700;
+    font-size:      var(--text-3xl);
+    color:          var(--white);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom:  0.75rem;
+}
+
+.hero-tagline {
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    300;
+    font-size:      var(--text-sm);
+    color:          var(--aged-oak);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom:  2.75rem;
+}
+
+/* Vertical scroll-indicator line at bottom */
+.hero-scroll {
+    position:  absolute;
+    bottom:    2.5rem;
+    left:      50%;
+    transform: translateX(-50%);
+    z-index:   1;
+}
+
+.hero-scroll span {
+    display:    block;
+    width:      1px;
+    height:     44px;
+    background: var(--brass);
+    margin:     0 auto;
+    animation:  scrollPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 1;   transform: scaleY(1);    }
+    50%      { opacity: 0.3; transform: scaleY(0.55); }
+}
+
+
+/* ============================================
+   5. BUTTONS
+   ============================================ */
+
+/* Solid brass — hero CTA, submit */
+.btn-primary {
+    display:        inline-block;
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-xs);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color:          var(--charcoal);
+    background:     var(--brass);
+    padding:        1rem 2.5rem;
+    border:         none;
+    cursor:         pointer;
+    transition:     background 0.3s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+    background: var(--aged-oak);
+    transform:  translateY(-2px);
+}
+
+/* Outlined brass — secondary actions */
+.btn-outline {
+    display:        inline-block;
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-xs);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color:          var(--brass);
+    background:     transparent;
+    padding:        0.9rem 2.25rem;
+    border:         1px solid var(--brass);
+    cursor:         pointer;
+    transition:     background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--brass);
+    color:      var(--charcoal);
+}
+
+
+/* ============================================
+   6. SHARED SECTION ELEMENTS
+   ============================================ */
+
+/* Uppercase label above headings */
+.section-label {
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-xs);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color:          var(--brass);
+    margin-bottom:  0.875rem;
+}
+
+/* Section heading */
+.section-heading {
+    font-family:   'Playfair Display', serif;
+    font-weight:   700;
+    font-size:     var(--text-2xl);
+    color:         var(--charcoal);
+    line-height:   1.2;
+    margin-bottom: 1.25rem;
+}
+
+/* Short brass rule */
+.section-divider {
+    width:         48px;
+    height:        2px;
+    background:    var(--brass);
+    margin-bottom: 2rem;
+}
+
+.section-divider--centered {
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+
+/* ============================================
+   7. PHILOSOPHY
+   ============================================ */
+.philosophy {
+    padding:    var(--section-pad-sm);
+    background: var(--warm-white);
+}
+
+.philosophy-inner {
+    max-width:  700px;
+    margin:     0 auto;
+    text-align: center;
+}
+
+.philosophy p {
+    font-size: var(--text-base);
+    color:     var(--soft-black);
+    line-height:   1.95;
+    margin-bottom: 1.25rem;
+}
+
+.philosophy p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ============================================
+   8. FEATURED WORK
+   ============================================ */
+.featured-work {
+    padding:    var(--section-pad-sm);
+    background: var(--linen);
+}
+
+.featured-header {
+    text-align:    center;
+    margin-bottom: 2.75rem;
+}
+
+/* Single column on mobile; see breakpoints for wider */
+.featured-grid {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2rem;
+    max-width:             1150px;
+    margin:                0 auto;
+}
+
+/* ── Card ── */
+.featured-card {
+    background: var(--warm-white);
+    overflow:   hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.featured-card:hover {
+    transform:  translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Image container */
+.featured-card-img {
+    position:    relative;
+    overflow:    hidden;
+    aspect-ratio: 4 / 3;
+    background:  var(--charcoal);   /* fallback */
+}
+
+.featured-card-img img {
+    width:      100%;
+    height:     100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.featured-card:hover .featured-card-img img {
+    transform: scale(1.05);
+}
+
+/* Timber-type badge */
+.featured-card-timber {
+    position:       absolute;
+    top:            1.125rem;
+    left:           1.125rem;
+    background:     rgba(28, 28, 28, 0.72);
+    color:          var(--brass);
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-xs);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding:        0.45rem 0.9rem;
+}
+
+/* Text block below image */
+.featured-card-info {
+    padding: 1.75rem 1.75rem 2rem;
+}
+
+.featured-card-info h3 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   600;
+    font-size:     var(--text-lg);
+    color:         var(--walnut);
+    margin-bottom: 0.4rem;
+}
+
+.featured-card-info p {
+    font-size:  var(--text-sm);
+    color:      var(--soft-black);
+    line-height:1.65;
+}
+
+/* CTA link below the grid */
+.featured-cta {
+    text-align:    center;
+    margin-top:    2.75rem;
+}
+
+
+/* ============================================
+   9. PROCESS
+   ============================================ */
+.process {
+    padding:    var(--section-pad-sm);
+    background: var(--warm-white);
+}
+
+.process-header {
+    text-align:    center;
+    margin-bottom: 2.75rem;
+}
+
+/* Single column on mobile; see breakpoints */
+.process-grid {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2.5rem;
+    max-width:             1050px;
+    margin:                0 auto;
+}
+
+/* Each step — number beside text (row) on mobile/tablet */
+.process-step {
+    display:     flex;
+    gap:         1.5rem;
+    align-items: flex-start;
+}
+
+/* Large brass step number */
+.process-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size:   2.25rem;
+    color:       var(--brass);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width:   52px;
+}
+
+.process-step-body h3 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   600;
+    font-size:     var(--text-lg);
+    color:         var(--walnut);
+    margin-bottom: 0.4rem;
+}
+
+.process-step-body p {
+    font-size:  var(--text-sm);
+    color:      var(--soft-black);
+    line-height:1.7;
+}
+
+
+/* ============================================
+   10. CONTACT
+   ============================================ */
+.contact {
+    padding:    var(--section-pad-sm);
+    background: var(--charcoal);
+}
+
+.contact-inner {
+    max-width: 660px;
+    margin:    0 auto;
+}
+
+/* Override shared label/heading colours for dark bg */
+.contact .section-heading {
+    color: var(--white);
+}
+
+.contact-intro {
+    font-size:  var(--text-base);
+    color:      rgba(255, 255, 255, 0.60);
+    line-height:1.7;
+    margin-bottom:2.5rem;
+}
+
+/* ── Form ── */
+.contact-form {
+    display:        flex;
+    flex-direction: column;
+    gap:            1.75rem;
+}
+
+.form-group {
+    display:        flex;
+    flex-direction: column;
+    gap:            0.5rem;
+}
+
+/* Labels */
+.form-group label {
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-xs);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color:          var(--aged-oak);
+}
+
+/* Text inputs & select — bottom-border only style */
+.form-group input,
+.form-group select {
+    background:     transparent;
+    border:         none;
+    border-bottom:  1px solid rgba(184, 149, 90, 0.35);
+    padding:        0.9rem 0;
+    color:          var(--white);
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    300;
+    font-size:      var(--text-base);
+    outline:        none;
+    transition:     border-color 0.3s ease;
+    -webkit-appearance: none;
+    appearance:     none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-bottom-color: var(--brass);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.30);
+}
+
+/* Custom select arrow */
+.form-group select {
+    background-image:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 4.5L11 1' stroke='%23B8955A' fill='none' stroke-width='1.8'/%3E%3C/svg%3E");
+    background-repeat:   no-repeat;
+    background-position: right 0.25rem center;
+    padding-right:       1.75rem;
+    cursor:              pointer;
+}
+
+.form-group select option {
+    background: var(--charcoal);
+    color:      var(--white);
+}
+
+/* Textarea — full border box */
+.form-group textarea {
+    background:     rgba(255, 255, 255, 0.04);
+    border:         1px solid rgba(184, 149, 90, 0.30);
+    padding:        1rem;
+    resize:         vertical;
+    min-height:     130px;
+    color:          var(--white);
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    300;
+    font-size:      var(--text-base);
+    line-height:    1.6;
+    outline:        none;
+    transition:     border-color 0.3s ease;
+    -webkit-appearance: none;
+    appearance:     none;
+}
+
+.form-group textarea:focus {
+    border-color: var(--brass);
+}
+
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.30);
+}
+
+/* Submit button */
+.btn-submit {
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-xs);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color:          var(--charcoal);
+    background:     var(--brass);
+    padding:        1.1rem 2.75rem;
+    border:         none;
+    cursor:         pointer;
+    align-self:     flex-start;
+    transition:     background 0.3s ease, transform 0.15s ease;
+}
+
+.btn-submit:hover {
+    background: var(--aged-oak);
+    transform:  translateY(-2px);
+}
+
+
+/* ============================================
+   11. FOOTER
+   ============================================ */
+footer {
+    background: var(--soft-black);
+    padding:    3.5rem 5% 1.75rem;
+}
+
+/* Single column on mobile; 3-col at 768px+ */
+.footer-grid {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2.25rem;
+    max-width:             1150px;
+    margin:                0 auto;
+}
+
+/* Brand column */
+.footer-brand .logo-text {
+    display:       inline-block;
+    margin-bottom: 1rem;
+    font-size:     var(--text-lg);
+}
+
+.footer-brand p {
+    font-size:  var(--text-sm);
+    color:      rgba(255, 255, 255, 0.45);
+    line-height:1.7;
+    max-width:  280px;
+}
+
+/* Nav + Contact columns */
+.footer-col h4 {
+    font-family:    'Montserrat', sans-serif;
+    font-weight:    500;
+    font-size:      var(--text-xs);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color:          var(--brass);
+    margin-bottom:  1.25rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.55rem;
+}
+
+.footer-col ul a,
+.footer-col p {
+    font-size:  var(--text-sm);
+    color:      rgba(255, 255, 255, 0.55);
+    transition: color 0.3s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--brass);
+}
+
+/* Email link in contact column */
+.footer-col p a {
+    color: var(--brass);
+}
+
+.footer-col p a:hover {
+    color: var(--aged-oak);
+}
+
+/* Copyright bar */
+.footer-bottom {
+    max-width:    1150px;
+    margin:       2.25rem auto 0;
+    padding-top:  1.75rem;
+    border-top:   1px solid rgba(255, 255, 255, 0.10);
+}
+
+.footer-bottom p {
+    font-size: var(--text-xs);
+    color:     rgba(255, 255, 255, 0.30);
+}
+
+
+/* ============================================
+   12. RESPONSIVE — TABLET   768px+
+   ============================================ */
+@media (min-width: 768px) {
+
+    /* ── Nav: hide hamburger, show horizontal links ── */
+    .nav-toggle {
+        display: none;
+    }
+
+    nav ul {
+        position:   static;
+        width:      auto;
+        height:     auto;
+        background: transparent;
+        padding:    0;
+        right:      auto;
+        transition: none;
+        display:    flex;
+        gap:        2.5rem;
+        align-items:center;
+    }
+
+    nav ul li {
+        margin-bottom: 0;
+    }
+
+    /* Force overlay hidden on desktop */
+    .nav-overlay {
+        display: none !important;
+    }
+
+    /* ── Section padding ── */
+    .philosophy    { padding: var(--section-pad-md); }
+    .featured-work { padding: var(--section-pad-md); }
+    .process       { padding: var(--section-pad-md); }
+    .contact       { padding: var(--section-pad-md); }
+
+    /* ── Featured: 2 columns ── */
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ── Process: 2 columns ── */
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ── Footer: 3 columns ── */
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+
+/* ============================================
+   13. RESPONSIVE — DESKTOP   1024px+
+   ============================================ */
+@media (min-width: 1024px) {
+
+    /* ── Section padding ── */
+    .philosophy    { padding: var(--section-pad-lg); }
+    .featured-work { padding: var(--section-pad-lg); }
+    .process       { padding: var(--section-pad-lg); }
+    .contact       { padding: var(--section-pad-lg); }
+
+    /* ── Featured: 3 columns ── */
+    .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ── Process: 4 columns, stacked (number above text) ── */
+    .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .process-step {
+        flex-direction: column;
+        align-items:    center;
+        text-align:     center;
+    }
+
+    .process-number {
+        min-width:     unset;
+        margin-bottom: 0.75rem;
+    }
+}
