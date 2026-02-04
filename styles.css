@@ -1040,3 +1040,336 @@ footer {
     .about-timber  { padding: var(--section-pad-md); }
     .about-service-area { padding: var(--section-pad-md); }
 }
+
+
+/* ============================================
+   15. SERVICES PAGE — Page-specific styles
+   ============================================ */
+
+/* ── Service category alternating sections ── */
+.service-category {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2.5rem;
+    padding:               var(--section-pad-sm);
+    max-width:             1150px;
+    margin:                0 auto;
+}
+
+/* Alternate backgrounds */
+.service-category:nth-child(odd) {
+    background: var(--warm-white);
+}
+
+.service-category:nth-child(even) {
+    background: var(--linen);
+}
+
+.service-category-image {
+    position: relative;
+}
+
+.service-category-image img {
+    width:      100%;
+    height:     auto;
+    box-shadow: var(--shadow-md);
+}
+
+.service-category-text h2 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   700;
+    font-size:     var(--text-2xl);
+    color:         var(--charcoal);
+    margin-bottom: 1.25rem;
+}
+
+.service-category-text p {
+    font-size:     var(--text-base);
+    color:         var(--soft-black);
+    line-height:   1.85;
+    margin-bottom: 1.25rem;
+}
+
+.service-category-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Price callout */
+.service-price {
+    color:          var(--brass);
+    font-weight:    500;
+    font-size:      var(--text-base);
+    margin-top:     1.75rem;
+    padding-top:    1.25rem;
+    border-top:     1px solid rgba(184, 149, 90, 0.25);
+}
+
+/* ── Commission process ── */
+.commission-process {
+    padding:    var(--section-pad-sm);
+    background: var(--charcoal);
+}
+
+.commission-process-inner {
+    max-width:  900px;
+    margin:     0 auto;
+    text-align: center;
+}
+
+.commission-process .section-heading {
+    color: var(--white);
+}
+
+.process-intro {
+    font-size:     var(--text-base);
+    color:         rgba(255, 255, 255, 0.60);
+    line-height:   1.85;
+    margin-bottom: 3rem;
+}
+
+.process-steps-detailed {
+    display:        flex;
+    flex-direction: column;
+    gap:            2.5rem;
+}
+
+.process-step-detailed {
+    text-align: left;
+    padding:    1.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border:     1px solid rgba(184, 149, 90, 0.20);
+}
+
+.step-number {
+    font-family:   'Playfair Display', serif;
+    font-weight:   700;
+    font-size:     1.5rem;
+    color:         var(--brass);
+    margin-bottom: 0.75rem;
+}
+
+.process-step-detailed h3 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   600;
+    font-size:     var(--text-lg);
+    color:         var(--white);
+    margin-bottom: 0.65rem;
+}
+
+.process-step-detailed p {
+    font-size:   var(--text-sm);
+    color:       rgba(255, 255, 255, 0.70);
+    line-height: 1.7;
+}
+
+/* ── Pricing & payment ── */
+.pricing-payment {
+    padding:    var(--section-pad-sm);
+    background: var(--warm-white);
+}
+
+.pricing-payment-inner {
+    max-width:  900px;
+    margin:     0 auto;
+    text-align: center;
+}
+
+.pricing-payment-inner > p {
+    font-size:     var(--text-base);
+    color:         var(--soft-black);
+    line-height:   1.85;
+    margin-bottom: 2.5rem;
+}
+
+.pricing-details {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2rem;
+    margin-bottom:         2.5rem;
+}
+
+.pricing-detail-block {
+    text-align: left;
+    padding:    1.5rem;
+    background: var(--linen);
+    border-left: 3px solid var(--brass);
+}
+
+.pricing-detail-block h3 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   600;
+    font-size:     var(--text-lg);
+    color:         var(--walnut);
+    margin-bottom: 0.5rem;
+}
+
+.pricing-detail-block p {
+    font-size:   var(--text-sm);
+    color:       var(--soft-black);
+    line-height: 1.7;
+}
+
+.pricing-note {
+    font-size:   var(--text-sm);
+    color:       var(--soft-black);
+    line-height: 1.7;
+    font-style:  italic;
+}
+
+/* ── Materials guide ── */
+.materials-guide {
+    padding:    var(--section-pad-sm);
+    background: var(--linen);
+}
+
+.materials-guide-inner {
+    max-width:  1050px;
+    margin:     0 auto;
+    text-align: center;
+}
+
+.materials-guide-inner > p {
+    font-size:     var(--text-base);
+    color:         var(--soft-black);
+    line-height:   1.85;
+    margin-bottom: 2.75rem;
+}
+
+.materials-grid {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2rem;
+    margin-bottom:         3rem;
+}
+
+.material-card {
+    text-align: left;
+    padding:    1.75rem;
+    background: var(--warm-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.material-card h3 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   600;
+    font-size:     var(--text-lg);
+    color:         var(--walnut);
+    margin-bottom: 0.65rem;
+}
+
+.material-card p {
+    font-size:   var(--text-sm);
+    color:       var(--soft-black);
+    line-height: 1.7;
+}
+
+.finishes-section {
+    text-align:    left;
+    padding:       2rem;
+    background:    var(--warm-white);
+    border-top:    2px solid var(--brass);
+    margin-top:    2rem;
+}
+
+.finishes-section h3 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   600;
+    font-size:     var(--text-lg);
+    color:         var(--walnut);
+    margin-bottom: 0.75rem;
+}
+
+.finishes-section p {
+    font-size:   var(--text-base);
+    color:       var(--soft-black);
+    line-height: 1.85;
+}
+
+/* ── Services CTA ── */
+.services-cta {
+    padding:    var(--section-pad-sm);
+    background: var(--charcoal);
+    text-align: center;
+}
+
+.services-cta-inner {
+    max-width: 700px;
+    margin:    0 auto;
+}
+
+.services-cta h2 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   700;
+    font-size:     var(--text-2xl);
+    color:         var(--white);
+    margin-bottom: 1rem;
+}
+
+.services-cta p {
+    font-size:     var(--text-base);
+    color:         rgba(255, 255, 255, 0.60);
+    line-height:   1.7;
+    margin-bottom: 2rem;
+}
+
+
+/* ── Responsive: tablet+ ── */
+@media (min-width: 768px) {
+    .service-category {
+        padding: var(--section-pad-md);
+    }
+
+    .commission-process { padding: var(--section-pad-md); }
+    .pricing-payment    { padding: var(--section-pad-md); }
+    .materials-guide    { padding: var(--section-pad-md); }
+    .services-cta       { padding: var(--section-pad-md); }
+
+    .pricing-details {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .materials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps-detailed {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+}
+
+/* ── Responsive: desktop+ (1024px) ── */
+@media (min-width: 1024px) {
+    .service-category {
+        grid-template-columns: 1fr 1fr;
+        gap:                   4rem;
+        padding:               var(--section-pad-lg);
+    }
+
+    /* Image-left layout (default) */
+    .service-category--img-left .service-category-image {
+        order: 1;
+    }
+
+    .service-category--img-left .service-category-text {
+        order: 2;
+    }
+
+    /* Image-right layout */
+    .service-category--img-right .service-category-image {
+        order: 2;
+    }
+
+    .service-category--img-right .service-category-text {
+        order: 1;
+    }
+
+    .commission-process { padding: var(--section-pad-lg); }
+    .pricing-payment    { padding: var(--section-pad-lg); }
+    .materials-guide    { padding: var(--section-pad-lg); }
+    .services-cta       { padding: var(--section-pad-lg); }
+
+    .materials-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
