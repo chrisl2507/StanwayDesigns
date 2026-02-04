@@ -13,24 +13,24 @@
     --brass:      #B8955A;
     --off-white:  #FAFAF8;
     
-    /* Spacing system — radical scale */
+    /* Spacing system — MORE REASONABLE */
     --space-xs:  0.5rem;
     --space-sm:  1rem;
     --space-md:  2rem;
-    --space-lg:  4rem;
-    --space-xl:  8rem;
-    --space-2xl: 12rem;
-    --space-3xl: 16rem;
+    --space-lg:  3rem;
+    --space-xl:  5rem;
+    --space-2xl: 7rem;
+    --space-3xl: 9rem;
     
-    /* Typography scale — MASSIVE */
+    /* Typography scale — TONED DOWN */
     --text-xs:      0.75rem;
     --text-sm:      0.875rem;
     --text-base:    1rem;
     --text-lg:      1.125rem;
     --text-xl:      1.5rem;
     --text-2xl:     2rem;
-    --text-display: clamp(3rem, 8vw, 7rem);
-    --text-massive: clamp(4rem, 12vw, 10rem);
+    --text-display: clamp(2.5rem, 6vw, 5rem);
+    --text-massive: clamp(3rem, 8vw, 6.5rem);
 }
 
 * {
@@ -277,7 +277,8 @@ body.cursor-hover .cursor-outline {
    5. HERO — Full-bleed, asymmetric
    ============================================ */
 .hero-v2 {
-    height: 100vh;
+    height: 70vh;
+    min-height: 500px;
     position: relative;
     overflow: hidden;
 }
@@ -371,7 +372,7 @@ body.cursor-hover .cursor-outline {
    6. PHILOSOPHY — Asymmetric grid breaker
    ============================================ */
 .philosophy-v2 {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-xl) 0;
     background: var(--warm-white);
     position: relative;
 }
@@ -437,16 +438,25 @@ body.cursor-hover .cursor-outline {
 .philosophy-image-block {
     grid-column: 9 / 13;
     grid-row: 2;
-    margin-top: calc(var(--space-xl) * -1);
+    margin-top: calc(var(--space-md) * -1);
     position: relative;
     margin-right: -5%;
 }
 
+.philosophy-image-block:empty {
+    display: none;
+}
+
 .philosophy-image-block img {
     width: 100%;
-    height: 600px;
+    height: 500px;
     object-fit: cover;
     filter: grayscale(15%);
+}
+
+.philosophy-image-block img[src=""],
+.philosophy-image-block img:not([src]) {
+    display: none;
 }
 
 /* Mobile adjustments */
@@ -479,10 +489,16 @@ body.cursor-hover .cursor-outline {
    7. STATEMENT SECTION — Full-width overlay
    ============================================ */
 .statement-section {
-    height: 80vh;
-    min-height: 600px;
+    height: 60vh;
+    min-height: 400px;
     position: relative;
-    margin: var(--space-3xl) 0;
+    margin: var(--space-2xl) 0;
+}
+
+.statement-section:empty,
+.statement-section img[src=""],
+.statement-section img:not([src]) {
+    display: none;
 }
 
 .statement-image-wrap {
@@ -533,7 +549,7 @@ body.cursor-hover .cursor-outline {
    8. SERVICES PREVIEW — Minimal list
    ============================================ */
 .services-preview {
-    padding: var(--space-2xl) 5%;
+    padding: var(--space-xl) 5%;
     background: var(--off-white);
 }
 
@@ -543,7 +559,7 @@ body.cursor-hover .cursor-outline {
 }
 
 .services-preview-intro {
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-xl);
 }
 
 .section-label-minimal {
@@ -662,14 +678,14 @@ body.cursor-hover .cursor-outline {
    9. PROCESS — Horizontal scroll
    ============================================ */
 .process-v2 {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0;
     background: var(--warm-white);
     overflow: hidden;
 }
 
 .process-header-v2 {
     padding: 0 5%;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
 }
 
 .process-scroll-container {
@@ -736,7 +752,7 @@ body.cursor-hover .cursor-outline {
    10. CONTACT — Minimal form
    ============================================ */
 .contact-v2 {
-    padding: var(--space-2xl) 5%;
+    padding: var(--space-xl) 5%;
     background: var(--charcoal);
 }
 
@@ -745,13 +761,13 @@ body.cursor-hover .cursor-outline {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
     align-items: start;
 }
 
 .contact-intro-block {
     position: sticky;
-    top: var(--space-2xl);
+    top: var(--space-lg);
 }
 
 .contact-intro-block .section-label-minimal {
@@ -881,7 +897,7 @@ body.cursor-hover .cursor-outline {
    ============================================ */
 .footer-v2 {
     background: var(--charcoal);
-    padding: var(--space-2xl) 5% var(--space-lg);
+    padding: var(--space-xl) 5% var(--space-lg);
     border-top: 1px solid rgba(247, 245, 242, 0.1);
 }
 
@@ -890,8 +906,8 @@ body.cursor-hover .cursor-outline {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--space-2xl);
-    margin-bottom: var(--space-xl);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-lg);
 }
 
 .footer-logo {
@@ -982,17 +998,17 @@ body.cursor-hover .cursor-outline {
    ============================================ */
 @media (max-width: 768px) {
     :root {
-        --space-xl: 4rem;
-        --space-2xl: 6rem;
-        --space-3xl: 8rem;
+        --space-xl: 3rem;
+        --space-2xl: 4rem;
+        --space-3xl: 5rem;
     }
     
     .hero-content-v2 {
-        padding-bottom: var(--space-2xl);
+        padding-bottom: var(--space-xl);
     }
     
     .hero-title {
-        font-size: clamp(2.5rem, 12vw, 4rem);
+        font-size: clamp(2.5rem, 10vw, 4rem);
     }
     
     .scroll-indicator {
@@ -1000,7 +1016,7 @@ body.cursor-hover .cursor-outline {
     }
     
     .philosophy-v2 {
-        padding: var(--space-2xl) 0;
+        padding: var(--space-xl) 0;
     }
     
     .philosophy-text-block {
@@ -1008,8 +1024,8 @@ body.cursor-hover .cursor-outline {
     }
     
     .statement-section {
-        height: 60vh;
-        min-height: 400px;
+        height: 50vh;
+        min-height: 350px;
     }
     
     .statement-text-inner {
