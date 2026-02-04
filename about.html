@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Stanway Designs | Master Craftsman | Nottingham Woodworking</title>
-    <meta name="description" content="Meet the craftsman behind Stanway Designs. A Nottingham-based bespoke woodworker creating heirloom-quality furniture from premium timber. Workshop, process, and story.">
+    <meta name="description" content="Meet Max Stanway, the craftsman behind Stanway Designs. A Nottingham-based bespoke woodworker creating heirloom-quality furniture from premium timber.">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:title" content="About Stanway Designs | Master Craftsman">
-    <meta property="og:description" content="Meet Max Stanway, the craftsman behind Stanway Designs. Bespoke woodworking in Nottingham, creating furniture built to last generations.">
+    <meta property="og:description" content="Meet the craftsman behind Stanway Designs. Bespoke woodworking in Nottingham.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://stanwaydesigns.co.uk/about.html">
 
@@ -19,112 +19,190 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="styles-v2.css">
 </head>
 <body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
     <!-- ==========================================
          NAVIGATION
          ========================================== -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo-text">Stanway</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul role="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
+    <nav class="nav-minimal">
+        <a href="index.html" class="nav-logo">Stanway</a>
+        <button class="nav-hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+        </button>
     </nav>
-    <div class="nav-overlay" aria-hidden="true"></div>
 
-    <!-- ==========================================
-         PAGE HERO (text-only, no image)
-         ========================================== -->
-    <section class="page-hero">
-        <div class="page-hero-content">
-            <p class="section-label">About Stanway</p>
-            <h1>The Craftsman</h1>
-            <div class="section-divider section-divider--centered"></div>
-            <p class="page-hero-intro">Every piece tells a story. This is ours.</p>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         THE ORIGIN
-         ========================================== -->
-    <section class="about-origin">
-        <div class="about-text-block">
-            <h2>Where It Started</h2>
-            <div class="section-divider"></div>
-            <p>Woodworking runs in the family. My father and uncle both began their careers specialising in office furniture design before moving into consulting. I grew up watching them sketch, problem-solve, and build. The language of timber and joinery was spoken at the dinner table.</p>
-            <p>I completed a BA in Furniture and Design, not because I needed permission to build, but because I wanted to understand the depth of the craft. The history. The techniques that have been refined over centuries. The discipline required to make something that lasts.</p>
-            <p>One of the first commissions I truly cared about was a ring box for my sister's wedding. Something small, deeply personal, and entirely hers. Walnut and brass, hand-fitted, with a lining chosen for the way it felt. That piece reminded me why this work matters — not scale or complexity, but the quiet permanence of something made with care.</p>
-        </div>
-        <div class="about-image-block">
-            <img src="includes/Images/stanway-max-workshop.webp" alt="Max Stanway in his purpose-built workshop in Nottingham, hand-planing a piece of walnut" width="800" height="1000">
-        </div>
-    </section>
-
-    <!-- ==========================================
-         THE WORKSHOP
-         ========================================== -->
-    <section class="about-workshop">
-        <div class="about-workshop-grid">
-            <div class="about-workshop-text">
-                <p class="section-label">The Workshop</p>
-                <h2>Where The Work Happens</h2>
-                <div class="section-divider"></div>
-                <p>The workshop is purpose-built. Every tool has its place. The light is good. The space is designed for focus, not show.</p>
-                <p>This is where raw timber becomes furniture. Where sketches are tested, joints are fitted, and finishes are hand-applied until they are exactly right. The process is quiet, methodical, and unrushed.</p>
-                <p>Most clients never see this space, and that is fine. What matters is that the work done here speaks for itself when it arrives in your home.</p>
-            </div>
-            <div class="about-workshop-images">
-                <div class="workshop-img-row">
-                    <img src="includes/Images/stanway-workshop-tools.webp" alt="Hand planes and chisels laid out on a workbench in Stanway's Nottingham workshop" width="600" height="450">
-                </div>
-                <div class="workshop-img-row">
-                    <img src="includes/Images/stanway-workshop-timber.webp" alt="Raw timber planks stacked in Stanway's purpose-built workshop, waiting to be crafted into bespoke furniture" width="600" height="450">
-                </div>
+    <!-- Full-screen menu overlay -->
+    <div class="menu-overlay">
+        <div class="menu-inner">
+            <ul class="menu-links">
+                <li><a href="index.html" data-text="Home">Home</a></li>
+                <li><a href="about.html" data-text="About">About</a></li>
+                <li><a href="services.html" data-text="Services">Services</a></li>
+                <li><a href="gallery.html" data-text="Gallery">Gallery</a></li>
+                <li><a href="index.html#contact" data-text="Contact">Contact</a></li>
+            </ul>
+            <div class="menu-footer">
+                <p>Bespoke Woodworking</p>
+                <p>Nottingham</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- ==========================================
-         THE TIMBER
+         PAGE HERO — Minimal
          ========================================== -->
-    <section class="about-timber">
-        <div class="about-timber-inner">
-            <p class="section-label">Materials</p>
-            <h2>The Timber We Use</h2>
-            <div class="section-divider section-divider--centered"></div>
-            <p>We source timber locally wherever possible. The specifics matter less than the quality. Walnut for its depth and warmth. Oak for its strength and grain. Ash for its elegance and workability. Each piece is selected for character, not just consistency.</p>
-            <p>Sometimes clients bring their own materials — reclaimed beams from a family property, timber with a story already attached. We welcome that. The best commissions often start with a conversation about what the wood has already lived through.</p>
-            <p>What matters is that every piece of timber we work with is worthy of the time it takes to craft it properly.</p>
+    <section class="page-hero-minimal">
+        <div class="page-hero-content-minimal">
+            <p class="section-label-minimal">About</p>
+            <h1 class="page-title">The craftsman</h1>
         </div>
     </section>
 
     <!-- ==========================================
-         SERVICE AREA
+         ORIGIN STORY — Asymmetric
          ========================================== -->
-    <section class="about-service-area">
-        <div class="service-area-inner">
-            <p class="section-label">Where We Work</p>
-            <h2>Service Area</h2>
-            <div class="section-divider section-divider--centered"></div>
-            <p>We are based in Nottingham and serve clients across Nottinghamshire and surrounding areas. Every commission includes delivery and installation — we ensure your piece is positioned exactly as planned.</p>
-            <p>If you are outside our typical delivery area, get in touch. We are always open to the conversation.</p>
-            <div class="service-area-cta">
-                <a href="index.html#contact" class="btn-primary">Start Your Commission</a>
+    <section class="about-origin-v2">
+        <div class="about-origin-container">
+            
+            <!-- Large quote/heading -->
+            <div class="origin-quote-block">
+                <blockquote class="display-quote">
+                    "Woodworking runs in the family"
+                </blockquote>
+            </div>
+
+            <!-- Story text -->
+            <div class="origin-story-block">
+                <p>My father and uncle both began their careers specialising in office furniture design before moving into consulting. I grew up watching them sketch, problem-solve, and build. The language of timber and joinery was spoken at the dinner table.</p>
+                
+                <p>I completed a BA in Furniture and Design, not because I needed permission to build, but because I wanted to understand the depth of the craft. The history. The techniques that have been refined over centuries. The discipline required to make something that lasts.</p>
+                
+                <p>One of the first commissions I truly cared about was a ring box for my sister's wedding. Something small, deeply personal, and entirely hers. Walnut and brass, hand-fitted, with a lining chosen for the way it felt. That piece reminded me why this work matters — not scale or complexity, but the quiet permanence of something made with care.</p>
+            </div>
+
+            <!-- Portrait image — bleeds off edge -->
+            <div class="origin-image-block">
+                <img src="includes/Images/stanway-max-workshop.webp" alt="Max Stanway in his workshop" width="800" height="1000">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         WORKSHOP — Full-width image + overlay
+         ========================================== -->
+    <section class="workshop-statement">
+        <div class="workshop-statement-image">
+            <img src="includes/Images/stanway-workshop-tools.webp" alt="Hand planes and chisels in workshop" width="1600" height="900">
+        </div>
+        <div class="workshop-statement-overlay">
+            <div class="workshop-statement-text">
+                <h2>The workshop</h2>
+                <p>Purpose-built. Every tool has its place. The light is good. The space is designed for focus, not show.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PROCESS DETAIL — Two-column
+         ========================================== -->
+    <section class="about-process-detail">
+        <div class="about-process-container">
+            
+            <div class="about-process-text">
+                <p class="section-label-minimal">Approach</p>
+                <h2 class="display-heading-small">Where the work happens</h2>
+                
+                <div class="process-detail-body">
+                    <p>This is where raw timber becomes furniture. Where sketches are tested, joints are fitted, and finishes are hand-applied until they are exactly right. The process is quiet, methodical, and unrushed.</p>
+                    
+                    <p>Most clients never see this space, and that is fine. What matters is that the work done here speaks for itself when it arrives in your home.</p>
+                </div>
+            </div>
+
+            <div class="about-process-images">
+                <img src="includes/Images/stanway-workshop-timber.webp" alt="Raw timber planks in workshop" width="800" height="600">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         MATERIALS — Minimal grid
+         ========================================== -->
+    <section class="about-materials">
+        <div class="about-materials-container">
+            
+            <div class="about-materials-intro">
+                <p class="section-label-minimal">Materials</p>
+                <h2 class="display-heading-small">The timber we use</h2>
+            </div>
+
+            <div class="materials-grid-simple">
+                
+                <div class="material-simple-card">
+                    <h3>Walnut</h3>
+                    <p>Dark, rich, warm. A beautiful depth of colour and tight grain. Ages gracefully. Our most requested timber for dining tables and statement pieces.</p>
+                </div>
+
+                <div class="material-simple-card">
+                    <h3>Oak</h3>
+                    <p>Strong, durable, characterful. Pronounced grain and excellent structural properties. Works well for larger pieces requiring robustness.</p>
+                </div>
+
+                <div class="material-simple-card">
+                    <h3>Ash</h3>
+                    <p>Light, elegant, refined. Subtle grain and excellent workability. Suits contemporary designs and lighter spaces.</p>
+                </div>
+
+                <div class="material-simple-card">
+                    <h3>Reclaimed</h3>
+                    <p>Every piece tells a story. Character, history, unique markings that cannot be replicated. Perfect for clients who want something one-of-a-kind.</p>
+                </div>
+
+            </div>
+
+            <div class="about-materials-note">
+                <p>We source timber locally wherever possible. The specifics matter less than the quality. Each piece is selected for character, not just consistency.</p>
+                
+                <p>Sometimes clients bring their own materials — reclaimed beams from a family property, timber with a story already attached. We welcome that. The best commissions often start with a conversation about what the wood has already lived through.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICE AREA — Simple centered
+         ========================================== -->
+    <section class="about-service-area-v2">
+        <div class="service-area-container-v2">
+            <p class="section-label-minimal">Location</p>
+            <h2 class="display-heading-small">Where we work</h2>
+            
+            <div class="service-area-text">
+                <p>We are based in Nottingham and serve clients across Nottinghamshire and surrounding areas. Every commission includes delivery and installation — we ensure your piece is positioned exactly as planned.</p>
+                
+                <p>If you are outside our typical delivery area, get in touch. We are always open to the conversation.</p>
+            </div>
+
+            <div class="service-area-cta-v2">
+                <a href="index.html#contact" class="link-underline">Start your commission</a>
             </div>
         </div>
     </section>
@@ -132,36 +210,41 @@
     <!-- ==========================================
          FOOTER
          ========================================== -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo-text">Stanway</a>
-                <p>Bespoke woodworking and custom furniture, crafted in Nottingham. Built to last generations.</p>
+    <footer class="footer-v2">
+        <div class="footer-container-v2">
+            
+            <div class="footer-col-main">
+                <div class="footer-logo">Stanway</div>
+                <p class="footer-tagline">Bespoke woodworking, crafted in Nottingham</p>
             </div>
+
             <div class="footer-col">
-                <h4>Pages</h4>
+                <p class="footer-col-title">Navigate</p>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
-                <h4>Contact</h4>
+                <p class="footer-col-title">Contact</p>
                 <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
                 <p>Nottingham</p>
-                <p>By appointment only</p>
+                <p>By appointment</p>
             </div>
+
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+
+        <div class="footer-bottom-v2">
+            <p>&copy; 2026 Stanway Designs</p>
+            <p><a href="privacy.html">Privacy</a></p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="navigation.js"></script>
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
 
 </body>
 </html>
