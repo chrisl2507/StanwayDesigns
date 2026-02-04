@@ -852,4 +852,191 @@ footer {
         min-width:     unset;
         margin-bottom: 0.75rem;
     }
+
+    /* ── About page ── */
+    .page-hero { padding: var(--section-pad-lg); }
+
+    .about-origin {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    .about-workshop { padding: var(--section-pad-lg); }
+
+    .about-workshop-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    .about-timber { padding: var(--section-pad-lg); }
+    .about-service-area { padding: var(--section-pad-lg); }
+}
+
+
+/* ============================================
+   14. ABOUT PAGE — Page-specific styles
+   ============================================ */
+
+/* ── Text-only page hero ── */
+.page-hero {
+    padding:        var(--section-pad-sm);
+    background:     var(--warm-white);
+    text-align:     center;
+    padding-top:    8rem;
+    padding-bottom: 5rem;
+}
+
+.page-hero-content {
+    max-width: 700px;
+    margin:    0 auto;
+}
+
+.page-hero h1 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   700;
+    font-size:     var(--text-3xl);
+    color:         var(--charcoal);
+    margin-bottom: 1.25rem;
+}
+
+.page-hero-intro {
+    font-size:   var(--text-lg);
+    color:       var(--soft-black);
+    line-height: 1.7;
+}
+
+/* ── Origin section: text + portrait image ── */
+.about-origin {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2.5rem;
+    padding:               var(--section-pad-sm);
+    background:            var(--linen);
+    max-width:             1150px;
+    margin:                0 auto;
+}
+
+.about-text-block h2 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   700;
+    font-size:     var(--text-2xl);
+    color:         var(--charcoal);
+    margin-bottom: 1.25rem;
+}
+
+.about-text-block p {
+    font-size:     var(--text-base);
+    color:         var(--soft-black);
+    line-height:   1.85;
+    margin-bottom: 1.5rem;
+}
+
+.about-text-block p:last-child {
+    margin-bottom: 0;
+}
+
+.about-image-block img {
+    width:      100%;
+    height:     auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* ── Workshop section: text + 2 images ── */
+.about-workshop {
+    padding:    var(--section-pad-sm);
+    background: var(--warm-white);
+}
+
+.about-workshop-grid {
+    display:               grid;
+    grid-template-columns: 1fr;
+    gap:                   2.5rem;
+    max-width:             1150px;
+    margin:                0 auto;
+}
+
+.about-workshop-text h2 {
+    font-family:   'Playfair Display', serif;
+    font-weight:   700;
+    font-size:     var(--text-2xl);
+    color:         var(--charcoal);
+    margin-bottom: 1.25rem;
+}
+
+.about-workshop-text p {
+    font-size:     var(--text-base);
+    color:         var(--soft-black);
+    line-height:   1.85;
+    margin-bottom: 1.5rem;
+}
+
+.about-workshop-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-workshop-images {
+    display:        flex;
+    flex-direction: column;
+    gap:            1.5rem;
+}
+
+.workshop-img-row img {
+    width:      100%;
+    height:     auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* ── Timber section: centered text block ── */
+.about-timber {
+    padding:    var(--section-pad-sm);
+    background: var(--linen);
+}
+
+.about-timber-inner {
+    max-width:  700px;
+    margin:     0 auto;
+    text-align: center;
+}
+
+.about-timber-inner p {
+    font-size:     var(--text-base);
+    color:         var(--soft-black);
+    line-height:   1.85;
+    margin-bottom: 1.5rem;
+}
+
+.about-timber-inner p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Service area section: centered text + CTA ── */
+.about-service-area {
+    padding:    var(--section-pad-sm);
+    background: var(--warm-white);
+}
+
+.service-area-inner {
+    max-width:  700px;
+    margin:     0 auto;
+    text-align: center;
+}
+
+.service-area-inner p {
+    font-size:     var(--text-base);
+    color:         var(--soft-black);
+    line-height:   1.85;
+    margin-bottom: 1.5rem;
+}
+
+.service-area-cta {
+    margin-top: 2.5rem;
+}
+
+
+/* ── Responsive: tablet+ ── */
+@media (min-width: 768px) {
+    .about-origin  { padding: var(--section-pad-md); }
+    .about-workshop { padding: var(--section-pad-md); }
+    .about-timber  { padding: var(--section-pad-md); }
+    .about-service-area { padding: var(--section-pad-md); }
 }
