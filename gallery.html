@@ -19,126 +19,116 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Lenis Smooth Scroll -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-
-    <!-- GSAP + ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
     <!-- ==========================================
-         NAVIGATION
+         NAVIGATION — Fixed, Always Visible
          ========================================== -->
-    <nav class="nav-minimal">
-        <a href="index.html" class="nav-logo">Stanway</a>
-        <button class="nav-hamburger" aria-label="Menu">
-            <span></span>
-            <span></span>
-        </button>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Stanway Designs</a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Full-screen menu overlay -->
-    <div class="menu-overlay">
-        <div class="menu-inner">
-            <ul class="menu-links">
-                <li><a href="index.html" data-text="Home">Home</a></li>
-                <li><a href="about.html" data-text="About">About</a></li>
-                <li><a href="services.html" data-text="Services">Services</a></li>
-                <li><a href="gallery.html" data-text="Gallery">Gallery</a></li>
-                <li><a href="index.html#contact" data-text="Contact">Contact</a></li>
-            </ul>
-            <div class="menu-footer">
-                <p>Bespoke Woodworking</p>
-                <p>Nottingham</p>
-            </div>
-        </div>
-    </div>
+    <!-- Nav overlay for mobile -->
+    <div class="nav-overlay"></div>
 
     <!-- ==========================================
          PAGE HERO
          ========================================== -->
-    <section class="page-hero-minimal">
-        <div class="page-hero-content-minimal">
-            <p class="section-label-minimal">Gallery</p>
-            <h1 class="page-title">Our work</h1>
+    <section class="page-hero">
+        <div class="container">
+            <p class="page-label">Gallery</p>
+            <h1 class="page-heading">Our work</h1>
         </div>
     </section>
 
     <!-- ==========================================
          GALLERY FILTERS
          ========================================== -->
-    <section class="gallery-filters-section">
-        <div class="gallery-filters-container">
-            <button class="gallery-filter-btn active" data-filter="all">All</button>
-            <button class="gallery-filter-btn" data-filter="dining">Dining</button>
-            <button class="gallery-filter-btn" data-filter="living">Living</button>
-            <button class="gallery-filter-btn" data-filter="bedroom">Bedroom</button>
-            <button class="gallery-filter-btn" data-filter="statement">Statement</button>
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="dining">Dining</button>
+                <button class="filter-btn" data-filter="living">Living</button>
+                <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+                <button class="filter-btn" data-filter="statement">Statement</button>
+            </div>
         </div>
     </section>
 
     <!-- ==========================================
-         GALLERY GRID — Masonry
+         GALLERY GRID
          ========================================== -->
     <section class="gallery-section">
-        <div class="gallery-grid">
+        <div class="container">
+            <div class="gallery-grid">
 
-            <!-- Example items - update with actual images -->
-            <div class="gallery-item" data-category="dining" data-title="Walnut Dining Table" data-desc="Seats 8, solid walnut">
-                <img src="includes/Images/stanway-walnut-dining-table.webp" alt="Bespoke walnut dining table" width="800" height="600">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-info">
-                        <h3>Walnut Dining Table</h3>
-                        <p>Dining</p>
+                <div class="gallery-item" data-category="dining">
+                    <img src="includes/Images/stanway-walnut-dining-table.webp" alt="Bespoke walnut dining table" width="800" height="600">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>Walnut Dining Table</h3>
+                            <p>Dining</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="gallery-item" data-category="living" data-title="Oak Coffee Table" data-desc="Live edge, brass inlay">
-                <img src="includes/Images/stanway-oak-coffee-table.webp" alt="Live edge oak coffee table" width="800" height="600">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-info">
-                        <h3>Oak Coffee Table</h3>
-                        <p>Living</p>
+                <div class="gallery-item" data-category="living">
+                    <img src="includes/Images/stanway-oak-coffee-table.webp" alt="Live edge oak coffee table" width="800" height="600">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>Oak Coffee Table</h3>
+                            <p>Living</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="gallery-item" data-category="bedroom" data-title="Ash Bed Frame" data-desc="King size, clean lines">
-                <img src="includes/Images/stanway-ash-bed-frame.webp" alt="Bespoke ash bed frame" width="800" height="1000">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-info">
-                        <h3>Ash Bed Frame</h3>
-                        <p>Bedroom</p>
+                <div class="gallery-item" data-category="bedroom">
+                    <img src="includes/Images/stanway-ash-bed-frame.webp" alt="Bespoke ash bed frame" width="800" height="1000">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>Ash Bed Frame</h3>
+                            <p>Bedroom</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Add more gallery items as needed -->
+
             </div>
-
-            <!-- Add more gallery items as needed -->
-
         </div>
     </section>
 
     <!-- ==========================================
          LIGHTBOX MODAL
          ========================================== -->
-    <div class="lightbox-modal">
+    <div class="lightbox">
         <button class="lightbox-close" aria-label="Close">&times;</button>
         <div class="lightbox-content">
-            <img class="lightbox-image" src="" alt="">
+            <img class="lightbox-img" src="" alt="">
             <div class="lightbox-info">
                 <h2 class="lightbox-title"></h2>
-                <p class="lightbox-desc"></p>
+                <p class="lightbox-category"></p>
             </div>
         </div>
         <button class="lightbox-prev" aria-label="Previous">&lt;</button>
@@ -148,42 +138,43 @@
     <!-- ==========================================
          FOOTER
          ========================================== -->
-    <footer class="footer-v2">
-        <div class="footer-container-v2">
-            
-            <div class="footer-col-main">
-                <div class="footer-logo">Stanway</div>
-                <p class="footer-tagline">Bespoke woodworking, crafted in Nottingham</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col">
+                    <h3 class="footer-brand">Stanway Designs</h3>
+                    <p>Bespoke woodworking and custom furniture, crafted in Nottingham. Built to last generations.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
+                    <p>Nottingham, UK</p>
+                    <p>By appointment only</p>
+                </div>
+
             </div>
 
-            <div class="footer-col">
-                <p class="footer-col-title">Navigate</p>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
             </div>
-
-            <div class="footer-col">
-                <p class="footer-col-title">Contact</p>
-                <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
-                <p>Nottingham</p>
-                <p>By appointment</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom-v2">
-            <p>&copy; 2026 Stanway Designs</p>
-            <p><a href="privacy.html">Privacy</a></p>
         </div>
     </footer>
 
-    <!-- Main JavaScript -->
+    <!-- JavaScript -->
     <script src="main.js"></script>
-    <!-- Gallery JavaScript -->
     <script src="gallery.js"></script>
 
 </body>
