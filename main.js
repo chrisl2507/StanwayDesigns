@@ -6,27 +6,22 @@
 // Mobile Navigation Toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navOverlay = document.querySelector('.nav-overlay');
-const navMenu = navOverlay.querySelector('.nav-menu');
 const body = document.body;
 
-// Clone desktop menu into mobile overlay
 if (navToggle && navOverlay) {
     const desktopMenu = document.querySelector('.nav-container .nav-menu');
     if (desktopMenu) {
         const mobileMenu = desktopMenu.cloneNode(true);
         navOverlay.appendChild(mobileMenu);
     }
-    
-    // Toggle mobile menu
+
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navOverlay.classList.toggle('active');
         body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
     });
-    
-    // Close menu when clicking a link
-    const mobileLinks = navOverlay.querySelectorAll('.nav-link');
-    mobileLinks.forEach(link => {
+
+    navOverlay.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navOverlay.classList.remove('active');

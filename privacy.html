@@ -13,19 +13,37 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- ==========================================
-         NAVIGATION — Simple version
+         NAVIGATION — Fixed, Always Visible
          ========================================== -->
-    <nav class="nav-minimal" style="mix-blend-mode: normal;">
-        <a href="index.html" class="nav-logo" style="color: var(--charcoal);">Stanway</a>
-        <a href="index.html" class="link-underline" style="font-size: var(--text-sm);">Back to home</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Stanway Designs</a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <!-- Nav overlay for mobile -->
+    <div class="nav-overlay"></div>
 
     <!-- ==========================================
          PRIVACY CONTENT
@@ -90,40 +108,45 @@
     </section>
 
     <!-- ==========================================
-         FOOTER — Minimal
+         FOOTER
          ========================================== -->
-    <footer class="footer-v2">
-        <div class="footer-container-v2">
-            
-            <div class="footer-col-main">
-                <div class="footer-logo">Stanway</div>
-                <p class="footer-tagline">Bespoke woodworking, crafted in Nottingham</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-col">
+                    <h3 class="footer-brand">Stanway Designs</h3>
+                    <p>Bespoke woodworking and custom furniture, crafted in Nottingham. Built to last generations.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
+                    <p>Nottingham, UK</p>
+                    <p>By appointment only</p>
+                </div>
+
             </div>
 
-            <div class="footer-col">
-                <p class="footer-col-title">Navigate</p>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
             </div>
-
-            <div class="footer-col">
-                <p class="footer-col-title">Contact</p>
-                <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
-                <p>Nottingham</p>
-                <p>By appointment</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom-v2">
-            <p>&copy; 2026 Stanway Designs</p>
-            <p><a href="privacy.html">Privacy</a></p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
 
 </body>
 </html>
