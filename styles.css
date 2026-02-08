@@ -1,27 +1,27 @@
 /* ============================================
-   STANWAY DESIGNS — Dark Luxury
-   Bold · Masculine · Refined
+   STANWAY DESIGNS — Boutique Luxury
+   Warm · Masculine · Refined
    ============================================ */
 
 /* ============================================
    1. CSS VARIABLES & RESET
    ============================================ */
 :root {
-    /* Color Palette - Dark & Masculine */
-    --charcoal:     #111111;
-    --charcoal-mid: #1A1A1A;
-    --slate:        #232323;
-    --slate-light:  #2C2C2C;
-    --warm-white:   #F0EDE8;
-    --off-white:    #E8E4DD;
-    --brass:        #C4A265;
-    --brass-light:  #D4B87A;
-    --brass-dark:   #A68B4B;
-    --text-primary: #F0EDE8;
-    --text-secondary: #9A958D;
-    --text-dark:    #1A1A1A;
-    --border:       rgba(196, 162, 101, 0.15);
-    --border-light: rgba(240, 237, 232, 0.08);
+    /* Color Palette - Warm Luxury */
+    --charcoal:     #1C1C1C;
+    --charcoal-mid: #2A2724;
+    --stone:        #F0EBE3;
+    --stone-light:  #F7F4EF;
+    --cream:        #FAF8F5;
+    --white:        #FFFFFF;
+    --brass:        #B8955A;
+    --brass-light:  #C9A96E;
+    --brass-dark:   #9A7B42;
+    --text-heading: #1C1C1C;
+    --text-body:    #4A4540;
+    --text-muted:   #7A756E;
+    --border:       #DDD8D0;
+    --border-light: #EBE7E0;
 
     /* Typography */
     --font-heading: 'Playfair Display', serif;
@@ -51,9 +51,9 @@
     --nav-height: 80px;
 
     /* Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 1px 3px rgba(28, 28, 28, 0.06);
+    --shadow-md: 0 4px 12px rgba(28, 28, 28, 0.08);
+    --shadow-lg: 0 8px 30px rgba(28, 28, 28, 0.12);
 }
 
 * {
@@ -71,8 +71,8 @@ body {
     font-size: var(--text-base);
     font-weight: 300;
     line-height: 1.7;
-    color: var(--text-primary);
-    background: var(--charcoal);
+    color: var(--text-body);
+    background: var(--stone);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -112,7 +112,7 @@ button {
 
 
 /* ============================================
-   2. NAVIGATION — Fixed, Always Visible
+   2. NAVIGATION — Dark, Masculine
    ============================================ */
 .navbar {
     position: fixed;
@@ -120,8 +120,7 @@ button {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(17, 17, 17, 0.95);
-    border-bottom: 1px solid var(--border);
+    background: rgba(28, 28, 28, 0.97);
     backdrop-filter: blur(12px);
 }
 
@@ -140,7 +139,7 @@ button {
     font-size: var(--text-xl);
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: var(--warm-white);
+    color: #F0EBE3;
     text-transform: uppercase;
 }
 
@@ -160,7 +159,7 @@ button {
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--off-white);
+    color: rgba(240, 235, 227, 0.85);
     position: relative;
 }
 
@@ -211,7 +210,7 @@ button {
 .nav-toggle span {
     width: 24px;
     height: 2px;
-    background: var(--warm-white);
+    background: #F0EBE3;
     transition: all 0.3s ease;
 }
 
@@ -255,18 +254,18 @@ button {
 
 .nav-overlay .nav-link {
     font-size: var(--text-lg);
-    color: var(--warm-white);
+    color: #F0EBE3;
 }
 
 @media (min-width: 768px) {
     .nav-menu {
         display: flex;
     }
-    
+
     .nav-toggle {
         display: none;
     }
-    
+
     .nav-overlay {
         display: none;
     }
@@ -274,7 +273,7 @@ button {
 
 
 /* ============================================
-   3. HERO — Reasonable Size
+   3. HERO — Dramatic, Full-bleed
    ============================================ */
 .hero {
     margin-top: var(--nav-height);
@@ -296,7 +295,7 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .hero-content {
@@ -304,7 +303,7 @@ button {
     z-index: 1;
     width: 100%;
     padding: var(--space-3xl) 5%;
-    background: linear-gradient(to top, rgba(17, 17, 17, 0.9) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(28, 28, 28, 0.85) 0%, transparent 100%);
 }
 
 .hero-text {
@@ -316,7 +315,7 @@ button {
     font-size: var(--text-4xl);
     font-weight: 700;
     line-height: 1.1;
-    color: var(--warm-white);
+    color: #F0EBE3;
     margin-bottom: var(--space-md);
     letter-spacing: 0.5px;
 }
@@ -324,7 +323,7 @@ button {
 .hero-subtitle {
     font-size: var(--text-xl);
     line-height: 1.5;
-    color: var(--text-secondary);
+    color: rgba(240, 235, 227, 0.7);
     margin-bottom: var(--space-xl);
     letter-spacing: 0.3px;
 }
@@ -368,12 +367,12 @@ button {
 
 .btn-secondary {
     background: transparent;
-    border: 2px solid var(--warm-white);
-    color: var(--warm-white);
+    border: 2px solid #F0EBE3;
+    color: #F0EBE3;
 }
 
 .btn-secondary:hover {
-    background: var(--warm-white);
+    background: #F0EBE3;
     color: var(--charcoal);
 }
 
@@ -411,14 +410,23 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-md);
 }
 
 .section-header p {
     font-size: var(--text-lg);
-    color: var(--text-secondary);
+    color: var(--text-muted);
     line-height: 1.6;
+}
+
+/* Dark section variant — headings go light */
+.section-dark .section-header h2 {
+    color: #F0EBE3;
+}
+
+.section-dark .section-header p {
+    color: rgba(240, 235, 227, 0.7);
 }
 
 .section-cta {
@@ -434,14 +442,14 @@ section {
 }
 
 .text-link::after {
-    content: '→';
+    content: '\2192';
     position: absolute;
     right: 0;
     transition: transform 0.3s ease;
 }
 
 .text-link:hover {
-    color: var(--warm-white);
+    color: var(--brass-dark);
 }
 
 .text-link:hover::after {
@@ -453,8 +461,7 @@ section {
    6. INTRO SECTION
    ============================================ */
 .intro-section {
-    background: var(--charcoal-mid);
-    border-top: 1px solid var(--border);
+    background: var(--stone);
 }
 
 .intro-content {
@@ -467,14 +474,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-md);
 }
 
 .intro-content p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 
@@ -482,7 +489,7 @@ section {
    7. CATEGORIES GRID
    ============================================ */
 .categories-section {
-    background: var(--slate);
+    background: var(--stone-light);
 }
 
 .categories-grid {
@@ -492,7 +499,7 @@ section {
 }
 
 .category-card {
-    background: var(--charcoal-mid);
+    background: var(--white);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-light);
@@ -501,7 +508,6 @@ section {
 .category-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--border);
 }
 
 .category-image {
@@ -528,14 +534,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-sm);
 }
 
 .category-info p {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -547,7 +553,7 @@ section {
     text-transform: uppercase;
     color: var(--brass);
     padding-top: var(--space-sm);
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-light);
 }
 
 @media (min-width: 640px) {
@@ -564,10 +570,11 @@ section {
 
 
 /* ============================================
-   8. CRAFTSMANSHIP SECTION
+   8. CRAFTSMANSHIP SECTION — Dark accent
    ============================================ */
 .craftsmanship-section {
-    background: var(--charcoal-mid);
+    background: var(--charcoal);
+    color: #F0EBE3;
 }
 
 .craftsmanship-grid {
@@ -587,14 +594,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: #F0EBE3;
     margin-bottom: var(--space-md);
 }
 
 .craftsmanship-content p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: rgba(240, 235, 227, 0.7);
     margin-bottom: var(--space-md);
 }
 
@@ -602,12 +609,16 @@ section {
     margin-top: var(--space-md);
 }
 
+.craftsmanship-content .text-link:hover {
+    color: var(--brass-light);
+}
+
 @media (min-width: 1024px) {
     .craftsmanship-grid {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-3xl);
     }
-    
+
     .craftsmanship-image img {
         height: 500px;
     }
@@ -618,7 +629,7 @@ section {
    9. RECENT WORK — Gallery Preview
    ============================================ */
 .recent-work-section {
-    background: var(--slate);
+    background: var(--stone);
 }
 
 .gallery-preview {
@@ -630,7 +641,7 @@ section {
 .gallery-preview-item {
     position: relative;
     overflow: hidden;
-    background: var(--charcoal-mid);
+    background: var(--white);
     cursor: pointer;
     border: 1px solid var(--border-light);
 }
@@ -654,7 +665,7 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-lg);
     font-weight: 600;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-xs);
 }
 
@@ -682,7 +693,7 @@ section {
    10. PROCESS SECTION
    ============================================ */
 .process-section {
-    background: var(--charcoal-mid);
+    background: var(--stone-light);
 }
 
 .process-grid {
@@ -709,14 +720,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 600;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-sm);
 }
 
 .process-step p {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 @media (min-width: 640px) {
@@ -733,12 +744,11 @@ section {
 
 
 /* ============================================
-   11. CONTACT SECTION
+   11. CONTACT SECTION — Dark accent
    ============================================ */
 .contact-section {
-    background: var(--slate);
-    color: var(--warm-white);
-    border-top: 1px solid var(--border);
+    background: var(--charcoal);
+    color: #F0EBE3;
 }
 
 .contact-header {
@@ -755,7 +765,7 @@ section {
 
 .contact-header p {
     font-size: var(--text-lg);
-    color: rgba(247, 245, 242, 0.8);
+    color: rgba(240, 235, 227, 0.7);
 }
 
 /* Contact Form */
@@ -788,7 +798,7 @@ section {
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: rgba(247, 245, 242, 0.7);
+    color: rgba(240, 235, 227, 0.6);
 }
 
 .form-group input,
@@ -797,9 +807,9 @@ section {
     padding: 0.875rem;
     font-family: var(--font-body);
     font-size: var(--text-base);
-    color: var(--warm-white);
+    color: #F0EBE3;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(247, 245, 242, 0.2);
+    border: 1px solid rgba(240, 235, 227, 0.2);
     border-radius: 2px;
     outline: none;
     transition: all 0.3s ease;
@@ -822,13 +832,12 @@ section {
 
 
 /* ============================================
-   12. FOOTER
+   12. FOOTER — Dark
    ============================================ */
 .footer {
-    background: var(--charcoal);
-    color: var(--warm-white);
+    background: var(--charcoal-mid);
+    color: #F0EBE3;
     padding: var(--space-3xl) 0 var(--space-lg);
-    border-top: 1px solid var(--border);
 }
 
 .footer-grid {
@@ -848,14 +857,14 @@ section {
 .footer-col p {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: rgba(247, 245, 242, 0.7);
+    color: rgba(240, 235, 227, 0.6);
     margin-bottom: var(--space-xs);
 }
 
 .footer-col h4 {
     font-size: var(--text-sm);
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--brass);
     margin-bottom: var(--space-md);
@@ -866,7 +875,7 @@ section {
 }
 
 .footer-col a {
-    color: rgba(247, 245, 242, 0.8);
+    color: rgba(240, 235, 227, 0.7);
 }
 
 .footer-col a:hover {
@@ -875,13 +884,13 @@ section {
 
 .footer-bottom {
     padding-top: var(--space-lg);
-    border-top: 1px solid rgba(247, 245, 242, 0.1);
+    border-top: 1px solid rgba(240, 235, 227, 0.1);
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: var(--text-sm);
-    color: rgba(247, 245, 242, 0.5);
+    color: rgba(240, 235, 227, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -900,12 +909,12 @@ section {
         --text-3xl: 2rem;
         --text-2xl: 1.75rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .hero-buttons .btn {
         width: 100%;
         text-align: center;
@@ -927,8 +936,8 @@ section {
 .page-hero {
     margin-top: var(--nav-height);
     padding: var(--space-3xl) 0 var(--space-2xl);
-    background: var(--charcoal-mid);
-    border-bottom: 1px solid var(--border);
+    background: var(--stone);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .page-label {
@@ -944,7 +953,7 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
 }
 
 
@@ -955,7 +964,7 @@ section {
 /* Origin Story */
 .about-origin {
     padding: var(--space-3xl) 0;
-    background: var(--slate);
+    background: var(--stone-light);
 }
 
 .about-grid {
@@ -969,7 +978,7 @@ section {
     font-size: var(--text-3xl);
     font-weight: 700;
     line-height: 1.3;
-    color: var(--warm-white);
+    color: var(--text-heading);
     border-left: 4px solid var(--brass);
     padding-left: var(--space-lg);
 }
@@ -977,7 +986,7 @@ section {
 .about-story p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-lg);
 }
 
@@ -1024,21 +1033,21 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: #F0EBE3;
     margin-bottom: var(--space-md);
 }
 
 .workshop-text p {
     font-size: var(--text-lg);
     line-height: 1.7;
-    color: rgba(247, 245, 242, 0.9);
+    color: rgba(240, 235, 227, 0.9);
     max-width: 600px;
 }
 
 /* Process Detail */
 .about-process {
     padding: var(--space-3xl) 0;
-    background: var(--charcoal-mid);
+    background: var(--stone);
 }
 
 .about-process-grid {
@@ -1052,14 +1061,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-md);
 }
 
 .about-process-content p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -1079,7 +1088,7 @@ section {
 /* Materials */
 .about-materials {
     padding: var(--space-3xl) 0;
-    background: var(--slate);
+    background: var(--stone-light);
 }
 
 .materials-grid {
@@ -1091,7 +1100,7 @@ section {
 
 .material-card {
     padding: var(--space-lg);
-    background: var(--charcoal-mid);
+    background: var(--white);
     border-top: 3px solid var(--brass);
     border-left: 1px solid var(--border-light);
     border-right: 1px solid var(--border-light);
@@ -1102,14 +1111,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-sm);
 }
 
 .material-card p {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 .materials-note {
@@ -1122,14 +1131,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-md);
 }
 
 .materials-note p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -1148,7 +1157,7 @@ section {
 /* Location */
 .about-location {
     padding: var(--space-3xl) 0;
-    background: var(--charcoal-mid);
+    background: var(--stone);
     text-align: center;
 }
 
@@ -1156,7 +1165,7 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-md);
 }
 
@@ -1168,7 +1177,7 @@ section {
 .location-text p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -1180,14 +1189,14 @@ section {
 /* Services Intro */
 .services-intro {
     padding: var(--space-2xl) 0;
-    background: var(--slate);
+    background: var(--stone-light);
     text-align: center;
 }
 
 .services-intro p {
     font-size: var(--text-xl);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 /* Service Sections */
@@ -1199,7 +1208,7 @@ section {
 }
 
 .service-section-alt {
-    background: var(--slate);
+    background: var(--stone-light);
 }
 
 .service-image {
@@ -1240,14 +1249,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: #F0EBE3;
     margin-bottom: var(--space-md);
 }
 
 .service-content p {
     font-size: var(--text-lg);
     line-height: 1.7;
-    color: rgba(247, 245, 242, 0.9);
+    color: rgba(240, 235, 227, 0.9);
     margin-bottom: var(--space-md);
 }
 
@@ -1262,13 +1271,13 @@ section {
 /* Commission Process */
 .commission-process {
     padding: var(--space-3xl) 0;
-    background: var(--charcoal-mid);
+    background: var(--stone);
 }
 
 /* Pricing Section */
 .pricing-section {
     padding: var(--space-3xl) 0;
-    background: var(--slate);
+    background: var(--stone-light);
 }
 
 .pricing-grid {
@@ -1280,7 +1289,7 @@ section {
 
 .pricing-card {
     padding: var(--space-lg);
-    background: var(--charcoal-mid);
+    background: var(--white);
     border-left: 4px solid var(--brass);
 }
 
@@ -1288,14 +1297,14 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-sm);
 }
 
 .pricing-card p {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 .pricing-note {
@@ -1307,7 +1316,7 @@ section {
 .pricing-note p {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-md);
     font-style: italic;
 }
@@ -1321,34 +1330,37 @@ section {
 /* Materials Section */
 .materials-section {
     padding: var(--space-3xl) 0;
-    background: var(--charcoal-mid);
+    background: var(--stone);
 }
 
-/* Services CTA */
+/* Services CTA — Dark accent */
 .services-cta {
     padding: var(--space-3xl) 0;
-    background: var(--slate);
+    background: var(--charcoal);
     text-align: center;
-    border-top: 1px solid var(--border);
 }
 
 .services-cta h2 {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: #F0EBE3;
     margin-bottom: var(--space-md);
 }
 
 .services-cta p {
     font-size: var(--text-lg);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: rgba(240, 235, 227, 0.7);
     margin-bottom: var(--space-lg);
 }
 
 .services-cta .text-link {
     color: var(--brass);
+}
+
+.services-cta .text-link:hover {
+    color: var(--brass-light);
 }
 
 
@@ -1359,8 +1371,8 @@ section {
 /* Gallery Filters */
 .gallery-filters {
     padding: var(--space-lg) 0;
-    background: var(--slate);
-    border-bottom: 1px solid var(--border);
+    background: var(--stone);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .filter-buttons {
@@ -1377,22 +1389,22 @@ section {
     letter-spacing: 1px;
     text-transform: uppercase;
     background: transparent;
-    border: 1px solid var(--border-light);
-    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-body);
     transition: all 0.3s ease;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: var(--brass);
-    border-color: var(--brass);
-    color: var(--charcoal);
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+    color: #F0EBE3;
 }
 
 /* Gallery Grid */
 .gallery-section {
     padding: var(--space-3xl) 0;
-    background: var(--charcoal-mid);
+    background: var(--stone-light);
 }
 
 .gallery-grid {
@@ -1405,7 +1417,7 @@ section {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    background: var(--slate);
+    background: var(--white);
 }
 
 .gallery-item img {
@@ -1438,7 +1450,7 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-lg);
     font-weight: 700;
-    color: var(--warm-white);
+    color: #F0EBE3;
     margin-bottom: var(--space-xs);
 }
 
@@ -1495,7 +1507,7 @@ section {
 }
 
 .lightbox-info {
-    color: var(--warm-white);
+    color: #F0EBE3;
 }
 
 .lightbox-title {
@@ -1516,7 +1528,7 @@ section {
     position: absolute;
     background: transparent;
     font-size: 3rem;
-    color: var(--warm-white);
+    color: #F0EBE3;
     padding: var(--space-md);
     transition: color 0.3s ease;
 }
@@ -1559,7 +1571,7 @@ section {
 .privacy-page {
     margin-top: var(--nav-height);
     padding: var(--space-3xl) 0;
-    background: var(--charcoal-mid);
+    background: var(--stone);
 }
 
 .privacy-container {
@@ -1572,13 +1584,13 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-bottom: var(--space-sm);
 }
 
 .privacy-updated {
     font-size: var(--text-sm);
-    color: var(--text-secondary);
+    color: var(--text-muted);
     letter-spacing: 0.5px;
     margin-bottom: var(--space-2xl);
 }
@@ -1587,7 +1599,7 @@ section {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--warm-white);
+    color: var(--text-heading);
     margin-top: var(--space-xl);
     margin-bottom: var(--space-sm);
 }
@@ -1595,7 +1607,7 @@ section {
 .privacy-content p {
     font-size: var(--text-base);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -1608,7 +1620,7 @@ section {
 .privacy-content li {
     font-size: var(--text-base);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: var(--space-xs);
 }
 
@@ -1617,5 +1629,5 @@ section {
 }
 
 .privacy-content a:hover {
-    color: var(--brass-light);
+    color: var(--brass-dark);
 }
