@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Stanway Designs | Master Craftsman | Nottingham Woodworking</title>
-    <meta name="description" content="Meet Max Stanway, the craftsman behind Stanway Designs. A Nottingham-based bespoke woodworker creating heirloom-quality furniture from premium timber.">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="About Stanway Designs | Master Craftsman">
-    <meta property="og:description" content="Meet the craftsman behind Stanway Designs. Bespoke woodworking in Nottingham.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stanwaydesigns.co.uk/about.html">
+    <title>About Stanway Designs | Master Craftsman | Nottingham</title>
+    <meta name="description" content="Meet the craftsman behind Stanway Designs. A Nottingham-based bespoke woodworker creating heirloom-quality furniture from premium timber.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="includes/Images/stanway-favicon.png">
@@ -19,192 +12,206 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="styles-luxury.css">
 </head>
 <body>
-
-    <!-- ==========================================
-         NAVIGATION — Fixed, Always Visible
-         ========================================== -->
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="luxury-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Stanway Designs</a>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="index.html" class="logo">
+                <img src="includes/Images/stanway-logo.png" alt="Stanway Designs" class="logo-img">
+            </a>
 
-            <ul class="nav-menu">
+            <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Contact</a></li>
             </ul>
+
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Nav overlay for mobile -->
-    <div class="nav-overlay"></div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="services.html" class="mobile-link">Services</a>
+            <a href="gallery.html" class="mobile-link">Gallery</a>
+            <a href="index.html#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
 
-    <!-- ==========================================
-         PAGE HERO
-         ========================================== -->
-    <section class="page-hero">
-        <div class="container">
-            <p class="page-label">About</p>
-            <h1 class="page-heading">The craftsman</h1>
+    <!-- Page Hero -->
+    <section class="page-hero-luxury">
+        <div class="hero-bg">
+            <div class="hero-image parallax-img" style="background-image: url('https://images.unsplash.com/photo-1606744837616-56c2e6265537?w=1920&q=95')"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label light">About</span>
+            <h1 class="page-hero-title">The Craftsman</h1>
+            <p class="page-hero-subtitle">Where heritage meets modern craftsmanship</p>
         </div>
     </section>
 
-    <!-- ==========================================
-         ORIGIN STORY
-         ========================================== -->
-    <section class="about-origin">
+    <!-- Origin Story -->
+    <section class="about-story-section">
         <div class="container">
-            <div class="about-grid">
-                
-                <!-- Quote -->
-                <div class="about-quote">
+            <div class="story-grid">
+                <div class="story-quote">
                     <blockquote>
                         "Woodworking runs in the family"
                     </blockquote>
                 </div>
 
-                <!-- Story -->
-                <div class="about-story">
+                <div class="story-content">
                     <p>My father and uncle both began their careers specialising in office furniture design before moving into consulting. I grew up watching them sketch, problem-solve, and build. The language of timber and joinery was spoken at the dinner table.</p>
-                    
+
                     <p>I completed a BA in Furniture and Design, not because I needed permission to build, but because I wanted to understand the depth of the craft. The history. The techniques that have been refined over centuries. The discipline required to make something that lasts.</p>
-                    
+
                     <p>One of the first commissions I truly cared about was a ring box for my sister's wedding. Something small, deeply personal, and entirely hers. Walnut and brass, hand-fitted, with a lining chosen for the way it felt. That piece reminded me why this work matters — not scale or complexity, but the quiet permanence of something made with care.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ==========================================
-         WORKSHOP IMAGE
-         ========================================== -->
-    <section class="about-workshop">
-        <div class="workshop-image">
-            <img src="includes/Images/stanway-workshop-tools.webp" alt="Hand planes and chisels in workshop" width="1600" height="900">
+    <!-- Workshop Feature -->
+    <section class="workshop-feature">
+        <div class="workshop-image-wrapper">
+            <div class="workshop-bg parallax-img" style="background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1920&q=95')"></div>
         </div>
-        <div class="workshop-overlay">
-            <div class="container">
-                <div class="workshop-text">
-                    <h2>The workshop</h2>
-                    <p>Purpose-built. Every tool has its place. The light is good. The space is designed for focus, not show.</p>
+        <div class="workshop-content">
+            <div class="workshop-inner">
+                <span class="section-label light">The Workshop</span>
+                <h2 class="section-title light">Where it happens</h2>
+                <p class="workshop-text">
+                    Purpose-built. Every tool has its place. The light is good. The space is designed for focus, not show. This is where raw timber becomes furniture. Where sketches are tested, joints are fitted, and finishes are hand-applied until they are exactly right.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process & Materials -->
+    <section class="materials-process-section">
+        <div class="container">
+            <div class="materials-header">
+                <div class="materials-header-text">
+                    <span class="section-label">Our Materials</span>
+                    <h2 class="section-title">The timber we choose</h2>
+                    <p class="materials-desc">Each wood species brings its own character, grain pattern, and story. We select every piece for beauty and longevity.</p>
+                </div>
+                <div class="materials-nav">
+                    <button class="material-nav-btn material-prev" aria-label="Previous material">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="material-nav-btn material-next" aria-label="Next material">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ==========================================
-         PROCESS DETAIL
-         ========================================== -->
-    <section class="about-process">
-        <div class="container">
-            <div class="about-process-grid">
-                
-                <div class="about-process-text">
-                    <p class="page-label">Approach</p>
-                    <h2>Where the work happens</h2>
-                    
-                    <div class="about-process-content">
-                        <p>This is where raw timber becomes furniture. Where sketches are tested, joints are fitted, and finishes are hand-applied until they are exactly right. The process is quiet, methodical, and unrushed.</p>
-                        
-                        <p>Most clients never see this space, and that is fine. What matters is that the work done here speaks for itself when it arrives in your home.</p>
+            <div class="materials-carousel-wrapper">
+                <div class="materials-carousel">
+                    <div class="material-slide">
+                        <div class="material-slide-image">
+                            <img src="https://images.unsplash.com/photo-1620843002805-05a08cb72f57?w=800&q=90" alt="Walnut timber">
+                            <div class="material-slide-overlay"></div>
+                        </div>
+                        <div class="material-slide-content">
+                            <h3>Walnut</h3>
+                            <p>Dark, rich, warm. A beautiful depth of colour and tight grain. Ages gracefully. Our most requested timber for dining tables and statement pieces.</p>
+                        </div>
+                    </div>
+
+                    <div class="material-slide">
+                        <div class="material-slide-image">
+                            <img src="https://images.unsplash.com/photo-1615875474908-f403b00e4f2f?w=800&q=90" alt="Oak timber">
+                            <div class="material-slide-overlay"></div>
+                        </div>
+                        <div class="material-slide-content">
+                            <h3>Oak</h3>
+                            <p>Strong, durable, characterful. Pronounced grain and excellent structural properties. Works well for larger pieces requiring robustness.</p>
+                        </div>
+                    </div>
+
+                    <div class="material-slide">
+                        <div class="material-slide-image">
+                            <img src="https://images.unsplash.com/photo-1536924430914-91f9e2041b83?w=800&q=90" alt="Ash timber">
+                            <div class="material-slide-overlay"></div>
+                        </div>
+                        <div class="material-slide-content">
+                            <h3>Ash</h3>
+                            <p>Light, elegant, refined. Subtle grain and excellent workability. Suits contemporary designs and lighter spaces.</p>
+                        </div>
+                    </div>
+
+                    <div class="material-slide">
+                        <div class="material-slide-image">
+                            <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=90" alt="Reclaimed timber">
+                            <div class="material-slide-overlay"></div>
+                        </div>
+                        <div class="material-slide-content">
+                            <h3>Reclaimed</h3>
+                            <p>Every piece tells a story. Character, history, unique markings that cannot be replicated. Perfect for clients who want something one-of-a-kind.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="about-process-image">
-                    <img src="includes/Images/stanway-workshop-timber.webp" alt="Raw timber planks in workshop" width="800" height="600">
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         MATERIALS
-         ========================================== -->
-    <section class="about-materials">
-        <div class="container">
-            
-            <div class="section-header">
-                <p class="page-label">Materials</p>
-                <h2>The timber we use</h2>
             </div>
 
-            <div class="materials-grid">
-                
-                <div class="material-card">
-                    <h3>Walnut</h3>
-                    <p>Dark, rich, warm. A beautiful depth of colour and tight grain. Ages gracefully. Our most requested timber for dining tables and statement pieces.</p>
-                </div>
-
-                <div class="material-card">
-                    <h3>Oak</h3>
-                    <p>Strong, durable, characterful. Pronounced grain and excellent structural properties. Works well for larger pieces requiring robustness.</p>
-                </div>
-
-                <div class="material-card">
-                    <h3>Ash</h3>
-                    <p>Light, elegant, refined. Subtle grain and excellent workability. Suits contemporary designs and lighter spaces.</p>
-                </div>
-
-                <div class="material-card">
-                    <h3>Reclaimed</h3>
-                    <p>Every piece tells a story. Character, history, unique markings that cannot be replicated. Perfect for clients who want something one-of-a-kind.</p>
-                </div>
-
+            <div class="materials-dots">
+                <button class="material-dot active" data-slide="0" aria-label="Go to Walnut"></button>
+                <button class="material-dot" data-slide="1" aria-label="Go to Oak"></button>
+                <button class="material-dot" data-slide="2" aria-label="Go to Ash"></button>
+                <button class="material-dot" data-slide="3" aria-label="Go to Reclaimed"></button>
             </div>
 
-            <div class="materials-note">
+            <div class="materials-note-luxury">
                 <p>We source timber locally wherever possible. The specifics matter less than the quality. Each piece is selected for character, not just consistency.</p>
-                
                 <p>Sometimes clients bring their own materials — reclaimed beams from a family property, timber with a story already attached. We welcome that. The best commissions often start with a conversation about what the wood has already lived through.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- ==========================================
-         SERVICE AREA
-         ========================================== -->
-    <section class="about-location">
+    <!-- Location -->
+    <section class="location-section">
         <div class="container-narrow">
-            <p class="page-label">Location</p>
-            <h2>Where we work</h2>
-            
-            <div class="location-text">
+            <div class="location-content">
+                <span class="section-label">Location</span>
+                <h2 class="section-title">Based in Nottingham</h2>
                 <p>We are based in Nottingham and serve clients across Nottinghamshire and surrounding areas. Every commission includes delivery and installation — we ensure your piece is positioned exactly as planned.</p>
-                
                 <p>If you are outside our typical delivery area, get in touch. We are always open to the conversation.</p>
-            </div>
-
-            <div class="section-cta">
-                <a href="index.html#contact" class="text-link">Start your commission</a>
+                <a href="index.html#contact" class="btn-primary">
+                    <span class="btn-text">Start Your Commission</span>
+                    <span class="btn-arrow">→</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="luxury-footer">
         <div class="container">
             <div class="footer-grid">
-                
-                <div class="footer-col">
-                    <h3 class="footer-brand">Stanway Designs</h3>
-                    <p>Bespoke woodworking and custom furniture, crafted in Nottingham. Built to last generations.</p>
+                <div class="footer-brand">
+                    <h3>Stanway Designs</h3>
+                    <p>Bespoke furniture crafted to last generations</p>
                 </div>
 
                 <div class="footer-col">
@@ -214,17 +221,17 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
-                    <p>Nottingham, UK</p>
-                    <p>By appointment only</p>
+                    <ul>
+                        <li><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></li>
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
@@ -233,8 +240,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="main.js"></script>
-
+    <script src="luxury.js"></script>
 </body>
 </html>

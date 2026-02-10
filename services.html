@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Furniture &amp; Commissions | Stanway Designs | Nottingham</title>
-    <meta name="description" content="Bespoke dining tables, bedroom furniture, and living room pieces. Custom woodworking commissions in Nottingham. View pricing, process, and timber options.">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Custom Furniture &amp; Commissions | Stanway Designs">
-    <meta property="og:description" content="Bespoke woodworking commissions in Nottingham. Dining tables, bedroom furniture, living room pieces.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stanwaydesigns.co.uk/services.html">
+    <title>Bespoke Furniture Services | Stanway Designs | Nottingham</title>
+    <meta name="description" content="Bespoke dining tables, bedroom furniture, and living room pieces. Custom woodworking commissions in Nottingham.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="includes/Images/stanway-favicon.png">
@@ -19,276 +12,198 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="styles-luxury.css">
 </head>
 <body>
-
-    <!-- ==========================================
-         NAVIGATION — Fixed, Always Visible
-         ========================================== -->
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="luxury-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Stanway Designs</a>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="index.html" class="logo">
+                <img src="includes/Images/stanway-logo.png" alt="Stanway Designs" class="logo-img">
+            </a>
 
-            <ul class="nav-menu">
+            <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Contact</a></li>
             </ul>
+
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Nav overlay for mobile -->
-    <div class="nav-overlay"></div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="services.html" class="mobile-link">Services</a>
+            <a href="gallery.html" class="mobile-link">Gallery</a>
+            <a href="index.html#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
 
-    <!-- ==========================================
-         PAGE HERO
-         ========================================== -->
-    <section class="page-hero">
-        <div class="container">
-            <p class="page-label">Services</p>
-            <h1 class="page-heading">Custom commissions</h1>
+    <!-- Page Hero -->
+    <section class="page-hero-luxury">
+        <div class="hero-bg">
+            <div class="hero-image parallax-img" style="background-image: url('https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1920&q=95')"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label light">Services</span>
+            <h1 class="page-hero-title">Bespoke Commissions</h1>
+            <p class="page-hero-subtitle">Furniture crafted to your exact specifications</p>
         </div>
     </section>
 
-    <!-- ==========================================
-         SERVICES INTRO
-         ========================================== -->
-    <section class="services-intro">
+    <!-- Services Intro -->
+    <section class="services-intro-section">
         <div class="container-narrow">
-            <p>Every piece is bespoke. Built to your exact needs, crafted to last generations. We work across four core categories, but if you have something else in mind, we can build it.</p>
+            <p class="services-intro-text">
+                Every piece is bespoke. Built to your exact needs, crafted to last generations. We work across four core categories, but if you have something else in mind, we can build it.
+            </p>
         </div>
     </section>
 
-    <!-- ==========================================
-         SERVICE CATEGORIES
-         ========================================== -->
-
-    <!-- Dining -->
-    <section class="service-section">
-        <div class="service-image">
-            <img src="includes/Images/stanway-service-dining.webp" alt="Bespoke walnut dining table" width="1600" height="900">
-        </div>
-        <div class="service-overlay">
-            <div class="container">
-                <div class="service-content">
-                    <span class="service-number">01</span>
-                    <h2>Dining</h2>
-                    <p>Tables, chairs, benches. The centre of a home. Where families gather, conversations happen, life unfolds. We build tables that earn their place in that role.</p>
-                    <p class="service-price">From £2,500</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Living -->
-    <section class="service-section service-section-alt">
-        <div class="service-image">
-            <img src="includes/Images/stanway-service-living.webp" alt="Bespoke oak coffee table" width="1600" height="900">
-        </div>
-        <div class="service-overlay">
-            <div class="container">
-                <div class="service-content">
-                    <span class="service-number">02</span>
-                    <h2>Living</h2>
-                    <p>Coffee tables, TV units, consoles. Functional, beautiful, built to withstand daily use. Each piece tailored to your room and how you use it.</p>
-                    <p class="service-price">From £800</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bedroom -->
-    <section class="service-section">
-        <div class="service-image">
-            <img src="includes/Images/stanway-service-bedroom.webp" alt="Bespoke ash bed frame" width="1600" height="900">
-        </div>
-        <div class="service-overlay">
-            <div class="container">
-                <div class="service-content">
-                    <span class="service-number">03</span>
-                    <h2>Bedroom</h2>
-                    <p>Bed frames, wardrobes, storage. Quiet elegance. Built to age gracefully. We avoid trends — what we build today should still feel right in twenty years.</p>
-                    <p class="service-price">From £1,800</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bespoke -->
-    <section class="service-section service-section-alt">
-        <div class="service-image">
-            <img src="includes/Images/stanway-service-bespoke.webp" alt="Bespoke sculptural shelving" width="1600" height="900">
-        </div>
-        <div class="service-overlay">
-            <div class="container">
-                <div class="service-content">
-                    <span class="service-number">04</span>
-                    <h2>Bespoke</h2>
-                    <p>Statement pieces. One-off commissions. If you have an idea and you're not sure if it's possible, the answer is probably yes. Get in touch.</p>
-                    <p class="service-price">From £1,500</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         COMMISSION PROCESS
-         ========================================== -->
-    <section class="commission-process">
+    <!-- Services Grid -->
+    <section class="services-grid-section">
         <div class="container">
-            
-            <div class="section-header">
-                <p class="page-label">Process</p>
-                <h2>How a commission works</h2>
-                <p>Every commission follows the same careful process, from first conversation to final delivery.</p>
+            <div class="services-cards">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=90" alt="Dining furniture">
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">01</span>
+                        <h3>Dining</h3>
+                        <p>Tables, chairs, benches. The centre of a home. Where families gather, conversations happen, life unfolds. We build tables that earn their place in that role.</p>
+                        <span class="service-price">From £2,500</span>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=90" alt="Living room furniture">
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">02</span>
+                        <h3>Living</h3>
+                        <p>Coffee tables, TV units, consoles. Functional, beautiful, built to withstand daily use. Each piece tailored to your room and how you use it.</p>
+                        <span class="service-price">From £800</span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=90" alt="Bedroom furniture">
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">03</span>
+                        <h3>Bedroom</h3>
+                        <p>Bed frames, wardrobes, storage. Quiet elegance. Built to age gracefully. We avoid trends — what we build today should still feel right in twenty years.</p>
+                        <span class="service-price">From £1,800</span>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=90" alt="Bespoke furniture">
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">04</span>
+                        <h3>Bespoke</h3>
+                        <p>Statement pieces. One-off commissions. If you have an idea and you're not sure if it's possible, the answer is probably yes. Get in touch.</p>
+                        <span class="service-price">From £1,500</span>
+                    </div>
+                </div>
             </div>
-
-            <div class="process-grid">
-                
-                <div class="process-step">
-                    <div class="process-number">01</div>
-                    <h3>Initial Consultation</h3>
-                    <p>We sit down — in person or by video — and talk through what you need. The room it will live in. How you will use it. What matters to you. This conversation shapes everything that follows.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-number">02</div>
-                    <h3>Design &amp; Quote</h3>
-                    <p>Based on our conversation, we develop a design. Sketches, measurements, timber selection. We provide a detailed quote with no hidden costs. If you're happy, we move forward with a 30% deposit.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-number">03</div>
-                    <h3>Workshop</h3>
-                    <p>Your piece moves into the workshop. Timber is selected, joinery is cut, surfaces are finished by hand. Lead times are typically 4 to 12 weeks. We keep you updated as the work progresses.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-number">04</div>
-                    <h3>Delivery &amp; Installation</h3>
-                    <p>Once complete, the balance is due before delivery. We deliver and install your piece ourselves, ensuring it is positioned exactly as designed. Delivery is included across Nottingham and surrounding areas.</p>
-                </div>
-
-            </div>
-
         </div>
     </section>
 
-    <!-- ==========================================
-         PRICING & PAYMENT
-         ========================================== -->
-    <section class="pricing-section">
+    <!-- Process Overview -->
+    <section class="process-overview-section">
         <div class="container">
-            
-            <div class="section-header">
-                <p class="page-label">Investment</p>
-                <h2>Pricing &amp; payment</h2>
+            <div class="section-header-center">
+                <span class="section-label">Process</span>
+                <h2 class="section-title">How a commission works</h2>
+                <p class="section-desc">Every commission follows the same careful process, from first conversation to final delivery</p>
             </div>
 
-            <div class="pricing-grid">
-                
-                <div class="pricing-card">
-                    <h3>Deposit</h3>
-                    <p>A 30% deposit is required to begin work and secure your place in the workshop schedule.</p>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Consultation</h3>
+                        <p>We discuss your vision, space, and how you'll use the piece. In person or virtually.</p>
+                    </div>
+                    <div class="step-line"></div>
                 </div>
 
-                <div class="pricing-card">
-                    <h3>Balance</h3>
-                    <p>The remaining balance is due on completion, before delivery and installation.</p>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Design & Quote</h3>
+                        <p>Detailed sketches, material selection, and transparent pricing. 30% deposit to begin.</p>
+                    </div>
+                    <div class="step-line"></div>
                 </div>
 
-                <div class="pricing-card">
-                    <h3>Payment</h3>
-                    <p>We accept bank transfer and cash payment.</p>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Creation</h3>
+                        <p>Your piece is crafted in our workshop over 4-12 weeks. Progress updates included.</p>
+                    </div>
+                    <div class="step-line"></div>
                 </div>
 
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Delivery</h3>
+                        <p>White-glove delivery and installation in your space. Balance due before delivery.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="pricing-note">
-                <p>Pricing varies depending on size, timber choice, and complexity of design. The figures shown reflect typical UK market rates for bespoke furniture of this quality. Every quote is tailored to your specific commission.</p>
-                <p>Lead times are typically 4 to 12 weeks from deposit, depending on the complexity of the piece and current workshop schedule.</p>
-            </div>
-
         </div>
     </section>
 
-    <!-- ==========================================
-         MATERIALS REFERENCE
-         ========================================== -->
-    <section class="materials-section">
-        <div class="container">
-            
-            <div class="section-header">
-                <p class="page-label">Materials</p>
-                <h2>Timber &amp; finishes</h2>
-                <p>We work primarily with walnut, oak, and ash, sourced locally wherever possible. We also work with reclaimed timber for clients who value the character and history that comes with it.</p>
-            </div>
-
-            <div class="materials-grid">
-                
-                <div class="material-card">
-                    <h3>Walnut</h3>
-                    <p>Dark, rich, and warm. Walnut has a beautiful depth of colour and a tight, consistent grain. It ages gracefully and is our most requested timber for dining tables and statement pieces.</p>
-                </div>
-
-                <div class="material-card">
-                    <h3>Oak</h3>
-                    <p>Strong, durable, and characterful. Oak has a pronounced grain and excellent structural properties. It works well for larger pieces and anything requiring robustness.</p>
-                </div>
-
-                <div class="material-card">
-                    <h3>Ash</h3>
-                    <p>Light, elegant, refined. Ash has a subtle grain and excellent workability. It suits contemporary designs and lighter spaces.</p>
-                </div>
-
-                <div class="material-card">
-                    <h3>Reclaimed</h3>
-                    <p>Every piece tells a story. Reclaimed timber brings character, history, and unique markings that cannot be replicated. Perfect for clients who want something truly one-of-a-kind.</p>
-                </div>
-
-            </div>
-
-            <div class="materials-note">
-                <h3>Finishes</h3>
-                <p>We offer a range of finishes depending on the piece and how it will be used. Oils penetrate the timber and enhance its natural colour. Wax provides a soft, low-sheen finish ideal for pieces that will be handled often. Lacquer offers greater protection for high-use surfaces such as dining tables and worktops.</p>
-                <p>We recommend the best finish for your specific commission during the design phase.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA
-         ========================================== -->
-    <section class="services-cta">
+    <!-- CTA Section -->
+    <section class="services-cta-section">
         <div class="container-narrow">
-            <h2>Ready to start your commission?</h2>
-            <p>Get in touch to discuss your project. We will take it from there.</p>
-            <a href="index.html#contact" class="text-link">Contact us</a>
+            <div class="cta-content">
+                <h2>Ready to begin?</h2>
+                <p>Get in touch to discuss your project. We'll take it from there.</p>
+                <a href="index.html#contact" class="btn-primary">
+                    <span class="btn-text">Start Your Commission</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="luxury-footer">
         <div class="container">
             <div class="footer-grid">
-                
-                <div class="footer-col">
-                    <h3 class="footer-brand">Stanway Designs</h3>
-                    <p>Bespoke woodworking and custom furniture, crafted in Nottingham. Built to last generations.</p>
+                <div class="footer-brand">
+                    <h3>Stanway Designs</h3>
+                    <p>Bespoke furniture crafted to last generations</p>
                 </div>
 
                 <div class="footer-col">
@@ -298,17 +213,17 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
-                    <p>Nottingham, UK</p>
-                    <p>By appointment only</p>
+                    <ul>
+                        <li><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></li>
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
@@ -317,8 +232,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="main.js"></script>
-
+    <script src="luxury.js"></script>
 </body>
 </html>

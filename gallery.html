@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture Gallery &amp; Portfolio | Stanway Designs | Nottingham</title>
-    <meta name="description" content="Browse bespoke woodworking and custom furniture by Stanway Designs. Dining tables, living pieces, bedroom furniture — all handcrafted in Nottingham from premium timber.">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Furniture Gallery | Stanway Designs">
-    <meta property="og:description" content="Browse our portfolio of bespoke furniture crafted in Nottingham.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stanwaydesigns.co.uk/gallery.html">
+    <title>Portfolio & Gallery | Stanway Designs | Nottingham</title>
+    <meta name="description" content="View our portfolio of bespoke furniture commissions. Handcrafted dining tables, bedroom furniture, and statement pieces.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="includes/Images/stanway-favicon.png">
@@ -19,132 +12,197 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="styles-luxury.css">
 </head>
 <body>
-
-    <!-- ==========================================
-         NAVIGATION — Fixed, Always Visible
-         ========================================== -->
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="luxury-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Stanway Designs</a>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="index.html" class="logo">
+                <img src="includes/Images/stanway-logo.png" alt="Stanway Designs" class="logo-img">
+            </a>
 
-            <ul class="nav-menu">
+            <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Contact</a></li>
             </ul>
+
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Nav overlay for mobile -->
-    <div class="nav-overlay"></div>
-
-    <!-- ==========================================
-         PAGE HERO
-         ========================================== -->
-    <section class="page-hero">
-        <div class="container">
-            <p class="page-label">Gallery</p>
-            <h1 class="page-heading">Our work</h1>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         GALLERY FILTERS
-         ========================================== -->
-    <section class="gallery-filters">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="dining">Dining</button>
-                <button class="filter-btn" data-filter="living">Living</button>
-                <button class="filter-btn" data-filter="bedroom">Bedroom</button>
-                <button class="filter-btn" data-filter="statement">Statement</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         GALLERY GRID
-         ========================================== -->
-    <section class="gallery-section">
-        <div class="container">
-            <div class="gallery-grid">
-
-                <div class="gallery-item" data-category="dining">
-                    <img src="includes/Images/stanway-walnut-dining-table.webp" alt="Bespoke walnut dining table" width="800" height="600">
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-info">
-                            <h3>Walnut Dining Table</h3>
-                            <p>Dining</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="living">
-                    <img src="includes/Images/stanway-oak-coffee-table.webp" alt="Live edge oak coffee table" width="800" height="600">
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-info">
-                            <h3>Oak Coffee Table</h3>
-                            <p>Living</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="bedroom">
-                    <img src="includes/Images/stanway-ash-bed-frame.webp" alt="Bespoke ash bed frame" width="800" height="1000">
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-info">
-                            <h3>Ash Bed Frame</h3>
-                            <p>Bedroom</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more gallery items as needed -->
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         LIGHTBOX MODAL
-         ========================================== -->
-    <div class="lightbox">
-        <button class="lightbox-close" aria-label="Close">&times;</button>
-        <div class="lightbox-content">
-            <img class="lightbox-img" src="" alt="">
-            <div class="lightbox-info">
-                <h2 class="lightbox-title"></h2>
-                <p class="lightbox-category"></p>
-            </div>
-        </div>
-        <button class="lightbox-prev" aria-label="Previous">&lt;</button>
-        <button class="lightbox-next" aria-label="Next">&gt;</button>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="services.html" class="mobile-link">Services</a>
+            <a href="gallery.html" class="mobile-link">Gallery</a>
+            <a href="index.html#contact" class="mobile-link">Contact</a>
+        </nav>
     </div>
 
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer class="footer">
+    <!-- Page Hero -->
+    <section class="page-hero-luxury">
+        <div class="hero-bg">
+            <div class="hero-image parallax-img" style="background-image: url('https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1920&q=95')"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label light">Gallery</span>
+            <h1 class="page-hero-title">Recent Work</h1>
+            <p class="page-hero-subtitle">A collection of our latest commissions</p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-full-section">
+        <div class="container">
+            <div class="gallery-grid-masonry">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item tall">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=90" alt="Walnut dining table">
+                    <div class="gallery-info">
+                        <h4>Walnut Dining Table</h4>
+                        <span>Nottingham, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=90" alt="Oak coffee table">
+                    <div class="gallery-info">
+                        <h4>Oak Coffee Table</h4>
+                        <span>Derby, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=90" alt="Ash bed frame">
+                    <div class="gallery-info">
+                        <h4>Ash Bed Frame</h4>
+                        <span>Leicester, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item tall">
+                    <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600&q=90" alt="Walnut shelving">
+                    <div class="gallery-info">
+                        <h4>Walnut Shelving</h4>
+                        <span>Nottingham, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item wide">
+                    <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=90" alt="Custom console">
+                    <div class="gallery-info">
+                        <h4>Custom Console</h4>
+                        <span>Mansfield, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=90" alt="Dining chairs">
+                    <div class="gallery-info">
+                        <h4>Dining Chairs</h4>
+                        <span>Nottingham, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=90" alt="TV unit">
+                    <div class="gallery-info">
+                        <h4>TV Unit</h4>
+                        <span>Newark, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item tall">
+                    <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&q=90" alt="Wardrobe">
+                    <div class="gallery-info">
+                        <h4>Bespoke Wardrobe</h4>
+                        <span>Leicester, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=90" alt="Side table">
+                    <div class="gallery-info">
+                        <h4>Side Table</h4>
+                        <span>Derby, 2024</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="gallery-item wide">
+                    <img src="https://images.unsplash.com/photo-1551298370-9d3d53740c72?w=800&q=90" alt="Office desk">
+                    <div class="gallery-info">
+                        <h4>Office Desk</h4>
+                        <span>Nottingham, 2024</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=90" alt="Bench">
+                    <div class="gallery-info">
+                        <h4>Live Edge Bench</h4>
+                        <span>Mansfield, 2024</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565183928294-7d22734464ab?w=600&q=90" alt="Bookshelf">
+                    <div class="gallery-info">
+                        <h4>Floating Bookshelf</h4>
+                        <span>Newark, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gallery-cta-section">
+        <div class="container-narrow">
+            <div class="cta-content">
+                <h2>Commission your piece</h2>
+                <p>Every piece in this gallery started with a conversation. Ready to begin yours?</p>
+                <a href="index.html#contact" class="btn-primary">
+                    <span class="btn-text">Start Your Commission</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
         <div class="container">
             <div class="footer-grid">
-                
-                <div class="footer-col">
-                    <h3 class="footer-brand">Stanway Designs</h3>
-                    <p>Bespoke woodworking and custom furniture, crafted in Nottingham. Built to last generations.</p>
+                <div class="footer-brand">
+                    <h3>Stanway Designs</h3>
+                    <p>Bespoke furniture crafted to last generations</p>
                 </div>
 
                 <div class="footer-col">
@@ -154,17 +212,17 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <p><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></p>
-                    <p>Nottingham, UK</p>
-                    <p>By appointment only</p>
+                    <ul>
+                        <li><a href="mailto:hello@stanwaydesigns.co.uk">hello@stanwaydesigns.co.uk</a></li>
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
@@ -173,9 +231,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="main.js"></script>
-    <script src="gallery.js"></script>
-
+    <script src="luxury.js"></script>
 </body>
 </html>
