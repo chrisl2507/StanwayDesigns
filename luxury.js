@@ -48,6 +48,26 @@ mobileLinks.forEach(link => {
     });
 });
 
+// Mobile dropdown toggle
+const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+mobileDropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        toggle.parentElement.classList.toggle('active');
+    });
+});
+
+// Close mobile menu when clicking mobile dropdown links
+const mobileDropdownLinks = document.querySelectorAll('.mobile-dropdown-items a');
+
+mobileDropdownLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
 // Smooth scroll for navigation links
 const navLinks = document.querySelectorAll('a[href^="#"]');
 
