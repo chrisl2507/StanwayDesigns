@@ -381,8 +381,8 @@ window.addEventListener('resize', () => {
 // ============================================
 // 12. CONSOLE MESSAGE
 // ============================================
-console.log('%c Stanway Designs ', 'background: #C9A963; color: #0A0A0A; font-size: 20px; padding: 10px 20px; font-family: serif;');
-console.log('%c Crafted with care ', 'background: #1A1A1A; color: #C9A963; font-size: 14px; padding: 5px 10px;');
+console.log('%c Stanway Designs ', 'background: #EC9176; color: #0A0A0A; font-size: 20px; padding: 10px 20px; font-family: serif;');
+console.log('%c Crafted with care ', 'background: #1A1A1A; color: #EC9176; font-size: 14px; padding: 5px 10px;');
 
 // ============================================
 // 13. MATERIALS CAROUSEL
@@ -453,6 +453,28 @@ if (materialsCarousel && materialSlides.length > 0) {
             updateMaterialCarousel();
         });
     });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    materialsCarousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    materialsCarousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        const slidesPerView = getSlidesPerView();
+
+        if (diff > 50 && currentMaterialSlide < totalMaterialSlides - slidesPerView) {
+            currentMaterialSlide++;
+            updateMaterialCarousel();
+        } else if (diff < -50 && currentMaterialSlide > 0) {
+            currentMaterialSlide--;
+            updateMaterialCarousel();
+        }
+    }, { passive: true });
 
     // Update on window resize
     let materialResizeTimer;
