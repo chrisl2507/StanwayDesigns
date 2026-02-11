@@ -15,6 +15,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles-luxury.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Stanway Designs",
+        "description": "Bespoke furniture crafted in Nottingham by Max Stanway. Commissioned dining tables, interiors, and statement pieces in premium timber.",
+        "url": "https://www.stanwaydesigns.co.uk",
+        "email": "maxstanway@stanwaydesigns.co.uk",
+        "telephone": "01159171734",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nottingham",
+            "addressCountry": "GB"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Max Stanway",
+            "jobTitle": "Furniture Maker",
+            "knowsAbout": [
+                "Bespoke furniture",
+                "Traditional joinery",
+                "Timber selection",
+                "Custom interiors",
+                "Gaming tables",
+                "Tabletop gaming furniture",
+                "Wooden prop replicas",
+                "Warhammer terrain"
+            ]
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Stanway Designs Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Bespoke Furniture",
+                        "description": "Commissioned dining tables, desks, bed frames, shelving, and console tables crafted from premium timber."
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "800",
+                        "priceCurrency": "GBP",
+                        "unitText": "starting from"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Interiors",
+                        "description": "Custom kitchen cabinetry, fitted wardrobes, wall panelling, and wine rack installations."
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "2500",
+                        "priceCurrency": "GBP",
+                        "unitText": "starting from"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Small Goods",
+                        "description": "Ring boxes, bowls, custom lamps, and crafted objects in rare and exotic timbers."
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "80",
+                        "priceCurrency": "GBP",
+                        "unitText": "starting from"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Gaming Tables",
+                        "description": "Bespoke tabletop gaming tables for Warhammer 40k, D&D, and tabletop games. Recessed play areas, dice trays, removable dining toppers."
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "8000",
+                        "priceCurrency": "GBP",
+                        "unitText": "starting from"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Wooden Film Prop Replicas",
+                        "description": "Hand-carved wooden replica swords, axes, and film props crafted from real timber. Each piece unique."
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -26,17 +129,11 @@
 
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="tabletop.html" class="nav-link">Tabletop</a></li>
+                <li><a href="replicas.html" class="nav-link">Replicas</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li class="nav-dropdown">
-                    <a href="products.html" class="nav-link">Products</a>
-                    <div class="nav-dropdown-menu">
-                        <a href="products.html#current">Current Products</a>
-                        <a href="products.html#future">Future Products</a>
-                    </div>
-                </li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
             </ul>
 
@@ -51,17 +148,11 @@
     <div class="mobile-menu">
         <nav class="mobile-nav">
             <a href="index.html" class="mobile-link">Home</a>
-            <a href="about.html" class="mobile-link">About</a>
-            <a href="services.html" class="mobile-link">Services</a>
+            <a href="products.html" class="mobile-link">Products</a>
+            <a href="tabletop.html" class="mobile-link">Tabletop</a>
+            <a href="replicas.html" class="mobile-link">Replicas</a>
             <a href="gallery.html" class="mobile-link">Gallery</a>
-            <div class="mobile-dropdown">
-                <button class="mobile-dropdown-toggle">Products</button>
-                <div class="mobile-dropdown-items">
-                    <a href="products.html#current">Current Products</a>
-                    <a href="products.html#future">Future Products</a>
-                </div>
-            </div>
-            <a href="blog.html" class="mobile-link">Blog</a>
+            <a href="about.html" class="mobile-link">About</a>
             <a href="#contact" class="mobile-link">Contact</a>
         </nav>
     </div>
@@ -278,6 +369,53 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Reviews</span>
+                <h2 class="section-title">What my customers say</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- PLACEHOLDER: Replace with actual Google/MyBuilder reviews -->
+                <div class="review-card">
+                    <p class="review-text">"The craftsmanship is outstanding. You can see the care that's gone into every detail &mdash; the joinery, the finish, the way the grain has been matched. It's a piece I'll have for life."</p>
+                    <span class="review-author">&mdash; James, Google Review</span>
+                </div>
+
+                <!-- PLACEHOLDER: Replace with actual Google/MyBuilder reviews -->
+                <div class="review-card">
+                    <p class="review-text">"Max was brilliant to work with from start to finish. He listened to what I wanted, offered honest advice, and kept me updated throughout. No drama, just a really good experience."</p>
+                    <span class="review-author">&mdash; Sarah, Google Review</span>
+                </div>
+
+                <!-- PLACEHOLDER: Replace with actual Google/MyBuilder reviews -->
+                <div class="review-card">
+                    <p class="review-text">"The finished piece exceeded everything I'd imagined. Photos don't do it justice &mdash; when you see it in person, the quality of the timber and the finish is something else entirely."</p>
+                    <span class="review-author">&mdash; David, MyBuilder</span>
+                </div>
+
+                <!-- PLACEHOLDER: Replace with actual Google/MyBuilder reviews -->
+                <div class="review-card">
+                    <p class="review-text">"I've recommended Max to three friends already. If you want something built properly from real timber by someone who genuinely cares about the work, this is who you go to."</p>
+                    <span class="review-author">&mdash; Rachel, Google Review</span>
+                </div>
+            </div>
+
+            <div class="reviews-links">
+                <!-- TODO: Add real Google Reviews URL -->
+                <a href="#" class="text-link">See all Google Reviews
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <!-- TODO: Add real MyBuilder URL -->
+                <a href="#" class="text-link">MyBuilder Profile
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Section -->
     <section class="process-section">
         <div class="container">
@@ -366,6 +504,8 @@
                             <option value="furniture">Furniture</option>
                             <option value="interiors">Interiors</option>
                             <option value="small-goods">Small Goods</option>
+                            <option value="gaming-table">Gaming Table</option>
+                            <option value="film-prop">Film Prop Replica</option>
                             <option value="bespoke">Bespoke Project</option>
                             <option value="unsure">Not sure yet</option>
                         </select>
@@ -398,11 +538,11 @@
                     <h4>Navigate</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tabletop.html">Tabletop</a></li>
+                        <li><a href="replicas.html">Replicas</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
 
