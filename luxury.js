@@ -136,41 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ===== CONTACT FORM =====
-
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => { data[key] = value; });
-
-            // Simple validation
-            const name = form.querySelector('[name="name"]');
-            const email = form.querySelector('[name="email"]');
-            const message = form.querySelector('[name="message"]');
-
-            if (name && !name.value.trim()) { name.focus(); return; }
-            if (email && !email.value.trim()) { email.focus(); return; }
-            if (message && !message.value.trim()) { message.focus(); return; }
-
-            const submitBtn = form.querySelector('.btn-primary');
-            if (submitBtn) {
-                const btnText = submitBtn.querySelector('.btn-text');
-                if (btnText) {
-                    btnText.textContent = 'Message Sent';
-                }
-                submitBtn.style.opacity = '0.7';
-                submitBtn.style.pointerEvents = 'none';
-            }
-
-            form.reset();
-        });
-    }
-
-
     // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

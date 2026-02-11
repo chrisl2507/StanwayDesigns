@@ -103,8 +103,19 @@
     <!-- Gallery Grid -->
     <section class="gallery-full-section">
         <div class="container">
+            <!-- Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="gallery-filter-btn active" data-filter="all">All</button>
+                <button class="gallery-filter-btn" data-filter="furniture">Furniture</button>
+                <button class="gallery-filter-btn" data-filter="interiors">Interiors</button>
+                <button class="gallery-filter-btn" data-filter="small-goods">Small Goods</button>
+                <button class="gallery-filter-btn" data-filter="workshop">Workshop</button>
+                <button class="gallery-filter-btn" data-filter="gaming">Gaming Tables</button>
+                <button class="gallery-filter-btn" data-filter="props">Film Props</button>
+            </div>
+
             <div class="gallery-grid-masonry">
-                <div class="gallery-item" data-title="Custom Desk" data-material="Timber">
+                <div class="gallery-item" data-category="furniture" data-title="Custom Desk" data-material="Timber">
                     <img src="includes/images/Desk/Desk_1.jpg" alt="Custom desk">
                     <div class="gallery-info">
                         <h4>Custom Desk</h4>
@@ -116,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-title="Bespoke Desk" data-material="Timber">
+                <div class="gallery-item" data-category="furniture" data-title="Bespoke Desk" data-material="Timber">
                     <img src="includes/images/Desk/Desk_A_2.jpg" alt="Bespoke desk">
                     <div class="gallery-info">
                         <h4>Bespoke Desk</h4>
@@ -128,7 +139,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item tall" data-title="Inbuilt Cupboard" data-material="Timber">
+                <div class="gallery-item tall" data-category="interiors" data-title="Inbuilt Cupboard" data-material="Timber">
                     <img src="includes/images/Cupboard/Inbuilt_Cupboard_1.jpg" alt="Inbuilt cupboard">
                     <div class="gallery-info">
                         <h4>Inbuilt Cupboard</h4>
@@ -140,7 +151,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item wide" data-title="Custom Kitchen" data-material="Timber">
+                <div class="gallery-item wide" data-category="interiors" data-title="Custom Kitchen" data-material="Timber">
                     <img src="includes/images/Kitchen/Kitchen_2.jpg" alt="Custom kitchen">
                     <div class="gallery-info">
                         <h4>Custom Kitchen</h4>
@@ -152,7 +163,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-title="Custom Countertop" data-material="Timber">
+                <div class="gallery-item" data-category="interiors" data-title="Custom Countertop" data-material="Timber">
                     <img src="includes/images/Kitchen/Custom_countertop_2.jpg" alt="Custom countertop">
                     <div class="gallery-info">
                         <h4>Custom Countertop</h4>
@@ -164,7 +175,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-title="Wine Rack" data-material="Timber">
+                <div class="gallery-item" data-category="interiors" data-title="Wine Rack" data-material="Timber">
                     <img src="includes/images/Kitchen/Wine_rack_storage.jpg" alt="Wine rack storage">
                     <div class="gallery-info">
                         <h4>Wine Rack</h4>
@@ -176,7 +187,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item tall" data-title="Wall Panelling" data-material="Timber">
+                <div class="gallery-item tall" data-category="interiors" data-title="Wall Panelling" data-material="Timber">
                     <img src="includes/images/Wall_Panel/Panel_Wall (2).jpg" alt="Wall panelling">
                     <div class="gallery-info">
                         <h4>Wall Panelling</h4>
@@ -188,7 +199,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-title="Custom Ring Box" data-material="Timber">
+                <div class="gallery-item" data-category="small-goods" data-title="Custom Ring Box" data-material="Timber">
                     <img src="includes/images/Ringbox/Custom_Ringbox.jpg" alt="Custom ring box">
                     <div class="gallery-info">
                         <h4>Custom Ring Box</h4>
@@ -200,7 +211,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item wide" data-title="Bespoke Cupboard" data-material="Timber">
+                <div class="gallery-item wide" data-category="interiors" data-title="Bespoke Cupboard" data-material="Timber">
                     <img src="includes/images/Cupboard/Cupboard_2.jpg" alt="Bespoke cupboard">
                     <div class="gallery-info">
                         <h4>Bespoke Cupboard</h4>
@@ -212,7 +223,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-title="Custom Lamp" data-material="Timber">
+                <div class="gallery-item" data-category="small-goods" data-title="Custom Lamp" data-material="Timber">
                     <img src="includes/images/Bespoke/Lamp_1.jpg" alt="Custom lamp">
                     <div class="gallery-info">
                         <h4>Custom Lamp</h4>
@@ -224,7 +235,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-title="Serving Board" data-material="Timber">
+                <div class="gallery-item" data-category="small-goods" data-title="Serving Board" data-material="Timber">
                     <img src="includes/images/Bespoke/ServingBoard.jpg" alt="Serving board">
                     <div class="gallery-info">
                         <h4>Serving Board</h4>
@@ -232,6 +243,60 @@
                     </div>
                     <div class="gallery-caption">
                         <strong>Serving Board</strong>
+                        <span>Timber · Nottingham</span>
+                    </div>
+                </div>
+
+                <!-- Gaming Table Placeholders -->
+                <div class="gallery-item" data-category="gaming" data-title="Gaming Table" data-material="Timber">
+                    <!-- PLACEHOLDER: Replace with gaming table photo -->
+                    <img src="includes/images/Bespoke/The_Odyssey/The_Odyssey_1.jpg" alt="Custom gaming table">
+                    <div class="gallery-info">
+                        <h4>Gaming Table</h4>
+                        <span>Nottingham, 2026</span>
+                    </div>
+                    <div class="gallery-caption">
+                        <strong>Gaming Table</strong>
+                        <span>Timber · Nottingham</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="gaming" data-title="Gaming Table Detail" data-material="Timber">
+                    <!-- PLACEHOLDER: Replace with gaming table detail photo -->
+                    <img src="includes/images/Bespoke/The_Odyssey/The_Odyssey_2.jpg" alt="Gaming table detail">
+                    <div class="gallery-info">
+                        <h4>Gaming Table Detail</h4>
+                        <span>Nottingham, 2026</span>
+                    </div>
+                    <div class="gallery-caption">
+                        <strong>Gaming Table Detail</strong>
+                        <span>Timber · Nottingham</span>
+                    </div>
+                </div>
+
+                <!-- Film Props Placeholders -->
+                <div class="gallery-item" data-category="props" data-title="Wooden Sword Replica" data-material="Timber">
+                    <!-- PLACEHOLDER: Replace with film prop photo -->
+                    <img src="includes/images/Bespoke/The_Odyssey/The_Odyssey_3.jpg" alt="Wooden sword replica">
+                    <div class="gallery-info">
+                        <h4>Wooden Sword Replica</h4>
+                        <span>Nottingham, 2026</span>
+                    </div>
+                    <div class="gallery-caption">
+                        <strong>Wooden Sword Replica</strong>
+                        <span>Timber · Nottingham</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="props" data-title="Battle Axe Replica" data-material="Timber">
+                    <!-- PLACEHOLDER: Replace with film prop photo -->
+                    <img src="includes/images/Bespoke/The_Odyssey/The_Odyssey_4.jpg" alt="Viking-style battle axe replica">
+                    <div class="gallery-info">
+                        <h4>Battle Axe Replica</h4>
+                        <span>Nottingham, 2026</span>
+                    </div>
+                    <div class="gallery-caption">
+                        <strong>Battle Axe Replica</strong>
                         <span>Timber · Nottingham</span>
                     </div>
                 </div>
@@ -279,6 +344,11 @@
                     <ul>
                         <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
                         <li><a href="tel:01159171734">0115 917 1734</a></li>
+                        <li><a href="tel:07480751431">07480 751 431</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <!-- TODO: Add real Google Reviews URL -->
+                        <!-- TODO: Add real MyBuilder URL -->
                         <li>Nottingham, UK</li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
@@ -292,5 +362,29 @@
     </footer>
 
     <script src="luxury.js"></script>
+    <script>
+        // Gallery filter
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item[data-category]');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
