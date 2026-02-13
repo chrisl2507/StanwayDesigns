@@ -1880,8 +1880,17 @@ section {
 /* Gallery CTA Section */
 .gallery-cta-section {
     padding: var(--space-3xl) 0;
-    background: var(--cream);
+    background: var(--coral);
     text-align: center;
+}
+
+.gallery-cta-section .btn-primary {
+    background: var(--white);
+    color: var(--coral-dark);
+}
+
+.gallery-cta-section .btn-primary::before {
+    background: var(--cream);
 }
 
 /* ============================================
