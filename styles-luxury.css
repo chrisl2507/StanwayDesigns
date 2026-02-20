@@ -56,8 +56,14 @@
 }
 
 html {
-    scroll-behavior: smooth;
     overflow-x: hidden;
+}
+
+/* Only enable smooth scroll when not navigating via View Transitions */
+@media (prefers-reduced-motion: no-preference) {
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -2515,6 +2521,49 @@ section {
 }
 
 /* ============================================
+   VIEW TRANSITIONS
+   ============================================ */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.2s;
+}
+
+/* ============================================
+   PREFERS REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
+}
+
+/* ============================================
+   CONTENT VISIBILITY FOR OFF-SCREEN SECTIONS
+   ============================================ */
+.reviews-section,
+.contact-section,
+.luxury-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+}
+
+/* ============================================
    16. RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
@@ -2598,6 +2647,19 @@ section {
 
     .workshop-feature {
         min-height: 50vh;
+    }
+
+    /* Disable hover scale effects on touch devices */
+    .philosophy-image:hover img,
+    .collection-card:hover .collection-image img,
+    .gallery-item:hover img,
+    .service-card:hover .service-card-image img,
+    .product-card:hover .product-card-image img,
+    .ringbox-feature-image:hover img,
+    .workshop-img-item:hover img,
+    .material-slide:hover .material-slide-image img,
+    .product-gallery img:hover {
+        transform: none;
     }
 
     /* Form inputs full-width and tap-friendly */
