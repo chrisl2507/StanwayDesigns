@@ -6,6 +6,26 @@
 /* ============================================
    1. RESET & VARIABLES
    ============================================ */
+
+/* Font fallbacks with metric overrides to prevent CLS during font swap */
+@font-face {
+    font-family: 'Cormorant Fallback';
+    src: local('Georgia');
+    size-adjust: 112%;
+    ascent-override: 80%;
+    descent-override: 20%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    size-adjust: 107%;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -35,8 +55,8 @@
     --gold-dark: #E17A5A;
 
     /* Typography */
-    --font-heading: 'Cormorant', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Cormorant', 'Cormorant Fallback', serif;
+    --font-body: 'Inter', 'Inter Fallback', sans-serif;
 
     /* Spacing */
     --space-unit: 8px;
@@ -2510,7 +2530,29 @@ section {
     transform: none;
 }
 
-/* Simple fade for sections */
+/* Simple fade for sections - applied via CSS to avoid visible→invisible flash */
+section,
+.gallery-item,
+.service-card,
+.blog-post-card,
+.product-card,
+.collection-card {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+section.visible,
+.gallery-item.visible,
+.service-card.visible,
+.blog-post-card.visible,
+.product-card.visible,
+.collection-card.visible,
+.hero-luxury,
+.page-hero-luxury {
+    opacity: 1;
+}
+
+/* Keep .fade-in for any manual usage */
 .fade-in {
     opacity: 0;
     transition: opacity 0.3s ease;

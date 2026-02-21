@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         fadeElements.forEach(el => {
-            el.classList.add('fade-in');
             observer.observe(el);
         });
     }
