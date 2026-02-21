@@ -3,10 +3,10 @@ const path = require('path');
 const CleanCSS = require('clean-css');
 
 const BASE = '/home/user/StanwayDesigns';
-const css = fs.readFileSync(path.join(BASE, 'styles-luxury.css'), 'utf8');
 
 // Extract critical above-the-fold CSS:
-// - Reset & variables (lines 1-100)
+// - Font fallback metric overrides (prevents CLS during font swap)
+// - Reset & variables
 // - Containers (needed for layout)
 // - Navigation (always visible)
 // - Hero section (first thing visible)
@@ -17,8 +17,10 @@ const css = fs.readFileSync(path.join(BASE, 'styles-luxury.css'), 'utf8');
 // Build critical CSS by extracting specific sections
 const critical = `
 /* Critical CSS - inlined for first paint */
+@font-face{font-family:'Cormorant Fallback';src:local('Georgia');size-adjust:112%;ascent-override:80%;descent-override:20%;line-gap-override:0%}
+@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--coral:#EC9176;--coral-light:#F4A995;--coral-dark:#E17A5A;--warm-brown:#2C2420;--text-dark:#3D3530;--mid-gray:#6B5E56;--light-gray:#E0D8D0;--warm-white:#FAF8F4;--cream:#F5F0EB;--linen:#EDE8E1;--white:#FFFFFF;--black:#2C2420;--charcoal:#3D3530;--dark-gray:#6B5E56;--gold:#EC9176;--gold-light:#F4A995;--gold-dark:#E17A5A;--font-heading:'Cormorant',serif;--font-body:'Inter',sans-serif;--space-unit:8px;--space-xs:calc(var(--space-unit)*1);--space-sm:calc(var(--space-unit)*2);--space-md:calc(var(--space-unit)*3);--space-lg:calc(var(--space-unit)*6);--space-xl:calc(var(--space-unit)*7);--space-2xl:calc(var(--space-unit)*9);--space-3xl:calc(var(--space-unit)*12);--transition-fast:0.2s cubic-bezier(0.4,0,0.2,1);--transition-base:0.3s cubic-bezier(0.4,0,0.2,1);--transition-slow:0.6s cubic-bezier(0.4,0,0.2,1);--transition-smooth:0.8s cubic-bezier(0.65,0,0.35,1)}
+:root{--coral:#EC9176;--coral-light:#F4A995;--coral-dark:#E17A5A;--warm-brown:#2C2420;--text-dark:#3D3530;--mid-gray:#6B5E56;--light-gray:#E0D8D0;--warm-white:#FAF8F4;--cream:#F5F0EB;--linen:#EDE8E1;--white:#FFFFFF;--black:#2C2420;--charcoal:#3D3530;--dark-gray:#6B5E56;--gold:#EC9176;--gold-light:#F4A995;--gold-dark:#E17A5A;--font-heading:'Cormorant','Cormorant Fallback',serif;--font-body:'Inter','Inter Fallback',sans-serif;--space-unit:8px;--space-xs:calc(var(--space-unit)*1);--space-sm:calc(var(--space-unit)*2);--space-md:calc(var(--space-unit)*3);--space-lg:calc(var(--space-unit)*6);--space-xl:calc(var(--space-unit)*7);--space-2xl:calc(var(--space-unit)*9);--space-3xl:calc(var(--space-unit)*12);--transition-fast:0.2s cubic-bezier(0.4,0,0.2,1);--transition-base:0.3s cubic-bezier(0.4,0,0.2,1);--transition-slow:0.6s cubic-bezier(0.4,0,0.2,1);--transition-smooth:0.8s cubic-bezier(0.65,0,0.35,1)}
 html{overflow-x:hidden}
 body{font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--text-dark);background:var(--warm-white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
 img{max-width:100%;display:block}
@@ -39,7 +41,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media(min-width:1024px){.nav-links{display:flex}.menu-toggle{display:none}}
 .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--warm-brown);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity var(--transition-smooth)}
 .mobile-menu.active{opacity:1;pointer-events:auto}
-.hero-luxury{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-luxury{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:1}
 .hero-bg{position:absolute;inset:0;overflow:hidden}
 .hero-image{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(44,36,32,0.5) 0%,rgba(44,36,32,0.15) 50%,rgba(44,36,32,0.3) 100%)}
@@ -54,10 +56,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-primary,.btn-secondary,.btn-outline{display:inline-flex;align-items:center;gap:12px;padding:16px 32px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;position:relative;overflow:hidden;border-radius:8px}
 .btn-primary{background:var(--coral);color:var(--white)}
 .btn-secondary{border:1px solid rgba(255,255,255,0.3);color:var(--white)}
-.page-hero-luxury{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;margin-top:72px;overflow:hidden}
+.page-hero-luxury{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;margin-top:72px;overflow:hidden;opacity:1}
 .page-hero-content{position:relative;z-index:1;text-align:center;max-width:800px;padding:0 5%}
 .page-hero-title{font-family:var(--font-heading);font-size:clamp(48px,8vw,84px);font-weight:600;line-height:1.1;color:var(--white);margin-bottom:24px;letter-spacing:-1px}
 .page-hero-subtitle{font-size:18px;font-weight:300;letter-spacing:1px;color:rgba(255,255,255,0.8)}
+section,.gallery-item,.service-card,.blog-post-card,.product-card,.collection-card{opacity:0;transition:opacity 0.3s ease}
+section.visible,.gallery-item.visible,.service-card.visible,.blog-post-card.visible,.product-card.visible,.collection-card.visible,.hero-luxury,.page-hero-luxury{opacity:1}
 .fade-in{opacity:0;transition:opacity 0.3s ease}
 .fade-in.visible{opacity:1}
 @media(max-width:768px){:root{--space-3xl:calc(var(--space-unit)*8);--space-2xl:calc(var(--space-unit)*6);--space-xl:calc(var(--space-unit)*5)}.hero-luxury{min-height:80vh}.hero-title{font-size:clamp(36px,10vw,56px)}.hero-subtitle{font-size:16px}.hero-buttons{flex-direction:column;width:100%}.btn-primary,.btn-secondary,.btn-outline{width:100%;justify-content:center;padding:16px 24px;min-height:48px}.nav-container{padding:16px 5%}.logo-img{height:40px}.page-hero-luxury{min-height:45vh}.page-hero-title{font-size:clamp(32px,9vw,56px)}.page-hero-subtitle{font-size:16px}}
@@ -95,18 +99,27 @@ for (const file of htmlFiles) {
 
   const cssHref = file.includes('/') ? '../styles-luxury.min.css' : 'styles-luxury.min.css';
 
-  // Replace the render-blocking stylesheet link with:
-  // 1. Inline critical CSS
-  // 2. Async-loaded full stylesheet
-  const oldLink = `<link rel="stylesheet" href="${cssHref}">`;
+  // Replace old inlined <style>...</style> + async stylesheet with updated version
+  const styleRegex = new RegExp(
+    `<style>[^<]+</style>\\s*\\n\\s*<link rel="stylesheet" href="${cssHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}" media="print" onload="this\\.media='all'">\\s*\\n\\s*<noscript><link rel="stylesheet" href="${cssHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"></noscript>`
+  );
+
   const newLink = `${criticalStyle}\n    <link rel="stylesheet" href="${cssHref}" media="print" onload="this.media='all'">\n    <noscript><link rel="stylesheet" href="${cssHref}"></noscript>`;
 
-  if (html.includes(oldLink)) {
-    html = html.replace(oldLink, newLink);
+  if (styleRegex.test(html)) {
+    html = html.replace(styleRegex, newLink);
     fs.writeFileSync(filePath, html);
     console.log(`Updated: ${file}`);
   } else {
-    console.log(`SKIPPED (no match): ${file}`);
+    // Fallback: try matching a plain stylesheet link
+    const oldLink = `<link rel="stylesheet" href="${cssHref}">`;
+    if (html.includes(oldLink)) {
+      html = html.replace(oldLink, newLink);
+      fs.writeFileSync(filePath, html);
+      console.log(`Updated (fallback): ${file}`);
+    } else {
+      console.log(`SKIPPED (no match): ${file}`);
+    }
   }
 }
 
