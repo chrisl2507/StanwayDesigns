@@ -1,20 +1,11 @@
 {
   "name": "stanwaydesigns",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Stanway Designs — Bespoke Luxury Joinery",
   "repository": {
     "type": "git",
     "url": "http://local_proxy@127.0.0.1:64506/git/chrisl2507/StanwayDesigns"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "clean-css-cli": "^5.6.3",
-    "terser": "^5.46.0"
-  }
+  "license": "ISC"
 }
