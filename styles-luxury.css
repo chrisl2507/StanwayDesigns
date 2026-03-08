@@ -1313,7 +1313,7 @@ section {
 .maker-portrait img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 2 / 5;
     object-fit: cover;
 }
 
@@ -2809,17 +2809,24 @@ section.visible,
 .review-card {
     background: var(--white);
     border-radius: 16px;
-    padding: var(--space-xl);
+    padding: var(--space-lg);
+}
+
+.review-stars {
+    color: #c9a84c;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
 .review-text {
     font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 17px;
+    font-weight: 600;
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.55;
     color: var(--text-dark);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .review-author {
@@ -2845,6 +2852,6 @@ section.visible,
 
 @media (min-width: 1200px) {
     .reviews-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
