@@ -31,46 +31,72 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 
     <link rel="stylesheet" href="styles-luxury.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <style>
+        /* ── Coverage map section ── */
+        .coverage-map-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .coverage-map-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coverage-map-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin: 0.75rem 0 1.25rem;
+        }
+
+        .coverage-map-text p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--mid-gray);
+            margin-bottom: 1rem;
+        }
+
+        .coverage-note {
+            font-size: 14px;
+            color: var(--coral-dark);
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        #coverage-map {
+            height: 480px;
+            width: 100%;
+            border-radius: 2px;
+            filter: grayscale(30%);
+        }
+
+        @media (max-width: 768px) {
+            .coverage-map-inner {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            #coverage-map {
+                height: 320px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="luxury-nav">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="includes/images/Logo/Logo.webp" alt="Stanway Designs" class="logo-img" decoding="async" width="531" height="484" srcset="includes/images/Logo/Logo.webp 531w" sizes="50px">
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="tabletop.html" class="nav-link">Gaming Tables</a></li>
-                <li><a href="replicas.html" class="nav-link">Replicas</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
-            </ul>
-
-            <button class="menu-toggle">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <nav class="mobile-nav">
-            <a href="index.html" class="mobile-link">Home</a>
-            <a href="products.html" class="mobile-link">Products</a>
-            <a href="services.html" class="mobile-link">Services</a>
-            <a href="tabletop.html" class="mobile-link">Gaming Tables</a>
-            <a href="replicas.html" class="mobile-link">Replicas</a>
-            <a href="gallery.html" class="mobile-link">Gallery</a>
-            <a href="about.html" class="mobile-link">About</a>
-            <a href="contact.html" class="mobile-link">Contact</a>
-        </nav>
-    </div>
+    <script src="nav.js" data-root=""></script>
 
     <main>
 
@@ -84,57 +110,43 @@
     <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
-            <div class="contact-two-col">
-
-                <!-- Left: details -->
-                <div>
-                    <p class="contact-intro">To discuss a commission, email Max at <a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a> or call <a href="tel:07480751431">07480 751 431</a>. Every project starts with a conversation &mdash; timber, dimensions, timescale, budget.</p>
-
-                    <div class="contact-cards-list">
-                        <a href="mailto:maxstanway@stanwaydesigns.co.uk" class="contact-detail-card">
-                            <span class="contact-detail-card__icon">&#x2709;&#xFE0F;</span>
-                            <div>
-                                <p class="contact-detail-card__label">Email</p>
-                                <p class="contact-detail-card__value">maxstanway@stanwaydesigns.co.uk</p>
-                            </div>
-                        </a>
-                        <a href="tel:01159171734" class="contact-detail-card">
-                            <span class="contact-detail-card__icon">&#x1F4DE;</span>
-                            <div>
-                                <p class="contact-detail-card__label">Phone</p>
-                                <p class="contact-detail-card__value">0115 917 1734</p>
-                            </div>
-                        </a>
-                        <a href="tel:07480751431" class="contact-detail-card">
-                            <span class="contact-detail-card__icon">&#x1F4F1;</span>
-                            <div>
-                                <p class="contact-detail-card__label">Mobile</p>
-                                <p class="contact-detail-card__value">07480 751 431</p>
-                            </div>
-                        </a>
-                        <div class="contact-detail-card">
-                            <span class="contact-detail-card__icon">&#x1F4CD;</span>
-                            <div>
-                                <p class="contact-detail-card__label">Workshop</p>
-                                <p class="contact-detail-card__value">33 Weardale Road, Nottingham, NG5 1DD &mdash; by appointment</p>
-                            </div>
-                        </div>
+            <div class="contact-cards-list">
+                <a href="mailto:maxstanway@stanwaydesigns.co.uk" class="contact-detail-card">
+                    <span class="contact-detail-card__icon">&#x2709;&#xFE0F;</span>
+                    <div>
+                        <p class="contact-detail-card__label">Email</p>
+                        <p class="contact-detail-card__value">maxstanway@stanwaydesigns.co.uk</p>
                     </div>
-                </div>
-
-                <!-- Right: map -->
-                <div>
-                    <div class="contact-map-wrap">
-                        <iframe
-                            src="https://www.google.com/maps?q=Stanway+Designs+33+Weardale+Road+Nottingham+NG5+1DD&output=embed"
-                            title="Stanway Designs &mdash; 33 Weardale Road, Nottingham NG5 1DD"
-                            allowfullscreen
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                </a>
+                <a href="https://instagram.com/StanwayDesigns" target="_blank" rel="noopener" class="contact-detail-card">
+                    <span class="contact-detail-card__icon">&#x1F4F7;</span>
+                    <div>
+                        <p class="contact-detail-card__label">Instagram</p>
+                        <p class="contact-detail-card__value">@StanwayDesigns</p>
                     </div>
-                </div>
+                </a>
+                <a href="https://facebook.com/StanwayDesigns" target="_blank" rel="noopener" class="contact-detail-card">
+                    <span class="contact-detail-card__icon">&#x1F4AC;</span>
+                    <div>
+                        <p class="contact-detail-card__label">Facebook</p>
+                        <p class="contact-detail-card__value">@StanwayDesigns</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Coverage Map -->
+    <section class="coverage-map-section">
+        <div class="container coverage-map-inner">
+            <div class="coverage-map-text">
+                <p class="section-label">Service Area</p>
+                <h2>Based in Nottingham.<br>Working across the region.</h2>
+                <p>Max works from his Nottingham workshop and delivers commissions across the East Midlands and beyond &mdash; typically within a 25-mile radius, and further for larger pieces.</p>
+                <p class="coverage-note">Outside the area? Get in touch &mdash; it&rsquo;s worth asking.</p>
+            </div>
+            <div class="coverage-map-wrap">
+                <div id="coverage-map" aria-label="Map showing Stanway Designs service area around Nottingham" role="img"></div>
             </div>
         </div>
     </section>
@@ -149,10 +161,10 @@
                     <h4>Navigate</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="tabletop.html">Gaming Tables</a></li>
-                        <li><a href="replicas.html">Replicas</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="joinery.html">Joinery</a></li>
+                        <li><a href="woodturning.html">Woodturning</a></li>
+                        <li><a href="restoration.html">Restoration &amp; Repair</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="about.html">About</a></li>
                     </ul>
@@ -162,26 +174,11 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
-                        <li><a href="tel:01159171734">0115 917 1734</a></li>
-                        <li><a href="tel:07480751431">07480 751 431</a></li>
                         <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
                         <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
                         <li>Nottingham, UK</li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
-                </div>
-
-                <div class="footer-col footer-map">
-                    <h4>Find Us</h4>
-                    <div class="footer-map-wrap">
-                        <iframe
-                            src="https://www.google.com/maps?q=Stanway+Designs+33+Weardale+Road+Nottingham+NG5+1DD&output=embed"
-                            title="Stanway Designs — 33 Weardale Road, Nottingham NG5 1DD"
-                            allowfullscreen
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
                 </div>
             </div>
 
@@ -192,7 +189,46 @@
     </footer>
 
     <script src="luxury.js"></script>
-    <script>if('serviceWorker' in navigator && location.protocol !== 'file:')navigator.serviceWorker.register('/sw.js');</script>
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2GqaE=" crossorigin=""></script>
+
+    <script>
+    (function () {
+        var areaCentre = [53.002, -1.155];
+        var radiusMetres = 40234; // 25 miles
+
+        var map = L.map('coverage-map', {
+            center: areaCentre,
+            zoom: 9,
+            zoomControl: true,
+            scrollWheelZoom: false,
+            dragging: true,
+            attributionControl: true
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+        L.circle(areaCentre, {
+            radius: radiusMetres,
+            color: '#B8A470',
+            weight: 2,
+            fillColor: '#B8A470',
+            fillOpacity: 0.12,
+            dashArray: '6, 4'
+        }).addTo(map);
+
+        window.addEventListener('resize', function () {
+            map.invalidateSize();
+        });
+    }());
+    </script>
+
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
     <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
 </body>
 </html>

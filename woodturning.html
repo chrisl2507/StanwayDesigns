@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodturning &amp; Homeware | Stanway Designs | Nottingham</title>
+    <meta name="description" content="Handcrafted woodturning and timber homeware by Stanway Designs. Turned bowls, vessels, candle holders and bespoke pieces in English walnut, oak, and burr elm.">
+    <meta name="keywords" content="woodturning Nottingham, turned bowls, timber homeware, bespoke woodturning, natural edge bowls, handcrafted gifts">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Woodturning &amp; Homeware | Stanway Designs | Nottingham">
+    <meta property="og:description" content="Handcrafted woodturning and timber homeware by Stanway Designs. Turned bowls, vessels, candle holders and bespoke pieces in English walnut, oak, and burr elm.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/woodturning.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Bespoke/Bowl_1.webp">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Woodturning &amp; Homeware | Stanway Designs | Nottingham">
+    <meta name="twitter:description" content="Handcrafted woodturning and timber homeware by Stanway Designs. Turned bowls, vessels, candle holders and bespoke pieces in English walnut, oak, and burr elm.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Bespoke/Bowl_1.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions for smooth page navigation -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="styles-luxury.css">
+
+    <!-- Active nav link style -->
+    <style>
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* Hero — bottom-left headline (matches joinery.html pattern) */
+        .woodturning-hero {
+            position: relative;
+            height: 100svh;
+            min-height: 560px;
+            overflow: hidden;
+            background-color: #1C1C1C;
+        }
+
+        .woodturning-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .woodturning-hero .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .woodturning-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 16, 14, 0.85) 0%,
+                rgba(20, 16, 14, 0.4) 50%,
+                rgba(20, 16, 14, 0.15) 100%
+            );
+        }
+
+        .woodturning-hero-content {
+            position: absolute;
+            bottom: clamp(3rem, 8vh, 6rem);
+            left: 0;
+            right: 0;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .woodturning-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .woodturning-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 10vw, 9rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.95;
+            letter-spacing: -1px;
+            margin: 0 0 1.25rem;
+        }
+
+        .woodturning-hero-sub {
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* Intro — asymmetric two-column */
+        .woodturning-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .woodturning-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .woodturning-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .woodturning-intro-body p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .woodturning-intro-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 900px) {
+            .woodturning-intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+                align-items: center;
+            }
+        }
+
+        /* Product categories — numbered minimal list */
+        .woodturning-categories-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .woodturning-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .woodturning-list-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+            cursor: default;
+            transition: padding-left 0.25s ease;
+        }
+
+        .woodturning-list-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .woodturning-list-item:hover {
+            padding-left: 1rem;
+        }
+
+        .woodturning-list-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+        }
+
+        .woodturning-list-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .woodturning-list-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.25s ease;
+        }
+
+        .woodturning-list-item:hover .woodturning-list-name {
+            color: var(--coral-dark);
+        }
+
+        .woodturning-list-sub {
+            font-family: var(--font-body);
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: var(--mid-gray);
+            text-transform: uppercase;
+        }
+
+        .woodturning-list-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--mid-gray);
+            margin-left: auto;
+            max-width: 300px;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .woodturning-list-item:hover .woodturning-list-desc {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .woodturning-list-desc {
+                display: none;
+            }
+
+            .woodturning-list-item:hover {
+                padding-left: 0.5rem;
+            }
+        }
+
+        /* Materials note — single column, generous whitespace */
+        .woodturning-materials-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .woodturning-materials-inner {
+            max-width: 640px;
+        }
+
+        .woodturning-materials-inner p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .woodturning-materials-inner p:last-child {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--mid-gray);
+        }
+
+        /* Shop CTA — two actions side by side */
+        .woodturning-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-brown);
+            text-align: center;
+        }
+
+        .woodturning-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .woodturning-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .woodturning-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .woodturning-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .woodturning-cta-section .btn-primary::before {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .woodturning-cta-section .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: color 0.2s ease;
+        }
+
+        .woodturning-cta-section .btn-secondary:hover {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="nav.js" data-root=""></script>
+    <script>document.querySelector('a[href="woodturning.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <main>
+
+    <!-- Hero -->
+    <section class="woodturning-hero">
+        <div class="hero-bg">
+            <img class="hero-image" src="includes/Images/woodturning-hero.webp" alt="" width="1920" height="1080" fetchpriority="high">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="woodturning-hero-content">
+            <span class="woodturning-hero-label">Stanway Designs</span>
+            <h1 class="woodturning-hero-title">Woodturning<br>&amp; Homeware</h1>
+            <span class="woodturning-hero-sub">Small Batch. Handcrafted. Lasting.</span>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="woodturning-intro-section">
+        <div class="container">
+            <div class="woodturning-intro-grid">
+                <div class="woodturning-intro-left">
+                    <h2 class="woodturning-intro-heading">The lathe is where it begins.</h2>
+                </div>
+                <div class="woodturning-intro-body">
+                    <p>Woodturning is the most direct conversation between maker and material. A piece of timber goes onto the lathe raw — with its own grain, figure, and character — and comes off as something useful. A bowl that holds fruit on a kitchen table. A vessel that sits on a shelf and catches light differently every morning.</p>
+                    <p>I work in small batches, selecting timber carefully and turning each piece by hand. No two are identical. The natural variation in grain and colour is what makes them worth having — not a flaw to be designed out, but the whole point.</p>
+                    <p>Pieces are available ready-made through the shop, or commissioned to a specific brief. If you have a timber in mind, a size, a purpose — get in touch and I'll make it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="woodturning-categories-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">What I make</span>
+                <h2 class="section-title">Turned &amp; handcrafted pieces</h2>
+                <p class="section-desc">Ready-made pieces are available in the shop. Commissions are always welcome.</p>
+            </div>
+
+            <ul class="woodturning-list">
+                <li class="woodturning-list-item" style="cursor: pointer;" onclick="location.href='woodturning-ring-boxes.html'">
+                    <span class="woodturning-list-num">01</span>
+                    <span class="woodturning-list-text">
+                        <a href="woodturning-ring-boxes.html" class="woodturning-list-name" style="text-decoration: none; color: inherit;">Custom Ring Boxes</a>
+                        <span class="woodturning-list-sub">Commissioned engagement &amp; wedding ring boxes</span>
+                    </span>
+                    <span class="woodturning-list-desc">Precision-turned individually in premium timber. Fitted velvet or suede interior, personalisation available. <span style="color: var(--coral-dark);">View details →</span></span>
+                </li>
+                <li class="woodturning-list-item">
+                    <span class="woodturning-list-num">02</span>
+                    <span class="woodturning-list-text">
+                        <span class="woodturning-list-name">Turned Bowls</span>
+                        <span class="woodturning-list-sub">Various sizes, various timbers</span>
+                    </span>
+                    <span class="woodturning-list-desc">From small fruit bowls to generous statement pieces. Finished in food-safe oil where intended for use.</span>
+                </li>
+                <li class="woodturning-list-item">
+                    <span class="woodturning-list-num">03</span>
+                    <span class="woodturning-list-text">
+                        <span class="woodturning-list-name">Vases &amp; Vessels</span>
+                        <span class="woodturning-list-sub">Decorative and functional</span>
+                    </span>
+                    <span class="woodturning-list-desc">Hollow-turned forms in a range of proportions. Striking as standalone objects or as a pair.</span>
+                </li>
+                <li class="woodturning-list-item">
+                    <span class="woodturning-list-num">04</span>
+                    <span class="woodturning-list-text">
+                        <span class="woodturning-list-name">Candle Holders &amp; Trinket Bowls</span>
+                        <span class="woodturning-list-sub">Gift-ready pieces</span>
+                    </span>
+                    <span class="woodturning-list-desc">Smaller turned pieces — beautifully finished and ready to give. Each one is packaged simply and labelled with the timber species.</span>
+                </li>
+                <li class="woodturning-list-item">
+                    <span class="woodturning-list-num">05</span>
+                    <span class="woodturning-list-text">
+                        <span class="woodturning-list-name">Custom Homeware</span>
+                        <span class="woodturning-list-sub">Commissioned to brief</span>
+                    </span>
+                    <span class="woodturning-list-desc">A specific timber, a specific size, a specific purpose. If you know what you want, I can make it.</span>
+                </li>
+                <li class="woodturning-list-item">
+                    <span class="woodturning-list-num">06</span>
+                    <span class="woodturning-list-text">
+                        <span class="woodturning-list-name">Natural Edge Pieces</span>
+                        <span class="woodturning-list-sub">Celebrating the timber's character</span>
+                    </span>
+                    <span class="woodturning-list-desc">Bowls and forms that retain the tree's original edge — bark, irregularity, and all. Each one unrepeatable.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Materials Note -->
+    <section class="woodturning-materials-section">
+        <div class="container">
+            <span class="section-label">Materials</span>
+            <div class="woodturning-materials-inner">
+                <p>I work primarily in English hardwoods — walnut, oak, cherry, yew, and burr elm — sourced locally where possible. Some pieces use more exotic timbers: African Padauk, Camphor Laurel, or spalted beech, chosen for their particular colour or figure. Every blank is selected by hand before it goes on the lathe.</p>
+                <p>"Each piece is unique. Grain, figure, and natural edge vary — that's the point."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop CTA -->
+    <section class="woodturning-cta-section">
+        <div class="container-narrow">
+            <div class="cta-content">
+                <h2>Find your piece</h2>
+                <p>Ready-made pieces are in the shop. Something specific in mind? Get in touch.</p>
+                <div class="woodturning-cta-actions">
+                    <a href="shop.html" class="btn-primary">
+                        <span class="btn-text">Browse available pieces</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="index.html#contact" class="btn-secondary">Commission something specific</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="joinery.html">Joinery</a></li>
+                        <li><a href="woodturning.html">Woodturning</a></li>
+                        <li><a href="tabletop.html">Gaming Tables</a></li>
+                        <li><a href="replicas.html">Reproductions</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <!-- TODO: Add real Google Reviews URL -->
+                        <!-- TODO: Add real MyBuilder URL -->
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="luxury.js"></script>
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Stanway Designs | Nottingham</title>
+    <meta name="description" content="Shop handcrafted woodturning and timber pieces by Stanway Designs. Bowls, vessels, ring boxes and homeware — new stock added regularly.">
+    <meta name="keywords" content="buy wooden bowls, handcrafted timber homeware, woodturning for sale, Stanway Designs shop">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shop | Stanway Designs | Nottingham">
+    <meta property="og:description" content="Shop handcrafted woodturning and timber pieces by Stanway Designs. Bowls, vessels, ring boxes and homeware — new stock added regularly.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/shop.html">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop | Stanway Designs | Nottingham">
+    <meta name="twitter:description" content="Shop handcrafted woodturning and timber pieces by Stanway Designs. Bowls, vessels, ring boxes and homeware — new stock added regularly.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions for smooth page navigation -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="styles-luxury.css">
+
+    <style>
+        /* ── Local token ── */
+        :root {
+            --shop-brass: #B8A470;
+            --shop-card-bg: #EEEBE5;
+        }
+
+        /* ── Active nav ── */
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* ══════════════════════════════════
+           PAGE HEADER
+        ══════════════════════════════════ */
+        .shop-header {
+            background: var(--text-dark);
+            padding: clamp(5rem, 12vh, 8rem) 0 clamp(3rem, 6vh, 5rem);
+        }
+
+        .shop-header-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 1.25rem;
+        }
+
+        .shop-header-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.95;
+            letter-spacing: -1px;
+            margin: 0 0 1.5rem;
+        }
+
+        .shop-header-sub {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 1.25rem;
+        }
+
+        .shop-header-body {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.55);
+            max-width: 560px;
+        }
+
+        .shop-header-body a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ══════════════════════════════════
+           FILTER BAR
+        ══════════════════════════════════ */
+        .shop-filter-section {
+            background: var(--warm-white);
+            border-bottom: 1px solid var(--light-gray);
+            position: sticky;
+            top: 0; /* overridden below to sit below nav */
+            z-index: 10;
+        }
+
+        .shop-filter-inner {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .shop-filter-inner::-webkit-scrollbar { display: none; }
+
+        .shop-filter-btn {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            white-space: nowrap;
+            margin-bottom: -1px;
+            flex-shrink: 0;
+        }
+
+        .shop-filter-btn:hover {
+            color: var(--charcoal);
+        }
+
+        .shop-filter-btn.active {
+            color: var(--charcoal);
+            border-bottom-color: var(--shop-brass);
+        }
+
+        /* ══════════════════════════════════
+           PRODUCT GRID SECTION
+        ══════════════════════════════════ */
+        .shop-grid-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+            min-height: 40vh;
+        }
+
+        /* Loading */
+        .shop-loading {
+            text-align: center;
+            padding: var(--space-3xl) 0;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--mid-gray);
+            letter-spacing: 1px;
+        }
+
+        /* Error */
+        .shop-error {
+            display: none;
+            text-align: center;
+            padding: var(--space-3xl) 0;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .shop-error p {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--mid-gray);
+            margin-bottom: 1rem;
+        }
+
+        .shop-error a {
+            color: var(--coral-dark);
+            text-decoration: none;
+        }
+
+        .shop-error a:hover { text-decoration: underline; }
+
+        /* Empty */
+        .shop-empty {
+            display: none;
+            text-align: center;
+            padding: var(--space-3xl) 0;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .shop-empty p {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--mid-gray);
+            margin-bottom: 0.75rem;
+        }
+
+        .shop-empty a {
+            color: var(--coral-dark);
+            text-decoration: none;
+        }
+
+        .shop-empty a:hover { text-decoration: underline; }
+
+        /* Grid */
+        #product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+        }
+
+        @media (min-width: 640px) {
+            #product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ── Card ── */
+        .shop-card {
+            background: var(--shop-card-bg);
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.25s ease;
+        }
+
+        .shop-card:hover {
+            border-color: var(--shop-brass);
+        }
+
+        .shop-card.sold {
+            opacity: 0.75;
+        }
+
+        /* Image */
+        .shop-card-image {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background: var(--shop-card-bg);
+            flex-shrink: 0;
+        }
+
+        .shop-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+
+        .shop-card:not(.sold):hover .shop-card-image img {
+            transform: scale(1.04);
+        }
+
+        /* Sold overlay */
+        .shop-card-sold-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(28, 28, 28, 0.65);
+            color: var(--shop-brass);
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            pointer-events: none;
+            letter-spacing: 1px;
+        }
+
+        /* Body */
+        .shop-card-body {
+            padding: 1.5rem 1.75rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .shop-card-category {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--shop-brass);
+            margin-bottom: 0.6rem;
+        }
+
+        .shop-card-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            line-height: 1.2;
+            margin: 0 0 0.4rem;
+        }
+
+        .shop-card-timber {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--mid-gray);
+            margin: 0 0 0.85rem;
+        }
+
+        .shop-card-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--mid-gray);
+            margin: 0 0 0.75rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .shop-card-dims {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: var(--mid-gray);
+            margin: 0;
+        }
+
+        .shop-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: auto;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(44, 36, 32, 0.1);
+        }
+
+        .shop-card-price {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            line-height: 1;
+        }
+
+        .shop-card-buy {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--charcoal);
+            padding: 0.7rem 1.1rem;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .shop-card-buy:hover {
+            background: var(--coral-dark);
+        }
+
+        .shop-card-buy.sold-btn {
+            background: var(--mid-gray);
+            opacity: 0.45;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        /* ══════════════════════════════════
+           VISIT FULL SHOP
+        ══════════════════════════════════ */
+        .shop-full-section {
+            padding: var(--space-3xl) 0;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .shop-full-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            margin: 0 0 0.75rem;
+        }
+
+        .shop-full-body {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--mid-gray);
+            margin: 0 0 2rem;
+        }
+
+        /* ══════════════════════════════════
+           COMMISSION CTA
+        ══════════════════════════════════ */
+        .shop-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--text-dark);
+            text-align: center;
+        }
+
+        .shop-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .shop-cta-section .cta-content p {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .shop-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .shop-cta-section .btn-primary::before {
+            background: rgba(255,255,255,0.08);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="nav.js" data-root=""></script>
+    <script>document.querySelector('a[href="shop.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <main>
+
+    <!-- Page Header -->
+    <section class="shop-header">
+        <div class="container">
+            <span class="shop-header-label">Stanway Designs</span>
+            <h1 class="shop-header-title">The Shop</h1>
+            <p class="shop-header-sub">In-stock pieces, ready to leave the workshop</p>
+            <p class="shop-header-body">Each piece is made by Max and listed here when it&rsquo;s ready. Click any piece to purchase securely. For commissions, use the <a href="index.html#contact">contact form</a>.</p>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="shop-filter-section">
+        <div class="container">
+            <div class="shop-filter-inner" role="tablist" aria-label="Filter by category">
+                <button class="shop-filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="shop-filter-btn" data-filter="bowls" role="tab" aria-selected="false">Bowls</button>
+                <button class="shop-filter-btn" data-filter="vessels" role="tab" aria-selected="false">Vessels</button>
+                <button class="shop-filter-btn" data-filter="ring-boxes" role="tab" aria-selected="false">Ring Boxes</button>
+                <button class="shop-filter-btn" data-filter="homeware" role="tab" aria-selected="false">Homeware</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="shop-grid-section">
+        <div class="container">
+
+            <p class="shop-loading" id="shop-loading">Loading pieces&hellip;</p>
+
+            <div class="shop-error" id="shop-error">
+                <p>Couldn&rsquo;t load the shop right now &mdash; please try again shortly.</p>
+                <p>In the meantime, <a href="index.html#contact">get in touch</a> to ask about available pieces.</p>
+            </div>
+
+            <div class="shop-empty" id="shop-empty">
+                <p>Nothing in the shop right now &mdash; new pieces are added regularly.</p>
+                <p><a href="https://instagram.com/StanwayDesigns" target="_blank" rel="noopener">Follow on Instagram</a> for a first look at new work.</p>
+            </div>
+
+            <div id="product-grid"></div>
+
+        </div>
+    </section>
+
+    <!-- Visit Full Shop -->
+    <section class="shop-full-section">
+        <div class="container-narrow">
+            <h2 class="shop-full-heading">See everything</h2>
+            <p class="shop-full-body">New pieces added as they leave the workshop.</p>
+            <a href="https://sumup.link/stanwaydesigns" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                <span class="btn-text">Visit the full shop</span>
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Commission CTA -->
+    <section class="shop-cta-section">
+        <div class="container-narrow">
+            <div class="cta-content">
+                <h2>Don&rsquo;t see what you&rsquo;re looking for?</h2>
+                <p>Commission a piece made specifically for you.</p>
+                <a href="index.html#contact" class="btn-primary">
+                    <span class="btn-text">Get in touch</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="joinery.html">Joinery</a></li>
+                        <li><a href="woodturning.html">Woodturning</a></li>
+                        <li><a href="restoration.html">Restoration &amp; Repair</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="luxury.js"></script>
+
+    <script>
+    (function () {
+        var SHEET_ID = '19iJBDROuyRY3hUqzEa2Em6-LcgDhuR3CWuIbGtdL8pE';
+        var CSV_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=Sheet1';
+
+        var grid      = document.getElementById('product-grid');
+        var loading   = document.getElementById('shop-loading');
+        var errorEl   = document.getElementById('shop-error');
+        var emptyEl   = document.getElementById('shop-empty');
+
+        /* ── CSV parser (handles quoted fields with embedded commas) ── */
+        function parseCSV(text) {
+            var rows = [];
+            var row = [];
+            var field = '';
+            var inQuotes = false;
+
+            for (var i = 0; i < text.length; i++) {
+                var ch   = text[i];
+                var next = text[i + 1];
+
+                if (inQuotes) {
+                    if (ch === '"' && next === '"') {
+                        field += '"';
+                        i++;
+                    } else if (ch === '"') {
+                        inQuotes = false;
+                    } else {
+                        field += ch;
+                    }
+                } else {
+                    if (ch === '"') {
+                        inQuotes = true;
+                    } else if (ch === ',') {
+                        row.push(field);
+                        field = '';
+                    } else if (ch === '\n') {
+                        row.push(field);
+                        rows.push(row);
+                        row = [];
+                        field = '';
+                    } else if (ch !== '\r') {
+                        field += ch;
+                    }
+                }
+            }
+            // flush trailing field/row
+            if (field !== '' || row.length > 0) {
+                row.push(field);
+                if (row.some(function (c) { return c.trim(); })) rows.push(row);
+            }
+
+            return rows;
+        }
+
+        /* ── Convert Google Drive share links to thumbnail URLs ── */
+        function resolveImageUrl(url) {
+            if (!url || !url.trim()) return '';
+            var m = url.match(/drive\.google\.com\/file\/d\/([^/?]+)/);
+            if (m) return 'https://drive.google.com/thumbnail?id=' + m[1] + '&sz=w800';
+            return url.trim();
+        }
+
+        /* ── Human-readable category label ── */
+        var CAT_LABELS = {
+            'bowls':      'Bowls',
+            'vessels':    'Vessels',
+            'ring-boxes': 'Ring Boxes',
+            'homeware':   'Homeware'
+        };
+
+        function catLabel(cat) {
+            return CAT_LABELS[cat] || cat;
+        }
+
+        /* ── Build a single product card DOM node ── */
+        function buildCard(p) {
+            var isSold  = p.sold === 'TRUE';
+            var imgUrl  = resolveImageUrl(p.image_url);
+
+            var article = document.createElement('article');
+            article.className = 'shop-card' + (isSold ? ' sold' : '');
+            article.setAttribute('data-category', p.category);
+
+            /* Image wrap */
+            var imgWrap = document.createElement('div');
+            imgWrap.className = 'shop-card-image';
+
+            if (imgUrl) {
+                var img = document.createElement('img');
+                img.src     = imgUrl;
+                img.alt     = p.name;
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                imgWrap.appendChild(img);
+            }
+
+            if (isSold) {
+                var overlay = document.createElement('div');
+                overlay.className   = 'shop-card-sold-overlay';
+                overlay.textContent = 'Sold';
+                imgWrap.appendChild(overlay);
+            }
+
+            article.appendChild(imgWrap);
+
+            /* Card body */
+            var body = document.createElement('div');
+            body.className = 'shop-card-body';
+
+            var cat = document.createElement('span');
+            cat.className   = 'shop-card-category';
+            cat.textContent = catLabel(p.category);
+
+            var name = document.createElement('h3');
+            name.className   = 'shop-card-name';
+            name.textContent = p.name;
+
+            var timber = document.createElement('p');
+            timber.className   = 'shop-card-timber';
+            timber.textContent = p.timber;
+
+            var desc = document.createElement('p');
+            desc.className   = 'shop-card-desc';
+            desc.textContent = p.description;
+
+            var dims = document.createElement('p');
+            dims.className   = 'shop-card-dims';
+            dims.textContent = p.dimensions;
+
+            var footer = document.createElement('div');
+            footer.className = 'shop-card-footer';
+
+            var price = document.createElement('span');
+            price.className   = 'shop-card-price';
+            price.textContent = '\u00a3' + p.price;
+
+            var btn;
+            if (isSold) {
+                btn = document.createElement('span');
+                btn.className   = 'shop-card-buy sold-btn';
+                btn.textContent = 'Sold';
+            } else {
+                btn = document.createElement('a');
+                btn.className   = 'shop-card-buy';
+                btn.href        = /^https?:\/\//i.test(p.sumup_url) ? p.sumup_url : '#';
+                btn.target      = '_blank';
+                btn.rel         = 'noopener noreferrer';
+                btn.textContent = 'Buy on SumUp \u2192';
+            }
+
+            footer.appendChild(price);
+            footer.appendChild(btn);
+
+            body.appendChild(cat);
+            body.appendChild(name);
+            body.appendChild(timber);
+            body.appendChild(desc);
+            body.appendChild(dims);
+            body.appendChild(footer);
+
+            article.appendChild(body);
+            return article;
+        }
+
+        /* ── Render products into the grid ── */
+        function renderProducts(products) {
+            loading.style.display = 'none';
+
+            if (!products.length) {
+                emptyEl.style.display = 'block';
+                return;
+            }
+
+            var frag = document.createDocumentFragment();
+            products.forEach(function (p) { frag.appendChild(buildCard(p)); });
+            grid.appendChild(frag);
+        }
+
+        /* ── Filter buttons ── */
+        document.querySelectorAll('.shop-filter-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var filter = this.getAttribute('data-filter');
+
+                document.querySelectorAll('.shop-filter-btn').forEach(function (b) {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+
+                document.querySelectorAll('#product-grid .shop-card').forEach(function (card) {
+                    card.style.display =
+                        (filter === 'all' || card.getAttribute('data-category') === filter)
+                        ? '' : 'none';
+                });
+            });
+        });
+
+        /* ── Fetch & parse CSV ── */
+        fetch(CSV_URL)
+            .then(function (res) {
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                return res.text();
+            })
+            .then(function (text) {
+                var rows = parseCSV(text);
+                if (rows.length < 2) {
+                    loading.style.display = 'none';
+                    emptyEl.style.display = 'block';
+                    return;
+                }
+
+                var headers  = rows[0].map(function (h) { return h.trim().toLowerCase(); });
+                var products = rows.slice(1)
+                    .filter(function (row) {
+                        return row.some(function (cell) { return cell.trim(); });
+                    })
+                    .map(function (row) {
+                        var obj = {};
+                        headers.forEach(function (h, i) {
+                            obj[h] = (row[i] || '').trim();
+                        });
+                        return obj;
+                    });
+
+                renderProducts(products);
+            })
+            .catch(function () {
+                loading.style.display = 'none';
+                errorEl.style.display = 'block';
+            });
+    }());
+    </script>
+
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

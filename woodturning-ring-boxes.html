@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Ring Boxes | Woodturning | Stanway Designs Nottingham</title>
+    <meta name="description" content="Handturned wooden ring boxes by Stanway Designs, Nottingham. Custom engagement and wedding ring boxes in English walnut, oak, and burr elm. Commissioned to order.">
+    <meta name="keywords" content="wooden ring box, handturned ring box Nottingham, engagement ring box, wedding ring box, bespoke ring box timber">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Custom Ring Boxes | Woodturning | Stanway Designs Nottingham">
+    <meta property="og:description" content="Handturned wooden ring boxes by Stanway Designs, Nottingham. Custom engagement and wedding ring boxes in English walnut, oak, and burr elm. Commissioned to order.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/woodturning-ring-boxes.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Ringbox/Ringbox_2_web.webp">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Custom Ring Boxes | Woodturning | Stanway Designs Nottingham">
+    <meta name="twitter:description" content="Handturned wooden ring boxes by Stanway Designs, Nottingham. Custom engagement and wedding ring boxes in English walnut, oak, and burr elm. Commissioned to order.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Ringbox/Ringbox_2_web.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions for smooth page navigation -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="styles-luxury.css">
+
+    <!-- Active nav link style — parent section highlighted -->
+    <style>
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* Breadcrumb back link */
+        .ringbox-breadcrumb {
+            background: var(--warm-white);
+            padding: 0;
+        }
+
+        .ringbox-breadcrumb-inner {
+            display: flex;
+            align-items: center;
+            padding: 1rem clamp(1.5rem, 5vw, 5rem);
+            padding-top: calc(var(--nav-height, 80px) + 1rem);
+        }
+
+        .ringbox-breadcrumb-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .ringbox-breadcrumb-link:hover {
+            color: var(--coral-dark);
+        }
+
+        .ringbox-breadcrumb-link svg {
+            transition: transform 0.2s ease;
+        }
+
+        .ringbox-breadcrumb-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        /* Hero — bottom-left, intimate scale */
+        .ringbox-hero {
+            position: relative;
+            height: 90svh;
+            min-height: 500px;
+            overflow: hidden;
+            background-color: #1C1C1C;
+        }
+
+        .ringbox-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .ringbox-hero .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .ringbox-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 16, 14, 0.88) 0%,
+                rgba(20, 16, 14, 0.45) 50%,
+                rgba(20, 16, 14, 0.1) 100%
+            );
+        }
+
+        .ringbox-hero-content {
+            position: absolute;
+            bottom: clamp(3rem, 8vh, 6rem);
+            left: 0;
+            right: 0;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .ringbox-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 1rem;
+        }
+
+        .ringbox-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 9vw, 8rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.95;
+            letter-spacing: -1px;
+            margin: 0 0 1.25rem;
+        }
+
+        .ringbox-hero-sub {
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 420px;
+            line-height: 1.6;
+        }
+
+        /* Intro — asymmetric */
+        .ringbox-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .ringbox-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .ringbox-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .ringbox-intro-body p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .ringbox-intro-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 900px) {
+            .ringbox-intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+                align-items: center;
+            }
+        }
+
+        /* Options — numbered minimal list */
+        .ringbox-options-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .ringbox-options-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .ringbox-options-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+            cursor: default;
+            transition: padding-left 0.25s ease;
+        }
+
+        .ringbox-options-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .ringbox-options-item:hover {
+            padding-left: 1rem;
+        }
+
+        .ringbox-options-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+        }
+
+        .ringbox-options-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .ringbox-options-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.25s ease;
+        }
+
+        .ringbox-options-item:hover .ringbox-options-name {
+            color: var(--coral-dark);
+        }
+
+        .ringbox-options-detail {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--mid-gray);
+        }
+
+        @media (max-width: 768px) {
+            .ringbox-options-item:hover {
+                padding-left: 0.5rem;
+            }
+        }
+
+        /* Process — 3 steps horizontal */
+        .ringbox-process-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .ringbox-process-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        @media (min-width: 640px) {
+            .ringbox-process-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .ringbox-process-step {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .ringbox-process-step-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--coral-dark);
+        }
+
+        .ringbox-process-step-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .ringbox-process-step-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--mid-gray);
+        }
+
+        .ringbox-process-note {
+            margin-top: var(--space-xl);
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            color: var(--mid-gray);
+            font-style: italic;
+        }
+
+        /* Gallery strip — 3 images horizontal */
+        .ringbox-gallery-section {
+            padding: var(--space-2xl) 0;
+            background: var(--linen);
+        }
+
+        .ringbox-gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .ringbox-gallery-strip {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ringbox-gallery-img {
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: var(--warm-brown);
+        }
+
+        .ringbox-gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .ringbox-gallery-img:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Dual CTA */
+        .ringbox-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-brown);
+            text-align: center;
+        }
+
+        .ringbox-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .ringbox-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .ringbox-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .ringbox-cta-section .btn-primary {
+            background: var(--white);
+            color: var(--warm-brown);
+        }
+
+        .ringbox-cta-section .btn-primary::before {
+            background: var(--cream);
+        }
+
+        .ringbox-cta-section .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .ringbox-cta-section .btn-ghost:hover {
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="nav.js" data-root=""></script>
+    <script>document.querySelector('a[href="woodturning.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <main>
+
+    <!-- Breadcrumb -->
+    <div class="ringbox-breadcrumb">
+        <div class="ringbox-breadcrumb-inner">
+            <a href="woodturning.html" class="ringbox-breadcrumb-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Woodturning &amp; Homeware
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="ringbox-hero">
+        <div class="hero-bg">
+            <img class="hero-image" src="includes/Images/ring-boxes-hero.webp" alt="" width="1920" height="1080" fetchpriority="high">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="ringbox-hero-content">
+            <span class="ringbox-hero-label">Woodturning &amp; Homeware</span>
+            <h1 class="ringbox-hero-title">Custom<br>Ring Boxes</h1>
+            <span class="ringbox-hero-sub">Turned by hand. Made to hold something that matters.</span>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="ringbox-intro-section">
+        <div class="container">
+            <div class="ringbox-intro-grid">
+                <div>
+                    <h2 class="ringbox-intro-heading">A box for the moment.</h2>
+                </div>
+                <div class="ringbox-intro-body">
+                    <p>These are not jewellery boxes. They're precision-turned pieces designed to present a ring at the moment it's given — to be held, opened, and remembered. The timber, the weight, the way the lid sits: all of it is part of what that moment feels like.</p>
+                    <p>Max turns each box individually on the lathe, selecting the blank for figure and character before a single cut is made. The interior is fitted by hand. No two boxes are the same — the grain, the colour, the natural variation in the timber is what gives each one its particular quality.</p>
+                    <p>If you're commissioning a ring box, get in touch with a brief — timber preference, timeline, any engraving — and Max will come back to you directly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Options -->
+    <section class="ringbox-options-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Made to order</span>
+                <h2 class="section-title">What you can specify</h2>
+                <p class="section-desc">Every box is commissioned individually. These are the choices you make.</p>
+            </div>
+
+            <ul class="ringbox-options-list">
+                <li class="ringbox-options-item">
+                    <span class="ringbox-options-num">01</span>
+                    <span class="ringbox-options-text">
+                        <span class="ringbox-options-name">Timber Choice</span>
+                        <span class="ringbox-options-detail">English walnut, oak, cherry, yew, burr elm — or bring your own meaningful piece of wood. If you have a piece of timber that means something — a reclaimed beam, a fallen garden tree — Max can work with it.</span>
+                    </span>
+                </li>
+                <li class="ringbox-options-item">
+                    <span class="ringbox-options-num">02</span>
+                    <span class="ringbox-options-text">
+                        <span class="ringbox-options-name">Interior</span>
+                        <span class="ringbox-options-detail">Fitted velvet or suede lining, colour to order. The interior is cut and fitted by hand to hold the ring securely without movement.</span>
+                    </span>
+                </li>
+                <li class="ringbox-options-item">
+                    <span class="ringbox-options-num">03</span>
+                    <span class="ringbox-options-text">
+                        <span class="ringbox-options-name">Personalisation</span>
+                        <span class="ringbox-options-detail">Initials, a date, or a short phrase engraved on the base. Available on request — raise it when you get in touch and Max will confirm what's possible.</span>
+                    </span>
+                </li>
+                <li class="ringbox-options-item">
+                    <span class="ringbox-options-num">04</span>
+                    <span class="ringbox-options-text">
+                        <span class="ringbox-options-name">Presentation</span>
+                        <span class="ringbox-options-detail">Arrives wrapped and ready. No additional packaging needed — the box is the packaging. It can be handed over exactly as delivered.</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="ringbox-process-section">
+        <div class="container">
+            <span class="section-label">How it works</span>
+            <h2 class="section-title" style="margin-bottom: 0;">Commission to delivery</h2>
+
+            <div class="ringbox-process-steps">
+                <div class="ringbox-process-step">
+                    <span class="ringbox-process-step-num">Step 01</span>
+                    <h3 class="ringbox-process-step-title">Commission</h3>
+                    <p class="ringbox-process-step-desc">Get in touch with your brief — timber, lining colour, any engraving, and your timeline. Max will confirm availability and discuss the details.</p>
+                </div>
+                <div class="ringbox-process-step">
+                    <span class="ringbox-process-step-num">Step 02</span>
+                    <h3 class="ringbox-process-step-title">Turn &amp; Finish</h3>
+                    <p class="ringbox-process-step-desc">The blank is selected, turned on the lathe, fitted with the interior lining, and finished by hand. You'll receive a photo before it ships.</p>
+                </div>
+                <div class="ringbox-process-step">
+                    <span class="ringbox-process-step-num">Step 03</span>
+                    <h3 class="ringbox-process-step-title">Deliver</h3>
+                    <p class="ringbox-process-step-desc">Shipped securely, wrapped and ready. Or collected from the workshop if you're local to Nottingham.</p>
+                </div>
+            </div>
+
+            <p class="ringbox-process-note">Most boxes are completed within 2–3 weeks of commission.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Strip -->
+    <section class="ringbox-gallery-section">
+        <div class="container">
+            <div class="ringbox-gallery-strip">
+                <div class="ringbox-gallery-img">
+                    <img src="includes/Images/ring-box-01.webp" alt="Handturned walnut ring box" loading="lazy" decoding="async" width="800" height="1067">
+                </div>
+                <div class="ringbox-gallery-img">
+                    <img src="includes/Images/ring-box-02.webp" alt="Handturned ring box — open" loading="lazy" decoding="async" width="800" height="1067">
+                </div>
+                <div class="ringbox-gallery-img">
+                    <img src="includes/Images/ring-box-03.webp" alt="Handturned ring box detail" loading="lazy" decoding="async" width="800" height="1067">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual CTA -->
+    <section class="ringbox-cta-section">
+        <div class="container-narrow">
+            <div class="cta-content">
+                <h2>Ready to commission yours?</h2>
+                <p>Get in touch with your brief and Max will respond within two working days.</p>
+                <div class="ringbox-cta-actions">
+                    <a href="index.html#contact" class="btn-primary">
+                        <span class="btn-text">Commission a Ring Box</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="shop.html" class="btn-ghost">Browse the Shop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="joinery.html">Joinery</a></li>
+                        <li><a href="woodturning.html">Woodturning</a></li>
+                        <li><a href="tabletop.html">Gaming Tables</a></li>
+                        <li><a href="replicas.html">Reproductions</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <!-- TODO: Add real Google Reviews URL -->
+                        <!-- TODO: Add real MyBuilder URL -->
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="luxury.js"></script>
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

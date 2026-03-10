@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitted Wardrobes | Bespoke Joinery | Stanway Designs Nottingham</title>
+    <meta name="description" content="Bespoke fitted wardrobes by Stanway Designs, Nottingham. Designed for the space, built in solid timber and quality materials. Alcoves, sloped ceilings, full-room designs.">
+    <meta name="keywords" content="fitted wardrobes Nottingham, bespoke wardrobes, alcove wardrobes, built-in wardrobes, custom joinery Nottingham">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fitted Wardrobes | Bespoke Joinery | Stanway Designs Nottingham">
+    <meta property="og:description" content="Bespoke fitted wardrobes by Stanway Designs, Nottingham. Designed for the space, built in solid timber and quality materials. Alcoves, sloped ceilings, full-room designs.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/joinery-fitted-wardrobes.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Cupboard/Inbuilt_Cupboard_1.webp">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fitted Wardrobes | Bespoke Joinery | Stanway Designs Nottingham">
+    <meta name="twitter:description" content="Bespoke fitted wardrobes by Stanway Designs, Nottingham. Designed for the space, built in solid timber and quality materials. Alcoves, sloped ceilings, full-room designs.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Cupboard/Inbuilt_Cupboard_1.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions for smooth page navigation -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="styles-luxury.css">
+
+    <!-- Active nav link style — parent section highlighted -->
+    <style>
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* Breadcrumb */
+        .wardrobe-breadcrumb {
+            background: var(--warm-white);
+        }
+
+        .wardrobe-breadcrumb-inner {
+            display: flex;
+            align-items: center;
+            padding: 1rem clamp(1.5rem, 5vw, 5rem);
+            padding-top: calc(var(--nav-height, 80px) + 1rem);
+        }
+
+        .wardrobe-breadcrumb-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .wardrobe-breadcrumb-link:hover {
+            color: var(--coral-dark);
+        }
+
+        .wardrobe-breadcrumb-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        .wardrobe-breadcrumb-link svg {
+            transition: transform 0.2s ease;
+        }
+
+        /* Hero — bottom-left */
+        .wardrobe-hero {
+            position: relative;
+            height: 90svh;
+            min-height: 500px;
+            overflow: hidden;
+            background-color: #1C1C1C;
+        }
+
+        .wardrobe-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .wardrobe-hero .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .wardrobe-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 16, 14, 0.85) 0%,
+                rgba(20, 16, 14, 0.4) 50%,
+                rgba(20, 16, 14, 0.12) 100%
+            );
+        }
+
+        .wardrobe-hero-content {
+            position: absolute;
+            bottom: clamp(3rem, 8vh, 6rem);
+            left: 0;
+            right: 0;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .wardrobe-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 1rem;
+        }
+
+        .wardrobe-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 10vw, 9rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.95;
+            letter-spacing: -1px;
+            margin: 0 0 1.25rem;
+        }
+
+        .wardrobe-hero-sub {
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Intro — asymmetric */
+        .wardrobe-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .wardrobe-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .wardrobe-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .wardrobe-intro-body p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .wardrobe-intro-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 900px) {
+            .wardrobe-intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+                align-items: center;
+            }
+        }
+
+        /* What's included — numbered list */
+        .wardrobe-included-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .wardrobe-included-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .wardrobe-included-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .wardrobe-included-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .wardrobe-included-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+        }
+
+        .wardrobe-included-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .wardrobe-included-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .wardrobe-included-detail {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--mid-gray);
+        }
+
+        /* Alcoves note — dark background */
+        .wardrobe-alcoves-section {
+            padding: var(--space-3xl) 0;
+            background: var(--text-dark);
+        }
+
+        .wardrobe-alcoves-inner {
+            max-width: 640px;
+        }
+
+        .wardrobe-alcoves-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .wardrobe-alcoves-inner p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.25rem;
+        }
+
+        .wardrobe-alcoves-inner p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA */
+        .wardrobe-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-brown);
+            text-align: center;
+        }
+
+        .wardrobe-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .wardrobe-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .wardrobe-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .wardrobe-cta-section .btn-primary::before {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="nav.js" data-root=""></script>
+    <script>document.querySelector('a[href="joinery.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <main>
+
+    <!-- Breadcrumb -->
+    <div class="wardrobe-breadcrumb">
+        <div class="wardrobe-breadcrumb-inner">
+            <a href="joinery.html" class="wardrobe-breadcrumb-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Joinery
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="wardrobe-hero">
+        <div class="hero-bg">
+            <img class="hero-image" src="includes/Images/wardrobes-hero.webp" alt="" width="1920" height="1080" fetchpriority="high">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="wardrobe-hero-content">
+            <span class="wardrobe-hero-label">Joinery</span>
+            <h1 class="wardrobe-hero-title">Fitted<br>Wardrobes</h1>
+            <span class="wardrobe-hero-sub">Designed for the space. Built for keeps.</span>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="wardrobe-intro-section">
+        <div class="container">
+            <div class="wardrobe-intro-grid">
+                <div>
+                    <h2 class="wardrobe-intro-heading">Every wall is a brief.</h2>
+                </div>
+                <div class="wardrobe-intro-body">
+                    <p>Fitted wardrobes designed and built to the exact dimensions of the room — not flat-pack units adapted to fit, not standard sizes with filler panels bolted on. The conversation starts with the space: the alcoves, the sloped ceilings, the walls that aren't quite square. What comes out is coherent with the room rather than placed in it.</p>
+                    <p>Each wardrobe is designed from scratch, drawn to your measurements, and built in the workshop before being installed on-site. The internal configuration — rails, drawers, shelving, pull-out storage — is designed around what you actually own and how you use it, not a standard kit.</p>
+                    <p>All work is carried out by Max, from the first site visit through to final fit. If something isn't right at installation, it gets fixed — no contractors, no middlemen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="wardrobe-included-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">The process</span>
+                <h2 class="section-title">What&rsquo;s included</h2>
+                <p class="section-desc">Every fitted wardrobe commission covers the full scope — from measuring up to final finish.</p>
+            </div>
+
+            <ul class="wardrobe-included-list">
+                <li class="wardrobe-included-item">
+                    <span class="wardrobe-included-num">01</span>
+                    <span class="wardrobe-included-text">
+                        <span class="wardrobe-included-name">Site Survey &amp; Design</span>
+                        <span class="wardrobe-included-detail">We measure the space and design around its character, not against it. Awkward angles, alcoves, and sloped ceilings are worked with, not around.</span>
+                    </span>
+                </li>
+                <li class="wardrobe-included-item">
+                    <span class="wardrobe-included-num">02</span>
+                    <span class="wardrobe-included-text">
+                        <span class="wardrobe-included-name">Timber &amp; Finish Selection</span>
+                        <span class="wardrobe-included-detail">Painted MDF, solid timber, veneered ply — whichever suits the space, the room's character, and your budget. Samples provided before any decision is made.</span>
+                    </span>
+                </li>
+                <li class="wardrobe-included-item">
+                    <span class="wardrobe-included-num">03</span>
+                    <span class="wardrobe-included-text">
+                        <span class="wardrobe-included-name">Workshop Build</span>
+                        <span class="wardrobe-included-detail">Panels and components built in Nottingham to precise measurements. You'll receive a progress update before installation is scheduled.</span>
+                    </span>
+                </li>
+                <li class="wardrobe-included-item">
+                    <span class="wardrobe-included-num">04</span>
+                    <span class="wardrobe-included-text">
+                        <span class="wardrobe-included-name">Interior Configuration</span>
+                        <span class="wardrobe-included-detail">Rails, drawers, shelving, pull-outs — designed around what you own, not a standard kit. Long-hang, double-hang, shoe storage, accessory drawers — whatever the brief requires.</span>
+                    </span>
+                </li>
+                <li class="wardrobe-included-item">
+                    <span class="wardrobe-included-num">05</span>
+                    <span class="wardrobe-included-text">
+                        <span class="wardrobe-included-name">Installation &amp; Finishing</span>
+                        <span class="wardrobe-included-detail">Full installation and final finishing on-site. Scribing to walls, fitting architraves and plinths, any on-site adjustments — until it looks like it was always there.</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Alcoves Note -->
+    <section class="wardrobe-alcoves-section">
+        <div class="container">
+            <div class="wardrobe-alcoves-inner">
+                <span class="section-label light">A note on alcoves</span>
+                <h2 class="wardrobe-alcoves-heading">Alcoves are not a problem.<br>They&rsquo;re a brief.</h2>
+                <p>The space beside a chimney breast that previously collected clutter — that's where fitted joinery earns its place. A wardrobe or shelving unit built into an alcove doesn't just solve a storage problem; it makes the alcove a considered part of the room.</p>
+                <p>Alcove joinery is one of the more satisfying things to get right. The depth, the return walls, the way it meets the ceiling — when the tolerances are tight and the finish is clean, the result reads as architecture rather than furniture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="wardrobe-cta-section">
+        <div class="container-narrow">
+            <div class="cta-content">
+                <h2>Start with a conversation</h2>
+                <p>We&rsquo;ll visit, measure, and come back with a design. No obligation.</p>
+                <a href="index.html#contact" class="btn-primary">
+                    <span class="btn-text">Get in touch</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="joinery.html">Joinery</a></li>
+                        <li><a href="woodturning.html">Woodturning</a></li>
+                        <li><a href="tabletop.html">Gaming Tables</a></li>
+                        <li><a href="replicas.html">Reproductions</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <!-- TODO: Add real Google Reviews URL -->
+                        <!-- TODO: Add real MyBuilder URL -->
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="luxury.js"></script>
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joinery Commissions | Stanway Designs | Nottingham</title>
+    <meta name="description" content="Bespoke joinery commissions by Stanway Designs, Nottingham. Fitted wardrobes, staircases, architectural joinery, and built-in cabinetry handcrafted in premium timber. Enquire today.">
+    <meta name="keywords" content="bespoke joinery Nottingham, fitted wardrobes, custom staircases, architectural joinery, built-in cabinetry, timber joinery">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Joinery Commissions | Stanway Designs | Nottingham">
+    <meta property="og:description" content="Bespoke joinery commissions by Stanway Designs, Nottingham. Fitted wardrobes, staircases, architectural joinery, and built-in cabinetry handcrafted in premium timber. Enquire today.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/joinery.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Kitchen/Kitchen_3.webp">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Joinery Commissions | Stanway Designs | Nottingham">
+    <meta name="twitter:description" content="Bespoke joinery commissions by Stanway Designs, Nottingham. Fitted wardrobes, staircases, architectural joinery, and built-in cabinetry handcrafted in premium timber. Enquire today.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Kitchen/Kitchen_3.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions for smooth page navigation -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="styles-luxury.css">
+
+    <!-- Active nav link style -->
+    <style>
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* Joinery hero — bottom-left headline */
+        .joinery-hero {
+            position: relative;
+            height: 100svh;
+            min-height: 560px;
+            overflow: hidden;
+            background-color: #1C1C1C;
+        }
+
+        .joinery-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .joinery-hero .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .joinery-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 16, 14, 0.85) 0%,
+                rgba(20, 16, 14, 0.4) 50%,
+                rgba(20, 16, 14, 0.15) 100%
+            );
+        }
+
+        .joinery-hero-content {
+            position: absolute;
+            bottom: clamp(3rem, 8vh, 6rem);
+            left: 0;
+            right: 0;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .joinery-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .joinery-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(5rem, 16vw, 13rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.9;
+            letter-spacing: -2px;
+            margin: 0 0 1.25rem;
+        }
+
+        .joinery-hero-sub {
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* Joinery intro — asymmetric */
+        .joinery-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .joinery-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .joinery-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .joinery-intro-body p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .joinery-intro-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 900px) {
+            .joinery-intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+                align-items: center;
+            }
+        }
+
+        /* Joinery services list — numbered, minimal */
+        .joinery-services-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .joinery-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .joinery-list-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+            cursor: default;
+            transition: padding-left 0.25s ease;
+        }
+
+        .joinery-list-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .joinery-list-item:hover {
+            padding-left: 1rem;
+        }
+
+        .joinery-list-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+            transition: color 0.25s ease;
+        }
+
+        .joinery-list-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.25s ease;
+        }
+
+        .joinery-list-item:hover .joinery-list-name {
+            color: var(--coral-dark);
+        }
+
+        .joinery-list-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--mid-gray);
+            margin-left: auto;
+            max-width: 320px;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .joinery-list-item:hover .joinery-list-desc {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .joinery-list-desc {
+                display: none;
+            }
+
+            .joinery-list-item:hover {
+                padding-left: 0.5rem;
+            }
+        }
+
+        /* Joinery CTA — dark background */
+        .joinery-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-brown);
+            text-align: center;
+        }
+
+        .joinery-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .joinery-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .joinery-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .joinery-cta-section .btn-primary::before {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="nav.js" data-root=""></script>
+    <script>document.querySelector('a[href="joinery.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <main>
+
+    <!-- Hero -->
+    <section class="joinery-hero">
+        <div class="hero-bg">
+            <img class="hero-image" src="includes/Images/joinery-hero.webp" alt="" width="1920" height="1080" fetchpriority="high">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="joinery-hero-content">
+            <span class="joinery-hero-label">Stanway Designs</span>
+            <h1 class="joinery-hero-title">Joinery</h1>
+            <span class="joinery-hero-sub">Fitted &amp; Structural Timber Work</span>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="joinery-intro-section">
+        <div class="container">
+            <div class="joinery-intro-grid">
+                <div class="joinery-intro-left">
+                    <h2 class="joinery-intro-heading">Built in.<br>Built to last.</h2>
+                </div>
+                <div class="joinery-intro-body">
+                    <p>Joinery is the craft of making timber work with a building — fitted to walls, floors, and ceilings with the kind of precision that makes a space feel resolved. I commission and install every piece myself, from first measurement to final fit.</p>
+                    <p>Whether it's a staircase that becomes the centrepiece of a hallway or a run of fitted wardrobes crafted to fill an awkward alcove, the approach is always the same: solid timber, traditional methods, no shortcuts.</p>
+                    <p>All joinery is commissioned individually. I work with homeowners, architects, and interior designers across Nottingham and the surrounding counties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services List -->
+    <section class="joinery-services-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">What I make</span>
+                <h2 class="section-title">Joinery commissions</h2>
+                <p class="section-desc">Each project is quoted individually. Get in touch with your brief and I'll respond within two working days.</p>
+            </div>
+
+            <ul class="joinery-list">
+                <li class="joinery-list-item" style="cursor: pointer;" onclick="location.href='joinery-fitted-wardrobes.html'">
+                    <span class="joinery-list-num">01</span>
+                    <a href="joinery-fitted-wardrobes.html" class="joinery-list-name" style="text-decoration: none; color: inherit;">Fitted Wardrobes &amp; Storage</a>
+                    <span class="joinery-list-desc">Floor-to-ceiling or alcove-fitted, with internal configuration designed around how you actually use the space. <span style="color: var(--coral-dark);">View details →</span></span>
+                </li>
+                <li class="joinery-list-item">
+                    <span class="joinery-list-num">02</span>
+                    <span class="joinery-list-name">Staircases &amp; Balustrades</span>
+                    <span class="joinery-list-desc">Straight, curved, or floating — handcrafted in solid timber with balustrades and newel posts to match.</span>
+                </li>
+                <li class="joinery-list-item">
+                    <span class="joinery-list-num">03</span>
+                    <span class="joinery-list-name">Doors &amp; Frames</span>
+                    <span class="joinery-list-desc">Solid timber doors, architraves, and frames. Internal and external. Period-accurate or contemporary — whatever suits the property.</span>
+                </li>
+                <li class="joinery-list-item">
+                    <span class="joinery-list-num">04</span>
+                    <span class="joinery-list-name">Architectural Joinery</span>
+                    <span class="joinery-list-desc">Skirting, cornicing, panelling, window boards, and any other structural timber element that defines how a room reads.</span>
+                </li>
+                <li class="joinery-list-item">
+                    <span class="joinery-list-num">05</span>
+                    <span class="joinery-list-name">Built-In Shelving &amp; Cabinetry</span>
+                    <span class="joinery-list-desc">Alcove shelving, home office cabinets, bespoke bookcases. Made to fit, finished to last.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process-overview-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">How it works</span>
+                <h2 class="section-title">From brief to installation</h2>
+                <p class="section-desc">Every joinery commission follows a clear process — so you always know what's happening and when.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step-card">
+                    <h3>Consultation</h3>
+                    <p>We meet on-site or over the phone to talk through your brief. I'll take measurements, understand the space, and ask the right questions before anything else.</p>
+                </div>
+
+                <div class="process-step-card">
+                    <h3>Design &amp; Drawing</h3>
+                    <p>I'll produce detailed drawings and a clear specification — timber species, dimensions, jointing methods, and finish. You'll have a fixed quote before any work begins.</p>
+                </div>
+
+                <div class="process-step-card">
+                    <h3>Workshop Build</h3>
+                    <p>Your joinery is made by hand in my workshop. Progress photos throughout, and final sign-off from you before anything leaves the bench.</p>
+                </div>
+
+                <div class="process-step-card">
+                    <h3>Installation</h3>
+                    <p>I fit everything myself — precisely, cleanly, and with care for your home. The job isn't done until it looks like it was always there.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="joinery-cta-section">
+        <div class="container-narrow">
+            <div class="cta-content">
+                <h2>Begin your commission</h2>
+                <p>Every project starts with a conversation.</p>
+                <a href="index.html#contact" class="btn-primary">
+                    <span class="btn-text">Get in touch</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="joinery.html">Joinery</a></li>
+                        <li><a href="tabletop.html">Gaming Tables</a></li>
+                        <li><a href="replicas.html">Reproductions</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <!-- TODO: Add real Google Reviews URL -->
+                        <!-- TODO: Add real MyBuilder URL -->
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="luxury.js"></script>
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

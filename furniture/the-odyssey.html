@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odyssey — Bespoke Storage &amp; Display | Stanway Designs</title>
+    <meta name="description" content="The Odyssey is a bespoke storage and display piece, handcrafted in Nottingham. Made to order in African Padauk, White Oak, Beech, English Yew, or Cherry. From £2,500.">
+    <meta name="keywords" content="The Odyssey, bespoke storage piece, bespoke display furniture, handcrafted cabinet Nottingham, Stanway Designs">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Odyssey — Bespoke Storage &amp; Display | Stanway Designs">
+    <meta property="og:description" content="The Odyssey is a bespoke storage and display piece, handcrafted in Nottingham. Made to order in African Padauk, White Oak, Beech, English Yew, or Cherry.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/furniture/the-odyssey.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Odyssey — Bespoke Storage &amp; Display | Stanway Designs">
+    <meta name="twitter:description" content="The Odyssey is a bespoke storage and display piece, handcrafted in Nottingham. Made to order in African Padauk, White Oak, Beech, English Yew, or Cherry.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="../includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="../styles-luxury.css">
+
+    <style>
+        /* ── Shared token ── */
+        :root { --brass: #B8A470; }
+
+        /* ── Active nav ── */
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* ══════════════════════════════════
+           BREADCRUMB
+        ══════════════════════════════════ */
+        .sp-breadcrumb {
+            padding-top: calc(var(--nav-height, 80px) + 1rem);
+            padding-bottom: 0.75rem;
+            background: var(--warm-white);
+        }
+
+        .sp-breadcrumb-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+        }
+
+        .sp-breadcrumb-parent {
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .sp-breadcrumb-parent:hover { color: var(--charcoal); }
+
+        .sp-breadcrumb-sep {
+            color: var(--light-gray);
+            font-size: 10px;
+        }
+
+        .sp-breadcrumb-current { color: var(--charcoal); }
+
+        /* ══════════════════════════════════
+           HERO
+        ══════════════════════════════════ */
+        .sp-hero {
+            position: relative;
+            min-height: 55vh;
+            max-height: 65vh;
+            overflow: hidden;
+            background-color: #1C1C1C;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .sp-hero-image {
+            position: absolute;
+            inset: 0;
+        }
+
+        .sp-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .sp-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(14, 10, 8, 0.90) 0%,
+                rgba(14, 10, 8, 0.45) 50%,
+                rgba(14, 10, 8, 0.10) 100%
+            );
+        }
+
+        .sp-hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+        }
+
+        .sp-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+        }
+
+        .sp-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 9vw, 7rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.92;
+            letter-spacing: -1px;
+            margin: 0 0 0.75rem;
+        }
+
+        .sp-hero-price {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+        }
+
+        /* ══════════════════════════════════
+           INTRO — asymmetric grid
+        ══════════════════════════════════ */
+        .sp-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .sp-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+        }
+
+        @media (min-width: 900px) {
+            .sp-intro-grid {
+                grid-template-columns: 1fr 1.15fr;
+                gap: var(--space-3xl);
+                align-items: start;
+            }
+        }
+
+        .sp-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.05;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .sp-intro-body p {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--mid-gray);
+            margin: 0 0 1.25rem;
+        }
+
+        .sp-intro-body p:last-child { margin-bottom: 0; }
+
+        /* ══════════════════════════════════
+           GALLERY
+        ══════════════════════════════════ */
+        .sp-gallery-section {
+            padding: var(--space-3xl) 0;
+            background: var(--charcoal);
+        }
+
+        .sp-gallery-section .section-label { color: var(--brass); }
+        .sp-gallery-section .section-title { color: var(--white); }
+
+        .sp-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            margin-top: var(--space-2xl);
+        }
+
+        @media (min-width: 900px) {
+            .sp-gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .sp-gallery-item {
+            overflow: hidden;
+            aspect-ratio: 3 / 4;
+        }
+
+        .sp-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .sp-gallery-item:hover img { transform: scale(1.04); }
+
+        /* ══════════════════════════════════
+           DETAIL — numbered list
+        ══════════════════════════════════ */
+        .sp-detail-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .sp-detail-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .sp-detail-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1.75rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.1);
+            transition: padding-left 0.25s ease;
+            cursor: default;
+        }
+
+        .sp-detail-item:first-child { border-top: 1px solid rgba(44, 36, 32, 0.1); }
+        .sp-detail-item:hover { padding-left: 0.75rem; }
+
+        .sp-detail-num {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--brass);
+            flex-shrink: 0;
+            width: 2rem;
+        }
+
+        .sp-detail-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .sp-detail-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.2s ease;
+        }
+
+        .sp-detail-item:hover .sp-detail-name { color: var(--coral-dark); }
+
+        .sp-detail-sub {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--mid-gray);
+        }
+
+        /* ══════════════════════════════════
+           TIMBERS
+        ══════════════════════════════════ */
+        .sp-timbers-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .sp-timber-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin-top: var(--space-2xl);
+            border: 1px solid rgba(44, 36, 32, 0.08);
+        }
+
+        @media (min-width: 700px) {
+            .sp-timber-grid { grid-template-columns: repeat(5, 1fr); }
+        }
+
+        .sp-timber-item {
+            padding: 1.5rem 1.25rem;
+            background: var(--warm-white);
+            border: 1px solid rgba(44, 36, 32, 0.08);
+            text-align: center;
+        }
+
+        .sp-timber-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            display: block;
+        }
+
+        .sp-timber-note {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 300;
+            color: var(--mid-gray);
+            display: block;
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+
+        /* ══════════════════════════════════
+           RELATED SERVICES
+        ══════════════════════════════════ */
+        .sp-related-section {
+            padding: var(--space-3xl) 0;
+            background: var(--cream);
+        }
+
+        .sp-related-list {
+            list-style: none;
+            margin: var(--space-xl) 0 0;
+            padding: 0;
+        }
+
+        .sp-related-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1.25rem;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.08);
+            transition: padding-left 0.2s ease;
+        }
+
+        .sp-related-item:first-child { border-top: 1px solid rgba(44, 36, 32, 0.08); }
+        .sp-related-item:hover { padding-left: 0.5rem; }
+
+        .sp-related-num {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--brass);
+            flex-shrink: 0;
+            width: 1.75rem;
+        }
+
+        .sp-related-link {
+            font-family: var(--font-heading);
+            font-size: clamp(1.2rem, 2vw, 1.65rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .sp-related-link:hover { color: var(--coral-dark); }
+
+        /* ══════════════════════════════════
+           DUAL CTA
+        ══════════════════════════════════ */
+        .sp-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--text-dark);
+            text-align: center;
+        }
+
+        .sp-cta-inner h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 600;
+            color: var(--white);
+            margin: 0 0 0.75rem;
+            line-height: 1.1;
+        }
+
+        .sp-cta-inner p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: rgba(255,255,255,0.55);
+            margin: 0 0 2.5rem;
+            font-style: italic;
+        }
+
+        .sp-cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .sp-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .sp-cta-section .btn-primary::before {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .sp-back-link {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .sp-back-link:hover { color: var(--white); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../nav.js" data-root="../"></script>
+    <script>document.querySelector('a[href="furniture.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <!-- Breadcrumb -->
+    <div class="sp-breadcrumb">
+        <div class="container">
+            <div class="sp-breadcrumb-inner">
+                <a href="../furniture.html" class="sp-breadcrumb-parent">Furniture</a>
+                <span class="sp-breadcrumb-sep">→</span>
+                <span class="sp-breadcrumb-current">The Odyssey</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+    <!-- Hero -->
+    <section class="sp-hero">
+        <div class="sp-hero-image">
+            <img src="../includes/images/Bespoke/The_Odyssey/The_Odyssey.webp" alt="The Odyssey — bespoke storage and display piece by Stanway Designs" fetchpriority="high" decoding="async" width="2048" height="1529">
+        </div>
+        <div class="sp-hero-overlay"></div>
+        <div class="sp-hero-content">
+            <div class="container">
+                <span class="sp-hero-label">Statement storage &amp; display</span>
+                <h1 class="sp-hero-title">The Odyssey</h1>
+                <p class="sp-hero-price">From £2,500 &mdash; made to order</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="sp-intro-section">
+        <div class="container">
+            <div class="sp-intro-grid">
+                <h2 class="sp-intro-heading">A statement piece.<br>Made once,<br>made right.</h2>
+                <div class="sp-intro-body">
+                    <p>I designed the Odyssey as a statement storage and display piece. Every unit is made to order in my Nottingham workshop, so I can tailor the timber, dimensions, and layout to suit your space exactly.</p>
+                    <p>Built using traditional joinery techniques, The Odyssey combines structural integrity with refined aesthetics. The result is a piece that feels substantial without being heavy — a balance of form and function that rewards closer inspection.</p>
+                    <p>Open shelving and enclosed storage work together to create something that displays what you want seen and conceals what you do not. This is not flat-pack dressed up as furniture. It is the real thing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="sp-gallery-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">The Odyssey in the workshop</span>
+                <h2 class="section-title" style="color:var(--white);">Every detail by hand</h2>
+            </div>
+        </div>
+        <div class="sp-gallery-grid">
+            <div class="sp-gallery-item">
+                <img src="../includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp" alt="The Odyssey — joinery detail" loading="lazy" decoding="async" width="2048" height="1943">
+            </div>
+            <div class="sp-gallery-item">
+                <img src="../includes/images/Bespoke/The_Odyssey/The_Odyssey_2.webp" alt="The Odyssey — craftsmanship close-up" loading="lazy" decoding="async" width="2048" height="1392">
+            </div>
+            <div class="sp-gallery-item">
+                <img src="../includes/images/Bespoke/The_Odyssey/The_Odyssey_3.webp" alt="The Odyssey — installed in a living space" loading="lazy" decoding="async" width="1392" height="2048">
+            </div>
+            <div class="sp-gallery-item">
+                <img src="../includes/images/Bespoke/The_Odyssey/The_Odyssey_4.webp" alt="The Odyssey — storage configuration detail" loading="lazy" decoding="async" width="1392" height="2048">
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Detail -->
+    <section class="sp-detail-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">What makes it</span>
+                <h2 class="section-title">The design</h2>
+                <p class="section-desc">Every element considered. Nothing arbitrary.</p>
+            </div>
+
+            <ul class="sp-detail-list">
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">01</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Open &amp; Enclosed Storage</span>
+                        <span class="sp-detail-sub">Shelves and enclosed compartments are designed together, not as an afterthought. Display what you choose; conceal what you do not.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">02</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Hand-Fitted Compartments</span>
+                        <span class="sp-detail-sub">Each compartment is individually fitted to the unit. No mass-produced hardware. Every drawer and door closes the way good joinery should.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">03</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Proportions to the Room</span>
+                        <span class="sp-detail-sub">Height, width, and depth are yours to specify. The Odyssey is sized to the space it will occupy — not the other way round.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">04</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Traditional Joinery</span>
+                        <span class="sp-detail-sub">Mortice and tenon, hand-cut dovetails, solid timber throughout. No veneers, no MDF cores. The structure is the same material you see on the surface.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">05</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Hand-Applied Finish</span>
+                        <span class="sp-detail-sub">The finish is applied by hand until it meets my standard — not the fastest method, but the right one. Hard wax oil, Danish oil, or lacquer depending on the brief.</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Timbers -->
+    <section class="sp-timbers-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Materials</span>
+                <h2 class="section-title">Choose your timber</h2>
+                <p class="section-desc">The choice of timber changes the character of the piece entirely. Custom timber requests are welcome.</p>
+            </div>
+
+            <div class="sp-timber-grid">
+                <div class="sp-timber-item">
+                    <span class="sp-timber-name">African Padauk</span>
+                    <span class="sp-timber-note">Warm, dramatic</span>
+                </div>
+                <div class="sp-timber-item">
+                    <span class="sp-timber-name">White Oak</span>
+                    <span class="sp-timber-note">Clean, contemporary</span>
+                </div>
+                <div class="sp-timber-item">
+                    <span class="sp-timber-name">Beech</span>
+                    <span class="sp-timber-note">Quiet elegance</span>
+                </div>
+                <div class="sp-timber-item">
+                    <span class="sp-timber-name">English Yew</span>
+                    <span class="sp-timber-note">Rich, characterful</span>
+                </div>
+                <div class="sp-timber-item">
+                    <span class="sp-timber-name">Cherry</span>
+                    <span class="sp-timber-note">Warm, refined</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related -->
+    <section class="sp-related-section">
+        <div class="container">
+            <span class="section-label">Also in Furniture</span>
+            <ul class="sp-related-list">
+                <li class="sp-related-item">
+                    <span class="sp-related-num">01</span>
+                    <a href="../furniture/dining-tables.html" class="sp-related-link">Dining Tables</a>
+                </li>
+                <li class="sp-related-item">
+                    <span class="sp-related-num">02</span>
+                    <a href="../furniture/gaming-tables.html" class="sp-related-link">Table Top Gaming Tables</a>
+                </li>
+                <li class="sp-related-item">
+                    <span class="sp-related-num">03</span>
+                    <a href="../furniture/living-room.html" class="sp-related-link">Living Room Pieces</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Dual CTA -->
+    <section class="sp-cta-section">
+        <div class="container-narrow">
+            <div class="sp-cta-inner">
+                <h2>Commission The Odyssey</h2>
+                <p>Timber, dimensions, configuration — all yours to choose. Get in touch and I'll walk you through the options.</p>
+                <div class="sp-cta-actions">
+                    <a href="../index.html#contact" class="btn-primary">
+                        <span class="btn-text">Get in touch</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="../furniture.html" class="sp-back-link">&larr; Back to Furniture</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../furniture.html">Furniture</a></li>
+                        <li><a href="../joinery.html">Joinery</a></li>
+                        <li><a href="../woodturning.html">Woodturning</a></li>
+                        <li><a href="../restoration.html">Restoration &amp; Repair</a></li>
+                        <li><a href="../gallery.html">Gallery</a></li>
+                        <li><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <li>Nottingham, UK</li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../luxury.js"></script>
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

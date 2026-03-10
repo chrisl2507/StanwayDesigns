@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Top Gaming Tables | Warhammer &amp; D&amp;D | Stanway Designs</title>
+    <meta name="description" content="Bespoke tabletop gaming tables handmade in Nottingham. Warhammer 40k and D&D tables with recessed play areas, dice trays, and dining toppers. From £8,000.">
+    <meta name="keywords" content="custom gaming table Nottingham, bespoke Warhammer table, D&D gaming table, tabletop gaming furniture, Stanway Designs">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Table Top Gaming Tables | Stanway Designs">
+    <meta property="og:description" content="Bespoke tabletop gaming tables handmade in Nottingham. Warhammer 40k and D&D tables with recessed play areas, dice trays, and dining toppers.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/furniture/gaming-tables.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Gaming Table/Table 1.webp">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Table Top Gaming Tables | Stanway Designs">
+    <meta name="twitter:description" content="Bespoke tabletop gaming tables handmade in Nottingham. Warhammer 40k and D&D tables with recessed play areas, dice trays, and dining toppers.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Gaming Table/Table 1.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="../includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="../styles-luxury.css">
+
+    <style>
+        /* ── Shared token ── */
+        :root { --brass: #B8A470; }
+
+        /* ── Active nav ── */
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* ══════════════════════════════════
+           BREADCRUMB
+        ══════════════════════════════════ */
+        .sp-breadcrumb {
+            padding-top: calc(var(--nav-height, 80px) + 1rem);
+            padding-bottom: 0.75rem;
+            background: var(--warm-white);
+        }
+
+        .sp-breadcrumb-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+        }
+
+        .sp-breadcrumb-parent {
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .sp-breadcrumb-parent:hover { color: var(--charcoal); }
+
+        .sp-breadcrumb-sep {
+            color: var(--light-gray);
+            font-size: 10px;
+        }
+
+        .sp-breadcrumb-current { color: var(--charcoal); }
+
+        /* ══════════════════════════════════
+           HERO
+        ══════════════════════════════════ */
+        .sp-hero {
+            position: relative;
+            min-height: 55vh;
+            max-height: 65vh;
+            overflow: hidden;
+            background-color: #1C1C1C;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .sp-hero-image {
+            position: absolute;
+            inset: 0;
+        }
+
+        .sp-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .sp-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(14, 10, 8, 0.90) 0%,
+                rgba(14, 10, 8, 0.45) 50%,
+                rgba(14, 10, 8, 0.10) 100%
+            );
+        }
+
+        .sp-hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+        }
+
+        .sp-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+        }
+
+        .sp-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.92;
+            letter-spacing: -1px;
+            margin: 0 0 0.75rem;
+        }
+
+        .sp-hero-price {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+        }
+
+        /* ══════════════════════════════════
+           INTRO — asymmetric grid
+        ══════════════════════════════════ */
+        .sp-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .sp-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+        }
+
+        @media (min-width: 900px) {
+            .sp-intro-grid {
+                grid-template-columns: 1fr 1.15fr;
+                gap: var(--space-3xl);
+                align-items: start;
+            }
+        }
+
+        .sp-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.05;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .sp-intro-body p {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--mid-gray);
+            margin: 0 0 1.25rem;
+        }
+
+        .sp-intro-body p:last-child { margin-bottom: 0; }
+
+        /* ══════════════════════════════════
+           GALLERY — 3-column
+        ══════════════════════════════════ */
+        .sp-gallery-section {
+            padding: var(--space-3xl) 0;
+            background: var(--charcoal);
+        }
+
+        .sp-gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2px;
+            margin-top: var(--space-2xl);
+        }
+
+        @media (min-width: 700px) {
+            .sp-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .sp-gallery-item {
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+        }
+
+        .sp-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .sp-gallery-item:hover img { transform: scale(1.04); }
+
+        /* ══════════════════════════════════
+           DETAIL — numbered list
+        ══════════════════════════════════ */
+        .sp-detail-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .sp-detail-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .sp-detail-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1.75rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.1);
+            transition: padding-left 0.25s ease;
+            cursor: default;
+        }
+
+        .sp-detail-item:first-child { border-top: 1px solid rgba(44, 36, 32, 0.1); }
+        .sp-detail-item:hover { padding-left: 0.75rem; }
+
+        .sp-detail-num {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--brass);
+            flex-shrink: 0;
+            width: 2rem;
+        }
+
+        .sp-detail-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .sp-detail-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.2s ease;
+        }
+
+        .sp-detail-item:hover .sp-detail-name { color: var(--coral-dark); }
+
+        .sp-detail-sub {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--mid-gray);
+        }
+
+        /* ══════════════════════════════════
+           SPEC / PRICING CALLOUT
+        ══════════════════════════════════ */
+        .sp-spec-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .sp-spec-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            margin-top: var(--space-2xl);
+        }
+
+        @media (min-width: 800px) {
+            .sp-spec-grid { grid-template-columns: 1fr 1fr; gap: var(--space-3xl); }
+        }
+
+        .sp-spec-block h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            margin: 0 0 1rem;
+        }
+
+        .sp-spec-block p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--mid-gray);
+            margin: 0 0 0.75rem;
+        }
+
+        .sp-spec-block p:last-child { margin-bottom: 0; }
+
+        .sp-pricing-highlight {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        /* ══════════════════════════════════
+           RELATED SERVICES
+        ══════════════════════════════════ */
+        .sp-related-section {
+            padding: var(--space-3xl) 0;
+            background: var(--cream);
+        }
+
+        .sp-related-list {
+            list-style: none;
+            margin: var(--space-xl) 0 0;
+            padding: 0;
+        }
+
+        .sp-related-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1.25rem;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.08);
+            transition: padding-left 0.2s ease;
+        }
+
+        .sp-related-item:first-child { border-top: 1px solid rgba(44, 36, 32, 0.08); }
+        .sp-related-item:hover { padding-left: 0.5rem; }
+
+        .sp-related-num {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--brass);
+            flex-shrink: 0;
+            width: 1.75rem;
+        }
+
+        .sp-related-link {
+            font-family: var(--font-heading);
+            font-size: clamp(1.2rem, 2vw, 1.65rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .sp-related-link:hover { color: var(--coral-dark); }
+
+        /* ══════════════════════════════════
+           DUAL CTA
+        ══════════════════════════════════ */
+        .sp-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--text-dark);
+            text-align: center;
+        }
+
+        .sp-cta-inner h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 600;
+            color: var(--white);
+            margin: 0 0 0.75rem;
+            line-height: 1.1;
+        }
+
+        .sp-cta-inner p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: rgba(255,255,255,0.55);
+            margin: 0 0 2.5rem;
+            font-style: italic;
+        }
+
+        .sp-cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .sp-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .sp-cta-section .btn-primary::before {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .sp-back-link {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .sp-back-link:hover { color: var(--white); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../nav.js" data-root="../"></script>
+    <script>document.querySelector('a[href="furniture.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <!-- Breadcrumb -->
+    <div class="sp-breadcrumb">
+        <div class="container">
+            <div class="sp-breadcrumb-inner">
+                <a href="../furniture.html" class="sp-breadcrumb-parent">Furniture</a>
+                <span class="sp-breadcrumb-sep">→</span>
+                <span class="sp-breadcrumb-current">Table Top Gaming Tables</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+    <!-- Hero -->
+    <section class="sp-hero">
+        <div class="sp-hero-image">
+            <img src="../includes/images/Gaming Table/Table 1.webp" alt="Custom gaming table by Stanway Designs" fetchpriority="high" decoding="async" width="615" height="436">
+        </div>
+        <div class="sp-hero-overlay"></div>
+        <div class="sp-hero-content">
+            <div class="container">
+                <span class="sp-hero-label">Warhammer &bull; D&amp;D &bull; Any system</span>
+                <h1 class="sp-hero-title">Gaming Tables</h1>
+                <p class="sp-hero-price">From £8,000 &mdash; made to order</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="sp-intro-section">
+        <div class="container">
+            <div class="sp-intro-grid">
+                <h2 class="sp-intro-heading">A proper table.<br>For serious games.</h2>
+                <div class="sp-intro-body">
+                    <p>If you've ever tried to play Warhammer 40k or a full D&amp;D campaign on a dining table with a mat on it, you know the pain. Dice rolling off the edge, drinks too close to the minis, nowhere to put your rulebooks.</p>
+                    <p>I build tables that solve all of that — and they look incredible in your home when you're not playing.</p>
+                    <p>Every gaming table I make is a proper piece of furniture first. Solid timber, traditional joinery, finished to the same standard as my dining tables and desks. The difference is what's underneath the surface — literally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="sp-gallery-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">From the workshop</span>
+                <h2 class="section-title" style="color:var(--white);">Built as furniture first</h2>
+            </div>
+        </div>
+        <div class="sp-gallery-grid">
+            <div class="sp-gallery-item">
+                <img src="../includes/images/Gaming Table/Table 1.webp" alt="Custom gaming table — full view" loading="lazy" decoding="async" width="615" height="436">
+            </div>
+            <div class="sp-gallery-item">
+                <img src="../includes/images/Gaming Table/Table 2.webp" alt="Gaming table — detail view" loading="lazy" decoding="async" width="615" height="438">
+            </div>
+            <div class="sp-gallery-item">
+                <img src="../includes/images/Gaming Table/Table 3.webp" alt="Gaming table — timber finish" loading="lazy" decoding="async" width="609" height="437">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="sp-detail-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">What's built in</span>
+                <h2 class="section-title">Features gamers actually care about</h2>
+                <p class="section-desc">Everything considered. Nothing tacked on as an afterthought.</p>
+            </div>
+
+            <ul class="sp-detail-list">
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">01</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Recessed Play Surface</span>
+                        <span class="sp-detail-sub">A sunken play area with felt or neoprene base. Your minis stay put, dice stay contained, and the table edge acts as a natural barrier.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">02</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Hardwood Dining Topper</span>
+                        <span class="sp-detail-sub">Lift it off for game night; put it back on and it's a dining table again. No compromise on either use.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">03</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Individual Dice Trays</span>
+                        <span class="sp-detail-sub">Built in at each player position. Not retrofitted — designed in from the start.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">04</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Recessed Cup Holders</span>
+                        <span class="sp-detail-sub">Set back from the play area. Nobody wants a spilled pint on their Ork army.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">05</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Cable Management</span>
+                        <span class="sp-detail-sub">Channels routed through the table for LED lighting rigs and charging. Clean, concealed, functional.</span>
+                    </span>
+                </li>
+                <li class="sp-detail-item">
+                    <span class="sp-detail-num">06</span>
+                    <span class="sp-detail-text">
+                        <span class="sp-detail-name">Storage Drawers</span>
+                        <span class="sp-detail-sub">For rulebooks, dice, character sheets, and everything else that usually ends up in a box on the floor.</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Spec + Pricing -->
+    <section class="sp-spec-section">
+        <div class="container">
+            <div class="sp-spec-grid">
+                <div class="sp-spec-block">
+                    <h3>Built to your spec</h3>
+                    <p>Every table is fully customisable. You choose the size — whether that's a four-player skirmish table or an eight-seater epic campaign table.</p>
+                    <p>You choose the timber — Oak, Walnut, Cherry, or something else. And you choose the features. Tablet holders for digital character sheets? Done. Removable player stations? No problem. A specific play surface size for your Warhammer boards? Tell me the dimensions.</p>
+                </div>
+                <div class="sp-spec-block">
+                    <h3>Pricing</h3>
+                    <span class="sp-pricing-highlight">From £8,000</span>
+                    <p>Four-player table in standard timber. Up to around £15,000 for larger tables with the full range of features.</p>
+                    <p>The exact price depends on size, timber choice, and how many extras you want built in. I'll give you a clear, detailed quote before any work starts — no surprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related -->
+    <section class="sp-related-section">
+        <div class="container">
+            <span class="section-label">Also in Furniture</span>
+            <ul class="sp-related-list">
+                <li class="sp-related-item">
+                    <span class="sp-related-num">01</span>
+                    <a href="../furniture/dining-tables.html" class="sp-related-link">Dining Tables</a>
+                </li>
+                <li class="sp-related-item">
+                    <span class="sp-related-num">02</span>
+                    <a href="../furniture/the-odyssey.html" class="sp-related-link">The Odyssey</a>
+                </li>
+                <li class="sp-related-item">
+                    <span class="sp-related-num">03</span>
+                    <a href="../furniture/bedroom.html" class="sp-related-link">Bedroom Furniture</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Dual CTA -->
+    <section class="sp-cta-section">
+        <div class="container-narrow">
+            <div class="sp-cta-inner">
+                <h2>Tell me about your dream table</h2>
+                <p>What games do you play? How many players? What features matter most? Send me the details and I'll put together a plan.</p>
+                <div class="sp-cta-actions">
+                    <a href="../index.html#contact" class="btn-primary">
+                        <span class="btn-text">Get in touch</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="../furniture.html" class="sp-back-link">&larr; Back to Furniture</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../furniture.html">Furniture</a></li>
+                        <li><a href="../joinery.html">Joinery</a></li>
+                        <li><a href="../woodturning.html">Woodturning</a></li>
+                        <li><a href="../restoration.html">Restoration &amp; Repair</a></li>
+                        <li><a href="../gallery.html">Gallery</a></li>
+                        <li><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <li>Nottingham, UK</li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../luxury.js"></script>
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

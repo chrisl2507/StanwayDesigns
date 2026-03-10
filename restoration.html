@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Restoration &amp; Repair | Stanway Designs | Nottingham</title>
+    <meta name="description" content="Furniture restoration and repair by Stanway Designs, Nottingham. Structural repair, surface restoration, French polishing, and sympathetic reproduction work on antique and period furniture.">
+    <meta name="keywords" content="furniture restoration Nottingham, antique furniture repair, French polishing, period furniture restoration, furniture refinishing">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Furniture Restoration &amp; Repair | Stanway Designs | Nottingham">
+    <meta property="og:description" content="Furniture restoration and repair by Stanway Designs, Nottingham. Structural repair, surface restoration, French polishing, and sympathetic reproduction work on antique and period furniture.">
+    <meta property="og:url" content="https://www.stanwaydesigns.co.uk/restoration.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Desk/Desk_5.webp">
+    <meta property="og:site_name" content="Stanway Designs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Furniture Restoration &amp; Repair | Stanway Designs | Nottingham">
+    <meta name="twitter:description" content="Furniture restoration and repair by Stanway Designs, Nottingham. Structural repair, surface restoration, French polishing, and sympathetic reproduction work on antique and period furniture.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Desk/Desk_5.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions for smooth page navigation -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="styles-luxury.css">
+
+    <!-- Active nav link style -->
+    <style>
+        .nav-link.nav-active { color: var(--coral-dark); }
+        .nav-link.nav-active::after { width: 100%; }
+
+        /* Hero — bottom-left headline */
+        .restoration-hero {
+            position: relative;
+            height: 100svh;
+            min-height: 560px;
+            overflow: hidden;
+            background-color: #1C1C1C;
+        }
+
+        .restoration-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .restoration-hero .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .restoration-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 16, 14, 0.85) 0%,
+                rgba(20, 16, 14, 0.4) 50%,
+                rgba(20, 16, 14, 0.15) 100%
+            );
+        }
+
+        .restoration-hero-content {
+            position: absolute;
+            bottom: clamp(3rem, 8vh, 6rem);
+            left: 0;
+            right: 0;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .restoration-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .restoration-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 9vw, 8.5rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.95;
+            letter-spacing: -1px;
+            margin: 0 0 1.25rem;
+        }
+
+        .restoration-hero-sub {
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* Intro — asymmetric two-column */
+        .restoration-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .restoration-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .restoration-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .restoration-intro-body p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .restoration-intro-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 900px) {
+            .restoration-intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+                align-items: center;
+            }
+        }
+
+        /* Services list — numbered minimal */
+        .restoration-services-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .restoration-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .restoration-list-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+            cursor: default;
+            transition: padding-left 0.25s ease;
+        }
+
+        .restoration-list-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .restoration-list-item:hover {
+            padding-left: 1rem;
+        }
+
+        .restoration-list-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+        }
+
+        .restoration-list-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .restoration-list-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.25s ease;
+        }
+
+        .restoration-list-item:hover .restoration-list-name {
+            color: var(--coral-dark);
+        }
+
+        .restoration-list-sub {
+            font-family: var(--font-body);
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: var(--mid-gray);
+            text-transform: uppercase;
+        }
+
+        .restoration-list-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--mid-gray);
+            margin-left: auto;
+            max-width: 300px;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .restoration-list-item:hover .restoration-list-desc {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .restoration-list-desc {
+                display: none;
+            }
+
+            .restoration-list-item:hover {
+                padding-left: 0.5rem;
+            }
+        }
+
+        /* Honesty section */
+        .restoration-honesty-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .restoration-honesty-inner {
+            max-width: 680px;
+        }
+
+        .restoration-honesty-inner blockquote {
+            margin: 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--coral-dark);
+        }
+
+        .restoration-honesty-inner blockquote p {
+            font-family: var(--font-heading);
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--text-dark);
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* CTA — dark background */
+        .restoration-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-brown);
+            text-align: center;
+        }
+
+        .restoration-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .restoration-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .restoration-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .restoration-cta-section .btn-primary::before {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="nav.js" data-root=""></script>
+    <script>document.querySelector('a[href="restoration.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <main>
+
+    <!-- Hero -->
+    <section class="restoration-hero">
+        <div class="hero-bg">
+            <img class="hero-image" src="includes/Images/restoration-hero.webp" alt="" width="1920" height="1080" fetchpriority="high">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="restoration-hero-content">
+            <span class="restoration-hero-label">Stanway Designs</span>
+            <h1 class="restoration-hero-title">Restoration<br>&amp; Repair</h1>
+            <span class="restoration-hero-sub">Furniture Worth Keeping</span>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="restoration-intro-section">
+        <div class="container">
+            <div class="restoration-intro-grid">
+                <div class="restoration-intro-left">
+                    <h2 class="restoration-intro-heading">Some pieces deserve a second life.</h2>
+                </div>
+                <div class="restoration-intro-body">
+                    <p>Old furniture was often made better than new furniture. Solid timber, hand-cut joints, finishing techniques that took days rather than minutes. When those pieces are damaged, worn, or broken — the right response isn't replacement. It's restoration.</p>
+                    <p>I work on antique and period furniture across the full range of restoration disciplines: structural repair, surface stripping and refinishing, French polishing, and sympathetic reproduction work where a component has been lost or damaged beyond saving. The aim is always to return a piece to use without erasing its history.</p>
+                    <p>Reproduction work is undertaken where the original cannot be salvaged — a replacement rail turned to match the existing profile, a carved detail recut in the same timber. The piece stays whole. The craftsmanship is honoured.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services List -->
+    <section class="restoration-services-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">What I offer</span>
+                <h2 class="section-title">Restoration services</h2>
+                <p class="section-desc">Each piece is assessed individually. Get in touch with photos and a description and I'll advise on what's possible.</p>
+            </div>
+
+            <ul class="restoration-list">
+                <li class="restoration-list-item">
+                    <span class="restoration-list-num">01</span>
+                    <span class="restoration-list-text">
+                        <span class="restoration-list-name">Structural Repair</span>
+                        <span class="restoration-list-sub">Joints, frames, broken components</span>
+                    </span>
+                    <span class="restoration-list-desc">Re-gluing failed joints, replacing broken stretchers or legs, consolidating loose frames — the work that makes a piece safe to use again.</span>
+                </li>
+                <li class="restoration-list-item">
+                    <span class="restoration-list-num">02</span>
+                    <span class="restoration-list-text">
+                        <span class="restoration-list-name">Surface Restoration</span>
+                        <span class="restoration-list-sub">Stripping, refinishing, French polish</span>
+                    </span>
+                    <span class="restoration-list-desc">Careful stripping of failing finishes, surface preparation, and refinishing in period-appropriate materials — including traditional shellac-based French polish.</span>
+                </li>
+                <li class="restoration-list-item">
+                    <span class="restoration-list-num">03</span>
+                    <span class="restoration-list-text">
+                        <span class="restoration-list-name">Upholstery Referral</span>
+                        <span class="restoration-list-sub">We work with trusted partners</span>
+                    </span>
+                    <span class="restoration-list-desc">Upholstery isn't my trade, but I work alongside trusted craftspeople who do it properly. I'll coordinate where a piece needs both.</span>
+                </li>
+                <li class="restoration-list-item">
+                    <span class="restoration-list-num">04</span>
+                    <span class="restoration-list-text">
+                        <span class="restoration-list-name">Reproduction Work</span>
+                        <span class="restoration-list-sub">Sympathetic matching for missing components</span>
+                    </span>
+                    <span class="restoration-list-desc">New components made to match the original — same timber species, same profiles, same construction methods. Invisible when done well.</span>
+                </li>
+                <li class="restoration-list-item">
+                    <span class="restoration-list-num">05</span>
+                    <span class="restoration-list-text">
+                        <span class="restoration-list-name">Antique &amp; Period Furniture</span>
+                        <span class="restoration-list-sub">Sensitive restoration that respects provenance</span>
+                    </span>
+                    <span class="restoration-list-desc">Georgian, Victorian, Arts &amp; Crafts, mid-century. Approached with the care and restraint that pieces of age and character deserve.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Honesty Section -->
+    <section class="restoration-honesty-section">
+        <div class="container">
+            <span class="section-label">A note on honesty</span>
+            <div class="restoration-honesty-inner">
+                <blockquote>
+                    <p>We don't restore everything. If a piece isn't worth saving structurally, we'll tell you. And if it is, we'll treat it with the care it deserves.</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="restoration-cta-section">
+        <div class="container-narrow">
+            <div class="cta-content">
+                <h2>Bring us your piece</h2>
+                <p>Send a few photos and a description of what needs attention. I'll come back to you with an honest assessment.</p>
+                <a href="index.html#contact" class="btn-primary">
+                    <span class="btn-text">Get in touch</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="joinery.html">Joinery</a></li>
+                        <li><a href="woodturning.html">Woodturning</a></li>
+                        <li><a href="restoration.html">Restoration &amp; Repair</a></li>
+                        <li><a href="tabletop.html">Gaming Tables</a></li>
+                        <li><a href="replicas.html">Reproductions</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <!-- TODO: Add real Google Reviews URL -->
+                        <!-- TODO: Add real MyBuilder URL -->
+                        <li>Nottingham, UK</li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="luxury.js"></script>
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>
