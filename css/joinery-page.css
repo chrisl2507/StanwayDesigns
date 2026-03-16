@@ -1,0 +1,215 @@
+/* Stanway Designs — joinery.html specific styles */
+
+/* Joinery hero — bottom-left headline */
+        .joinery-hero {
+            position: relative;
+            height: 100svh;
+            min-height: 560px;
+            overflow: hidden;
+            background-color: #1C1C1C;
+        }
+
+        .joinery-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .joinery-hero .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .joinery-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 16, 14, 0.85) 0%,
+                rgba(20, 16, 14, 0.4) 50%,
+                rgba(20, 16, 14, 0.15) 100%
+            );
+        }
+
+        .joinery-hero-content {
+            position: absolute;
+            bottom: clamp(3rem, 8vh, 6rem);
+            left: 0;
+            right: 0;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .joinery-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .joinery-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(5rem, 16vw, 13rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.9;
+            letter-spacing: -2px;
+            margin: 0 0 1.25rem;
+        }
+
+        .joinery-hero-sub {
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* Joinery intro — asymmetric */
+        .joinery-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .joinery-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .joinery-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .joinery-intro-body p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .joinery-intro-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 900px) {
+            .joinery-intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+                align-items: center;
+            }
+        }
+
+        /* Joinery services list — numbered, minimal */
+        .joinery-services-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .joinery-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .joinery-list-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+            cursor: default;
+            transition: padding-left 0.25s ease;
+        }
+
+        .joinery-list-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .joinery-list-item:hover {
+            padding-left: 1rem;
+        }
+
+        .joinery-list-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+            transition: color 0.25s ease;
+        }
+
+        .joinery-list-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.25s ease;
+        }
+
+        .joinery-list-item:hover .joinery-list-name {
+            color: var(--coral-dark);
+        }
+
+        .joinery-list-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--mid-gray);
+            margin-left: auto;
+            max-width: 320px;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .joinery-list-item:hover .joinery-list-desc {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .joinery-list-desc {
+                display: none;
+            }
+
+            .joinery-list-item:hover {
+                padding-left: 0.5rem;
+            }
+        }
+
+        /* Joinery CTA — dark background */
+        .joinery-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-brown);
+            text-align: center;
+        }
+
+        .joinery-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .joinery-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .joinery-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .joinery-cta-section .btn-primary::before {
+            background: rgba(255, 255, 255, 0.1);
+        }

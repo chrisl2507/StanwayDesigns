@@ -1,0 +1,312 @@
+/* Stanway Designs — furniture.html specific styles */
+
+/* ── Page header (contained, dark) ── */
+        .furniture-header {
+            background: var(--text-dark);
+            padding: clamp(5rem, 12vh, 8rem) 0 clamp(3rem, 5vh, 4.5rem);
+        }
+
+        .furniture-header-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 1.25rem;
+        }
+
+        .furniture-header-title {
+            font-family: var(--font-heading);
+            font-size: clamp(4rem, 10vw, 9rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.95;
+            letter-spacing: -1px;
+            margin: 0 0 1.5rem;
+        }
+
+        .furniture-header-sub {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.45);
+            max-width: 540px;
+            line-height: 1.7;
+        }
+
+        /* ── The Odyssey — cinematic feature ── */
+        .odyssey-feature {
+            position: relative;
+            min-height: 60vh;
+            overflow: hidden;
+            background-color: #1A1410;
+            display: flex;
+            align-items: center;
+        }
+
+        .odyssey-feature-image {
+            position: absolute;
+            inset: 0;
+        }
+
+        .odyssey-feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: right center;
+        }
+
+        .odyssey-feature-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(14, 10, 8, 0.92) 0%,
+                rgba(14, 10, 8, 0.55) 40%,
+                rgba(14, 10, 8, 0.1) 100%
+            );
+        }
+
+        .odyssey-feature-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 5rem);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: end;
+        }
+
+        @media (min-width: 900px) {
+            .odyssey-feature-content {
+                grid-template-columns: 1fr auto;
+                align-items: end;
+            }
+        }
+
+        .odyssey-feature-text {
+            max-width: 640px;
+        }
+
+        .odyssey-feature-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .odyssey-feature-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.92;
+            letter-spacing: -2px;
+            margin: 0 0 1.5rem;
+        }
+
+        .odyssey-feature-desc {
+            font-size: 16px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .odyssey-feature-cta {
+            flex-shrink: 0;
+            align-self: flex-end;
+            padding-bottom: 0.25rem;
+        }
+
+        .odyssey-feature-cta .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            white-space: nowrap;
+        }
+
+        .odyssey-feature-cta .btn-primary::before {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* ── Gaming table feature ── */
+        .gaming-feature-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .gaming-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        @media (min-width: 900px) {
+            .gaming-feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+            }
+
+            .gaming-feature-image-wrap {
+                order: 2;
+            }
+
+            .gaming-feature-text {
+                order: 1;
+            }
+        }
+
+        .gaming-feature-image-wrap {
+            overflow: hidden;
+            background-color: #2C2C2C;
+        }
+
+        .gaming-feature-image-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gaming-feature-image-wrap:hover img {
+            transform: scale(1.02);
+        }
+
+        .gaming-feature-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.05;
+            margin: 0.75rem 0 1.5rem;
+        }
+
+        .gaming-feature-text p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .gaming-feature-text p:last-of-type {
+            margin-bottom: 2rem;
+        }
+
+        /* ── Categories — numbered list ── */
+        .furniture-categories-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .furniture-cat-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .furniture-cat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+            cursor: default;
+            transition: padding-left 0.25s ease;
+        }
+
+        .furniture-cat-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .furniture-cat-item:hover {
+            padding-left: 1rem;
+        }
+
+        .furniture-cat-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+        }
+
+        .furniture-cat-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .furniture-cat-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.25s ease;
+        }
+
+        .furniture-cat-item:hover .furniture-cat-name {
+            color: var(--coral-dark);
+        }
+
+        .furniture-cat-detail {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--mid-gray);
+        }
+
+        .furniture-cat-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--mid-gray);
+            margin-left: auto;
+            max-width: 280px;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .furniture-cat-item:hover .furniture-cat-desc {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .furniture-cat-desc { display: none; }
+            .furniture-cat-item:hover { padding-left: 0.5rem; }
+        }
+
+        /* ── CTA — dark ── */
+        .furniture-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--text-dark);
+            text-align: center;
+        }
+
+        .furniture-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .furniture-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+
+        .furniture-cta-section .btn-primary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .furniture-cta-section .btn-primary::before {
+            background: rgba(255, 255, 255, 0.08);
+        }

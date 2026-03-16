@@ -29,71 +29,17 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-
-    <link rel="stylesheet" href="styles-luxury.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/contact-page.css">
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
-    <style>
-        /* ── Coverage map section ── */
-        .coverage-map-section {
-            padding: var(--space-3xl) 0;
-            background: var(--warm-white);
-        }
-
-        .coverage-map-inner {
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            gap: 5rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .coverage-map-text h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
-            color: var(--text-dark);
-            line-height: 1.1;
-            margin: 0.75rem 0 1.25rem;
-        }
-
-        .coverage-map-text p {
-            font-family: var(--font-body);
-            font-size: 15px;
-            line-height: 1.75;
-            color: var(--mid-gray);
-            margin-bottom: 1rem;
-        }
-
-        .coverage-note {
-            font-size: 14px;
-            color: var(--coral-dark);
-            margin-top: 1.5rem;
-            font-style: italic;
-        }
-
-        #coverage-map {
-            height: 480px;
-            width: 100%;
-            border-radius: 2px;
-            filter: grayscale(30%);
-        }
-
-        @media (max-width: 768px) {
-            .coverage-map-inner {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            #coverage-map {
-                height: 320px;
-            }
-        }
-    </style>
-</head>
+    </head>
 <body>
     <!-- Navigation -->
     <script src="nav.js" data-root=""></script>

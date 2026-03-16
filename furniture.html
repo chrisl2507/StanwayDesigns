@@ -29,326 +29,12 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-
-    <link rel="stylesheet" href="styles-luxury.css">
-
-    <!-- Active nav link style -->
-    <style>
-        .nav-link.nav-active { color: var(--coral-dark); }
-        .nav-link.nav-active::after { width: 100%; }
-
-        /* ── Page header (contained, dark) ── */
-        .furniture-header {
-            background: var(--text-dark);
-            padding: clamp(5rem, 12vh, 8rem) 0 clamp(3rem, 5vh, 4.5rem);
-        }
-
-        .furniture-header-label {
-            display: block;
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.45);
-            margin-bottom: 1.25rem;
-        }
-
-        .furniture-header-title {
-            font-family: var(--font-heading);
-            font-size: clamp(4rem, 10vw, 9rem);
-            font-weight: 600;
-            color: var(--white);
-            line-height: 0.95;
-            letter-spacing: -1px;
-            margin: 0 0 1.5rem;
-        }
-
-        .furniture-header-sub {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.45);
-            max-width: 540px;
-            line-height: 1.7;
-        }
-
-        /* ── The Odyssey — cinematic feature ── */
-        .odyssey-feature {
-            position: relative;
-            min-height: 60vh;
-            overflow: hidden;
-            background-color: #1A1410;
-            display: flex;
-            align-items: center;
-        }
-
-        .odyssey-feature-image {
-            position: absolute;
-            inset: 0;
-        }
-
-        .odyssey-feature-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: right center;
-        }
-
-        .odyssey-feature-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(14, 10, 8, 0.92) 0%,
-                rgba(14, 10, 8, 0.55) 40%,
-                rgba(14, 10, 8, 0.1) 100%
-            );
-        }
-
-        .odyssey-feature-content {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 5rem);
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: end;
-        }
-
-        @media (min-width: 900px) {
-            .odyssey-feature-content {
-                grid-template-columns: 1fr auto;
-                align-items: end;
-            }
-        }
-
-        .odyssey-feature-text {
-            max-width: 640px;
-        }
-
-        .odyssey-feature-label {
-            display: block;
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 1rem;
-        }
-
-        .odyssey-feature-title {
-            font-family: var(--font-heading);
-            font-size: clamp(3.5rem, 9vw, 8rem);
-            font-weight: 600;
-            color: var(--white);
-            line-height: 0.92;
-            letter-spacing: -2px;
-            margin: 0 0 1.5rem;
-        }
-
-        .odyssey-feature-desc {
-            font-size: 16px;
-            line-height: 1.75;
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0;
-        }
-
-        .odyssey-feature-cta {
-            flex-shrink: 0;
-            align-self: flex-end;
-            padding-bottom: 0.25rem;
-        }
-
-        .odyssey-feature-cta .btn-primary {
-            background: transparent;
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            white-space: nowrap;
-        }
-
-        .odyssey-feature-cta .btn-primary::before {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        /* ── Gaming table feature ── */
-        .gaming-feature-section {
-            padding: var(--space-3xl) 0;
-            background: var(--warm-white);
-        }
-
-        .gaming-feature-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-2xl);
-            align-items: center;
-        }
-
-        @media (min-width: 900px) {
-            .gaming-feature-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-3xl);
-            }
-
-            .gaming-feature-image-wrap {
-                order: 2;
-            }
-
-            .gaming-feature-text {
-                order: 1;
-            }
-        }
-
-        .gaming-feature-image-wrap {
-            overflow: hidden;
-            background-color: #2C2C2C;
-        }
-
-        .gaming-feature-image-wrap img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .gaming-feature-image-wrap:hover img {
-            transform: scale(1.02);
-        }
-
-        .gaming-feature-heading {
-            font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
-            color: var(--text-dark);
-            line-height: 1.05;
-            margin: 0.75rem 0 1.5rem;
-        }
-
-        .gaming-feature-text p {
-            font-size: 17px;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 1.25rem;
-        }
-
-        .gaming-feature-text p:last-of-type {
-            margin-bottom: 2rem;
-        }
-
-        /* ── Categories — numbered list ── */
-        .furniture-categories-section {
-            padding: var(--space-3xl) 0;
-            background: var(--linen);
-        }
-
-        .furniture-cat-list {
-            list-style: none;
-            margin: var(--space-2xl) 0 0;
-            padding: 0;
-        }
-
-        .furniture-cat-item {
-            display: flex;
-            align-items: baseline;
-            gap: 2rem;
-            padding: 1.75rem 0;
-            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
-            cursor: default;
-            transition: padding-left 0.25s ease;
-        }
-
-        .furniture-cat-item:first-child {
-            border-top: 1px solid rgba(44, 36, 32, 0.12);
-        }
-
-        .furniture-cat-item:hover {
-            padding-left: 1rem;
-        }
-
-        .furniture-cat-num {
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            color: var(--coral-dark);
-            flex-shrink: 0;
-            width: 2.5rem;
-        }
-
-        .furniture-cat-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-
-        .furniture-cat-name {
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 3vw, 2.25rem);
-            font-weight: 500;
-            color: var(--text-dark);
-            transition: color 0.25s ease;
-        }
-
-        .furniture-cat-item:hover .furniture-cat-name {
-            color: var(--coral-dark);
-        }
-
-        .furniture-cat-detail {
-            font-family: var(--font-body);
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--mid-gray);
-        }
-
-        .furniture-cat-desc {
-            font-family: var(--font-body);
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--mid-gray);
-            margin-left: auto;
-            max-width: 280px;
-            text-align: right;
-            opacity: 0;
-            transition: opacity 0.25s ease;
-            flex-shrink: 0;
-        }
-
-        .furniture-cat-item:hover .furniture-cat-desc {
-            opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-            .furniture-cat-desc { display: none; }
-            .furniture-cat-item:hover { padding-left: 0.5rem; }
-        }
-
-        /* ── CTA — dark ── */
-        .furniture-cta-section {
-            padding: var(--space-3xl) 0;
-            background: var(--text-dark);
-            text-align: center;
-        }
-
-        .furniture-cta-section .cta-content h2 {
-            color: var(--white);
-        }
-
-        .furniture-cta-section .cta-content p {
-            color: rgba(255, 255, 255, 0.6);
-            font-style: italic;
-        }
-
-        .furniture-cta-section .btn-primary {
-            background: transparent;
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .furniture-cta-section .btn-primary::before {
-            background: rgba(255, 255, 255, 0.08);
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/furniture-page.css">
+    </head>
 <body>
     <!-- Navigation -->
     <script src="nav.js" data-root=""></script>
@@ -373,12 +59,11 @@
         <div class="odyssey-feature-overlay"></div>
         <div class="odyssey-feature-content">
             <div class="odyssey-feature-text">
-                <span class="odyssey-feature-label">Flagship Commission</span>
                 <h2 class="odyssey-feature-title">The Odyssey</h2>
                 <p class="odyssey-feature-desc">Max&rsquo;s signature dining table &mdash; a large-format bespoke commission in solid English walnut with a live-edge slab top, hand-finished over weeks. Built for the room it lives in. Designed to outlast it.</p>
             </div>
             <div class="odyssey-feature-cta">
-                <a href="furniture-the-odyssey.html" class="btn-primary" style="margin-bottom: 0.75rem; display: block;">
+                <a href="furniture/the-odyssey.html" class="btn-primary" style="margin-bottom: 0.75rem; display: block;">
                     <span class="btn-text">View The Odyssey</span>
                     <span class="btn-arrow">→</span>
                 </a>
@@ -404,7 +89,7 @@
                     <p>Purpose-built gaming tables are a serious commission. A recessed play surface at the right depth, padded felt or neoprene in the colour of your choice, integrated trays for dice, cards, and tokens &mdash; and a removable cover that converts the whole thing back into a dining table.</p>
                     <p>Designed with the game in mind. Built with the same craft as everything else in the workshop &mdash; solid timber, hand-finished, made to last the campaigns.</p>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="furniture-gaming-tables.html" class="btn-primary">
+                        <a href="furniture/gaming-tables.html" class="btn-primary">
                             <span class="btn-text">View Gaming Tables</span>
                             <span class="btn-arrow">→</span>
                         </a>
@@ -428,34 +113,34 @@
             </div>
 
             <ul class="furniture-cat-list">
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture-dining-tables.html'">
+                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/dining-tables.html'">
                     <span class="furniture-cat-num">01</span>
                     <span class="furniture-cat-text">
-                        <a href="furniture-dining-tables.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Dining Tables</a>
+                        <a href="furniture/dining-tables.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Dining Tables</a>
                         <span class="furniture-cat-detail">The centrepiece of the room. Solid timber, live edge, or traditional form.</span>
                     </span>
                     <span class="furniture-cat-desc">From four-seater to banquet scale. Leg style, finish, and timber all to brief. <span style="color: var(--coral-dark);">View details →</span></span>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture-gaming-tables.html'">
+                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/gaming-tables.html'">
                     <span class="furniture-cat-num">02</span>
                     <span class="furniture-cat-text">
-                        <a href="furniture-gaming-tables.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Table Top Gaming Tables</a>
+                        <a href="furniture/gaming-tables.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Table Top Gaming Tables</a>
                         <span class="furniture-cat-detail">Purpose-built for play. Padded surfaces, integrated storage, dining topper.</span>
                     </span>
                     <span class="furniture-cat-desc">Warhammer 40k, D&amp;D, and any tabletop format. Size, felt colour, and features all configurable. <span style="color: var(--coral-dark);">View details →</span></span>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture-bedroom.html'">
+                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/bedroom.html'">
                     <span class="furniture-cat-num">03</span>
                     <span class="furniture-cat-text">
-                        <a href="furniture-bedroom.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Bedroom Furniture</a>
+                        <a href="furniture/bedroom.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Bedroom Furniture</a>
                         <span class="furniture-cat-detail">Bed frames, dressers, bedside pieces. Designed as a set or individually.</span>
                     </span>
                     <span class="furniture-cat-desc">Solid timber. Storage beds, platform builds, or upholstered headboards in timber frames. <span style="color: var(--coral-dark);">View details →</span></span>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture-living-room.html'">
+                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/living-room.html'">
                     <span class="furniture-cat-num">04</span>
                     <span class="furniture-cat-text">
-                        <a href="furniture-living-room.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Living Room</a>
+                        <a href="furniture/living-room.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Living Room</a>
                         <span class="furniture-cat-detail">Coffee tables, media units, console tables, shelving.</span>
                     </span>
                     <span class="furniture-cat-desc">Pieces that anchor a room without competing with it. Simple forms, considered proportions. <span style="color: var(--coral-dark);">View details →</span></span>
@@ -468,10 +153,10 @@
                     </span>
                     <span class="furniture-cat-desc">Hard-working pieces finished to the same standard as everything else. <span style="color: var(--mid-gray); font-style: italic;">Coming soon</span></span>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture-statement.html'">
+                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/statement.html'">
                     <span class="furniture-cat-num">06</span>
                     <span class="furniture-cat-text">
-                        <a href="furniture-statement.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Statement Commissions</a>
+                        <a href="furniture/statement.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Statement Commissions</a>
                         <span class="furniture-cat-detail">One-off pieces designed entirely to brief.</span>
                     </span>
                     <span class="furniture-cat-desc">If you have an idea and don&rsquo;t know what category it fits, get in touch. <span style="color: var(--coral-dark);">View details →</span></span>

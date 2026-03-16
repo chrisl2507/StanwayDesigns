@@ -1,0 +1,240 @@
+/* Stanway Designs — Base: variables, reset, containers, utility */
+
+/* ============================================
+   STANWAY DESIGNS — WARM EDITION
+   Personal · Warm · Coral-Forward
+   ============================================ */
+
+/* ============================================
+   1. RESET & VARIABLES
+   ============================================ */
+
+/* Font fallbacks with metric overrides to prevent CLS during font swap */
+@font-face {
+    font-family: 'Cormorant Fallback';
+    src: local('Georgia');
+    size-adjust: 112%;
+    ascent-override: 80%;
+    descent-override: 20%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    size-adjust: 107%;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors - Warm Coral Palette */
+    --coral: #EC9176;
+    --coral-light: #F4A995;
+    --coral-dark: #E17A5A;
+    --warm-brown: #2C2420;
+    --text-dark: #3D3530;
+    --mid-gray: #6B5E56;
+    --light-gray: #E0D8D0;
+    --warm-white: #FAF8F4;
+    --cream: #F5F0EB;
+    --linen: #EDE8E1;
+    --white: #FFFFFF;
+
+    /* Legacy aliases */
+    --black: #2C2420;
+    --charcoal: #3D3530;
+    --dark-gray: #6B5E56;
+    --gold: #EC9176;
+    --gold-light: #F4A995;
+    --gold-dark: #E17A5A;
+
+    /* Typography */
+    --font-heading: 'Cormorant', 'Cormorant Fallback', serif;
+    --font-body: 'Inter', 'Inter Fallback', sans-serif;
+
+    /* Spacing */
+    --space-unit: 8px;
+    --space-xs: calc(var(--space-unit) * 1);
+    --space-sm: calc(var(--space-unit) * 2);
+    --space-md: calc(var(--space-unit) * 3);
+    --space-lg: calc(var(--space-unit) * 6);
+    --space-xl: calc(var(--space-unit) * 7);
+    --space-2xl: calc(var(--space-unit) * 9);
+    --space-3xl: calc(var(--space-unit) * 12);
+
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+/* Only enable smooth scroll when not navigating via View Transitions */
+@media (prefers-reduced-motion: no-preference) {
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: var(--warm-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ============================================
+   2. CONTAINERS
+   ============================================ */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.container-full {
+    padding: 0 5%;
+}
+
+.container-narrow {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* ============================================
+
+/* ============================================
+   16. UTILITY CLASSES
+   ============================================ */
+.reveal-up {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal-up.revealed {
+    opacity: 1;
+    transform: none;
+}
+
+/* Simple fade for sections - applied via CSS to avoid visible→invisible flash */
+section,
+.gallery-item,
+.service-card,
+.blog-post-card,
+.product-card,
+.collection-card {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+section.visible,
+.gallery-item.visible,
+.service-card.visible,
+.blog-post-card.visible,
+.product-card.visible,
+.collection-card.visible,
+.hero-luxury,
+.page-hero-luxury {
+    opacity: 1;
+}
+
+/* Keep .fade-in for any manual usage */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* ============================================
+   VIEW TRANSITIONS
+   ============================================ */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.2s;
+}
+
+/* ============================================
+   PREFERS REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
+}
+
+/* ============================================
+   CONTENT VISIBILITY FOR OFF-SCREEN SECTIONS
+   ============================================ */
+.reviews-section,
+.contact-section,
+.luxury-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        --space-3xl: calc(var(--space-unit) * 8);
+        --space-2xl: calc(var(--space-unit) * 6);
+        --space-xl: calc(var(--space-unit) * 5);
+    }
+}

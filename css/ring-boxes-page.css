@@ -1,0 +1,368 @@
+/* Stanway Designs — woodturning/ring-boxes.html specific styles */
+
+/* Breadcrumb back link */
+        .ringbox-breadcrumb {
+            background: var(--warm-white);
+            padding: 0;
+        }
+
+        .ringbox-breadcrumb-inner {
+            display: flex;
+            align-items: center;
+            padding: 1rem clamp(1.5rem, 5vw, 5rem);
+            padding-top: calc(var(--nav-height, 80px) + 1rem);
+        }
+
+        .ringbox-breadcrumb-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .ringbox-breadcrumb-link:hover {
+            color: var(--coral-dark);
+        }
+
+        .ringbox-breadcrumb-link svg {
+            transition: transform 0.2s ease;
+        }
+
+        .ringbox-breadcrumb-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        /* Hero — bottom-left, intimate scale */
+        .ringbox-hero {
+            position: relative;
+            height: 90svh;
+            min-height: 500px;
+            overflow: hidden;
+            background-color: #1C1C1C;
+        }
+
+        .ringbox-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .ringbox-hero .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .ringbox-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 16, 14, 0.88) 0%,
+                rgba(20, 16, 14, 0.45) 50%,
+                rgba(20, 16, 14, 0.1) 100%
+            );
+        }
+
+        .ringbox-hero-content {
+            position: absolute;
+            bottom: clamp(3rem, 8vh, 6rem);
+            left: 0;
+            right: 0;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .ringbox-hero-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 1rem;
+        }
+
+        .ringbox-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 9vw, 8rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 0.95;
+            letter-spacing: -1px;
+            margin: 0 0 1.25rem;
+        }
+
+        .ringbox-hero-sub {
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 420px;
+            line-height: 1.6;
+        }
+
+        /* Intro — asymmetric */
+        .ringbox-intro-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .ringbox-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .ringbox-intro-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .ringbox-intro-body p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .ringbox-intro-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 900px) {
+            .ringbox-intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-3xl);
+                align-items: center;
+            }
+        }
+
+        /* Options — numbered minimal list */
+        .ringbox-options-section {
+            padding: var(--space-3xl) 0;
+            background: var(--linen);
+        }
+
+        .ringbox-options-list {
+            list-style: none;
+            margin: var(--space-2xl) 0 0;
+            padding: 0;
+        }
+
+        .ringbox-options-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(44, 36, 32, 0.12);
+            cursor: default;
+            transition: padding-left 0.25s ease;
+        }
+
+        .ringbox-options-item:first-child {
+            border-top: 1px solid rgba(44, 36, 32, 0.12);
+        }
+
+        .ringbox-options-item:hover {
+            padding-left: 1rem;
+        }
+
+        .ringbox-options-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--coral-dark);
+            flex-shrink: 0;
+            width: 2.5rem;
+        }
+
+        .ringbox-options-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .ringbox-options-name {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.25s ease;
+        }
+
+        .ringbox-options-item:hover .ringbox-options-name {
+            color: var(--coral-dark);
+        }
+
+        .ringbox-options-detail {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--mid-gray);
+        }
+
+        @media (max-width: 768px) {
+            .ringbox-options-item:hover {
+                padding-left: 0.5rem;
+            }
+        }
+
+        /* Process — 3 steps horizontal */
+        .ringbox-process-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .ringbox-process-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        @media (min-width: 640px) {
+            .ringbox-process-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .ringbox-process-step {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .ringbox-process-step-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--coral-dark);
+        }
+
+        .ringbox-process-step-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .ringbox-process-step-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--mid-gray);
+        }
+
+        .ringbox-process-note {
+            margin-top: var(--space-xl);
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            color: var(--mid-gray);
+            font-style: italic;
+        }
+
+        /* Gallery strip — 3 images horizontal */
+        .ringbox-gallery-section {
+            padding: var(--space-2xl) 0;
+            background: var(--linen);
+        }
+
+        .ringbox-gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .ringbox-gallery-strip {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ringbox-gallery-img {
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: var(--warm-brown);
+        }
+
+        .ringbox-gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .ringbox-gallery-img:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Dual CTA */
+        .ringbox-cta-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-brown);
+            text-align: center;
+        }
+
+        .ringbox-cta-section .cta-content h2 {
+            color: var(--white);
+        }
+
+        .ringbox-cta-section .cta-content p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .ringbox-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .ringbox-cta-section .btn-primary {
+            background: var(--white);
+            color: var(--warm-brown);
+        }
+
+        .ringbox-cta-section .btn-primary::before {
+            background: var(--cream);
+        }
+
+        .ringbox-cta-section .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .ringbox-cta-section .btn-ghost:hover {
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.6);
+        }

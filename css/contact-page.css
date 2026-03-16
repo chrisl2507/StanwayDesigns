@@ -1,0 +1,57 @@
+/* Stanway Designs — contact.html specific styles */
+
+/* ── Coverage map section ── */
+        .coverage-map-section {
+            padding: var(--space-3xl) 0;
+            background: var(--warm-white);
+        }
+
+        .coverage-map-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coverage-map-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin: 0.75rem 0 1.25rem;
+        }
+
+        .coverage-map-text p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--mid-gray);
+            margin-bottom: 1rem;
+        }
+
+        .coverage-note {
+            font-size: 14px;
+            color: var(--coral-dark);
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        #coverage-map {
+            height: 480px;
+            width: 100%;
+            border-radius: 2px;
+            filter: grayscale(30%);
+        }
+
+        @media (max-width: 768px) {
+            .coverage-map-inner {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            #coverage-map {
+                height: 320px;
+            }
+        }

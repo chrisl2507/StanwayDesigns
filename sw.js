@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stanway-v1';
+const CACHE_NAME = 'stanway-v2';
 const PRECACHE = [
   'styles-luxury.min.css',
   'luxury.min.js',
