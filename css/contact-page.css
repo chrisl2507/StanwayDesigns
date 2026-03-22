@@ -1,5 +1,116 @@
 /* Stanway Designs — contact.html specific styles */
 
+/* Clear fixed nav */
+.contact-page-header {
+    padding-top: 90px;
+}
+
+/* Bypass base.css section { opacity: 0 } for contact page sections */
+.contact-section,
+.coverage-map-section {
+    opacity: 1;
+}
+
+/* ── Contact split layout ── */
+.contact-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    padding: var(--space-3xl) 0;
+}
+
+@media (min-width: 900px) {
+    .contact-split {
+        grid-template-columns: 1fr 1.3fr;
+        gap: var(--space-3xl);
+        align-items: start;
+    }
+}
+
+.contact-split__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin: 0.5rem 0 1rem;
+}
+
+.contact-split__intro {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--mid-gray);
+    margin-bottom: var(--space-lg);
+}
+
+/* ── Netlify form ── */
+.contact-form {
+    background: var(--warm-white, #faf8f4);
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    padding: var(--space-xl);
+}
+
+.contact-form__honeypot {
+    display: none;
+}
+
+.contact-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+@media (max-width: 540px) {
+    .contact-form__row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--space-md);
+}
+
+.contact-form__label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+}
+
+.contact-form__input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--white);
+    transition: border-color var(--transition-base);
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.contact-form__input:focus {
+    outline: none;
+    border-color: var(--coral);
+}
+
+.contact-form__textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-form__submit {
+    width: 100%;
+    margin-top: var(--space-sm);
+}
+
 /* ── Coverage map section ── */
         .coverage-map-section {
             padding: var(--space-3xl) 0;

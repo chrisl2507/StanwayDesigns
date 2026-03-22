@@ -1,8 +1,5 @@
 /* Stanway Designs — Pages: page-hero, about, gallery, blog, products, gallery-filters */
 
-   14. PAGE-SPECIFIC STYLES
-   ============================================ */
-
 /* Page Hero Luxury */
 .page-hero-luxury {
     position: relative;
@@ -627,28 +624,20 @@
     background: var(--white);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .gallery-grid-masonry {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
 
+    /* Reset wide/tall spans on mobile — all items same ratio in 2-col grid */
     .gallery-item.wide,
     .gallery-item.tall {
         grid-column: span 1;
+        aspect-ratio: 4 / 3;
     }
 
-    .gallery-item img {
-        height: 200px !important;
-        aspect-ratio: 1;
-        border-radius: 10px;
-    }
-
-    .gallery-item.tall img {
-        height: 200px !important;
-    }
-
-    /* Show captions on mobile instead of hover overlays */
+    /* Show text captions below images on mobile (no hover available) */
     .gallery-caption {
         display: flex;
         flex-direction: column;
@@ -669,6 +658,7 @@
         letter-spacing: 0.5px;
     }
 
+    /* Hide hover overlay on mobile — no hover state exists */
     .gallery-info {
         display: none;
     }

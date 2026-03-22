@@ -47,7 +47,7 @@
             <span class="shop-header-label">Stanway Designs</span>
             <h1 class="shop-header-title">The Shop</h1>
             <p class="shop-header-sub">In-stock pieces, ready to leave the workshop</p>
-            <p class="shop-header-body">Each piece is made by Max and listed here when it&rsquo;s ready. Click any piece to purchase securely. For commissions, use the <a href="index.html#contact">contact form</a>.</p>
+            <p class="shop-header-body">Each piece is made by Max and listed here when it&rsquo;s ready. Click any piece to purchase securely. For commissions, use the <a href="contact.html">contact form</a>.</p>
         </div>
     </section>
 
@@ -72,7 +72,7 @@
 
             <div class="shop-error" id="shop-error">
                 <p>Couldn&rsquo;t load the shop right now &mdash; please try again shortly.</p>
-                <p>In the meantime, <a href="index.html#contact">get in touch</a> to ask about available pieces.</p>
+                <p>In the meantime, <a href="contact.html">get in touch</a> to ask about available pieces.</p>
             </div>
 
             <div class="shop-empty" id="shop-empty">
@@ -103,7 +103,7 @@
             <div class="cta-content">
                 <h2>Don&rsquo;t see what you&rsquo;re looking for?</h2>
                 <p>Commission a piece made specifically for you.</p>
-                <a href="index.html#contact" class="btn-primary">
+                <a href="contact.html" class="btn-primary">
                     <span class="btn-text">Get in touch</span>
                     <span class="btn-arrow">→</span>
                 </a>
@@ -212,6 +212,33 @@
             return url.trim();
         }
 
+        /* ── Security: SumUp URL validation ── */
+        function isSafeSumupUrl(url) {
+            if (!url || !url.trim()) return false;
+            try {
+                var parsed = new URL(url);
+                return parsed.protocol === 'https:' &&
+                       (parsed.hostname === 'sumup.link' ||
+                        parsed.hostname.endsWith('.sumup.com'));
+            } catch (e) {
+                return false;
+            }
+        }
+
+        /* ── Security: image URL validation ── */
+        function isSafeImageUrl(url) {
+            if (!url || !url.trim()) return false;
+            try {
+                var parsed = new URL(url);
+                return parsed.protocol === 'https:' &&
+                       (parsed.hostname === 'drive.google.com' ||
+                        parsed.hostname === 'lh3.googleusercontent.com' ||
+                        parsed.hostname.endsWith('.googleapis.com'));
+            } catch (e) {
+                return false;
+            }
+        }
+
         /* ── Human-readable category label ── */
         var CAT_LABELS = {
             'bowls':      'Bowls',
@@ -233,11 +260,19 @@
             article.className = 'shop-card' + (isSold ? ' sold' : '');
             article.setAttribute('data-category', p.category);
 
+            /* Make card clickable if a slug is present */
+            if (p.slug) {
+                article.style.cursor = 'pointer';
+                article.addEventListener('click', function () {
+                    window.location.href = 'shop/product.html?p=' + encodeURIComponent(p.slug);
+                });
+            }
+
             /* Image wrap */
             var imgWrap = document.createElement('div');
             imgWrap.className = 'shop-card-image';
 
-            if (imgUrl) {
+            if (imgUrl && isSafeImageUrl(imgUrl)) {
                 var img = document.createElement('img');
                 img.src     = imgUrl;
                 img.alt     = p.name;
@@ -291,13 +326,21 @@
                 btn = document.createElement('span');
                 btn.className   = 'shop-card-buy sold-btn';
                 btn.textContent = 'Sold';
-            } else {
+            } else if (isSafeSumupUrl(p.sumup_url)) {
                 btn = document.createElement('a');
                 btn.className   = 'shop-card-buy';
-                btn.href        = /^https?:\/\//i.test(p.sumup_url) ? p.sumup_url : '#';
+                btn.setAttribute('href', p.sumup_url);
                 btn.target      = '_blank';
                 btn.rel         = 'noopener noreferrer';
                 btn.textContent = 'Buy on SumUp \u2192';
+                /* Prevent card click from intercepting buy button */
+                btn.addEventListener('click', function (e) { e.stopPropagation(); });
+            } else {
+                btn = document.createElement('a');
+                btn.className   = 'shop-card-buy';
+                btn.setAttribute('href', 'contact.html');
+                btn.textContent = 'Contact to purchase \u2192';
+                btn.addEventListener('click', function (e) { e.stopPropagation(); });
             }
 
             footer.appendChild(price);

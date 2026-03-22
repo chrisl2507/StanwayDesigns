@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | Stanway Designs</title>
+    <meta name="description" content="Handcrafted woodturning and timber pieces by Stanway Designs — made by hand in Nottingham.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="../includes/images/Logo/Logo.webp">
+
+    <!-- View Transitions for smooth page navigation -->
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/product-page.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../nav.js" data-root="../"></script>
+    <script>document.querySelector('a[href="../shop.html"].nav-link')?.classList.add('nav-active');</script>
+
+    <main>
+
+    <!-- Breadcrumb -->
+    <div class="product-breadcrumb">
+        <div class="container">
+            <nav aria-label="Breadcrumb">
+                <a href="../shop.html">Shop</a>
+                <span class="breadcrumb-sep" aria-hidden="true">&rsaquo;</span>
+                <span class="breadcrumb-current" id="breadcrumb-product-name">Loading&hellip;</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Loading state -->
+    <div class="product-loading" id="product-loading">Loading&hellip;</div>
+
+    <!-- Not found state (hidden until needed) -->
+    <div class="product-not-found" id="product-not-found" style="display:none">
+        <p>This piece isn&rsquo;t available &mdash; it may have sold or been removed.</p>
+        <p><a href="../shop.html">Back to the shop</a></p>
+    </div>
+
+    <!-- Product content (hidden until loaded) -->
+    <div id="product-content" style="display:none">
+
+        <!-- Hero: image left, info right -->
+        <section class="product-hero-section">
+            <div class="container">
+                <div class="product-hero-inner">
+
+                    <!-- Primary image -->
+                    <div class="product-hero-image-wrap">
+                        <div class="product-main-image-container" id="product-main-image-container"></div>
+                    </div>
+
+                    <!-- Product info -->
+                    <div class="product-hero-info" id="product-info"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Image gallery (shown only when multiple images exist) -->
+        <section class="product-gallery-section" id="product-gallery-section" style="display:none">
+            <div class="container">
+                <div class="product-gallery-grid" id="product-gallery-grid"></div>
+            </div>
+        </section>
+
+        <!-- Back to shop -->
+        <section class="product-back-section">
+            <div class="container">
+                <a href="../shop.html" class="product-back-link">&larr; Back to shop</a>
+            </div>
+        </section>
+
+    </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../furniture.html">Furniture</a></li>
+                        <li><a href="../joinery.html">Joinery</a></li>
+                        <li><a href="../woodturning.html">Woodturning</a></li>
+                        <li><a href="../restoration.html">Restoration &amp; Repair</a></li>
+                        <li><a href="../gallery.html">Gallery</a></li>
+                        <li><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:maxstanway@stanwaydesigns.co.uk">maxstanway@stanwaydesigns.co.uk</a></li>
+                        <li><a href="https://instagram.com/StanwayDesigns">@StanwayDesigns on Instagram</a></li>
+                        <li><a href="https://facebook.com/StanwayDesigns">@StanwayDesigns on Facebook</a></li>
+                        <li>Nottingham, UK</li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stanway Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../luxury.js"></script>
+
+    <script>
+    (function () {
+        var SHEET_ID = '19iJBDROuyRY3hUqzEa2Em6-LcgDhuR3CWuIbGtdL8pE';
+        var CSV_URL  = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv';
+
+        var loadingEl    = document.getElementById('product-loading');
+        var notFoundEl   = document.getElementById('product-not-found');
+        var contentEl    = document.getElementById('product-content');
+        var breadcrumbEl = document.getElementById('breadcrumb-product-name');
+
+        /* ── Security: slug validation ── */
+        function isValidSlug(slug) {
+            return typeof slug === 'string' && /^[a-z0-9][a-z0-9\-]{0,98}[a-z0-9]$/.test(slug);
+        }
+
+        /* ── Security: SumUp URL validation ── */
+        function isSafeSumupUrl(url) {
+            if (!url || !url.trim()) return false;
+            try {
+                var parsed = new URL(url);
+                return parsed.protocol === 'https:' &&
+                       (parsed.hostname === 'sumup.link' ||
+                        parsed.hostname.endsWith('.sumup.com'));
+            } catch (e) {
+                return false;
+            }
+        }
+
+        /* ── Security: image URL validation ── */
+        function isSafeImageUrl(url) {
+            if (!url || !url.trim()) return false;
+            try {
+                var parsed = new URL(url);
+                return parsed.protocol === 'https:' &&
+                       (parsed.hostname === 'drive.google.com' ||
+                        parsed.hostname === 'lh3.googleusercontent.com' ||
+                        parsed.hostname.endsWith('.googleapis.com'));
+            } catch (e) {
+                return false;
+            }
+        }
+
+        /* ── CSV parser (handles quoted fields with embedded commas) ── */
+        function parseCSV(text) {
+            var rows = [];
+            var row = [];
+            var field = '';
+            var inQuotes = false;
+
+            for (var i = 0; i < text.length; i++) {
+                var ch   = text[i];
+                var next = text[i + 1];
+
+                if (inQuotes) {
+                    if (ch === '"' && next === '"') {
+                        field += '"';
+                        i++;
+                    } else if (ch === '"') {
+                        inQuotes = false;
+                    } else {
+                        field += ch;
+                    }
+                } else {
+                    if (ch === '"') {
+                        inQuotes = true;
+                    } else if (ch === ',') {
+                        row.push(field);
+                        field = '';
+                    } else if (ch === '\n') {
+                        row.push(field);
+                        rows.push(row);
+                        row = [];
+                        field = '';
+                    } else if (ch !== '\r') {
+                        field += ch;
+                    }
+                }
+            }
+            if (field !== '' || row.length > 0) {
+                row.push(field);
+                if (row.some(function (c) { return c.trim(); })) rows.push(row);
+            }
+            return rows;
+        }
+
+        /* ── Convert Google Drive share links to thumbnail URLs ── */
+        function resolveImageUrl(url) {
+            if (!url || !url.trim()) return '';
+            var m = url.match(/drive\.google\.com\/file\/d\/([^/?]+)/);
+            if (m) return 'https://drive.google.com/thumbnail?id=' + m[1] + '&sz=w800';
+            return url.trim();
+        }
+
+        /* ── Category labels ── */
+        var CAT_LABELS = {
+            'bowls':      'Bowls',
+            'vessels':    'Vessels',
+            'ring-boxes': 'Ring Boxes',
+            'homeware':   'Homeware'
+        };
+
+        function catLabel(cat) {
+            return CAT_LABELS[cat] || cat;
+        }
+
+        /* ── Show not-found state ── */
+        function showNotFound() {
+            loadingEl.style.display   = 'none';
+            contentEl.style.display   = 'none';
+            notFoundEl.style.display  = 'block';
+            breadcrumbEl.textContent  = 'Not found';
+        }
+
+        /* ── Read and validate slug from URL — never inserted into DOM ── */
+        var slug = new URLSearchParams(window.location.search).get('p');
+
+        if (!isValidSlug(slug)) {
+            showNotFound();
+        } else {
+            /* ── Fetch CSV ── */
+            fetch(CSV_URL)
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.text();
+                })
+                .then(function (text) {
+                    var rows = parseCSV(text);
+                    if (rows.length < 2) { showNotFound(); return; }
+
+                    var headers  = rows[0].map(function (h) { return h.trim().toLowerCase(); });
+                    var products = rows.slice(1)
+                        .filter(function (row) {
+                            return row.some(function (c) { return c.trim(); });
+                        })
+                        .map(function (row) {
+                            var obj = {};
+                            headers.forEach(function (h, i) { obj[h] = (row[i] || '').trim(); });
+                            return obj;
+                        });
+
+                    /* Match by slug — slug never written to DOM */
+                    var product = null;
+                    for (var i = 0; i < products.length; i++) {
+                        if (products[i].slug === slug) { product = products[i]; break; }
+                    }
+
+                    if (!product) { showNotFound(); return; }
+
+                    renderProduct(product);
+                })
+                .catch(function () { showNotFound(); });
+        }
+
+        /* ── Render product ── */
+        function renderProduct(p) {
+            var isSold = p.sold === 'TRUE';
+
+            /* Page title — from CSV row, not from URL param */
+            document.title = p.name + ' | Stanway Designs';
+
+            /* Breadcrumb — from CSV row */
+            breadcrumbEl.textContent = p.name;
+
+            /* ── Main image ── */
+            var mainContainer = document.getElementById('product-main-image-container');
+            var mainImgEl     = null;
+            var primaryUrl    = resolveImageUrl(p.image_url);
+
+            if (isSafeImageUrl(primaryUrl)) {
+                mainImgEl           = document.createElement('img');
+                mainImgEl.className = 'product-main-img';
+                mainImgEl.src       = primaryUrl;
+                mainImgEl.alt       = p.name;
+                mainImgEl.loading   = 'lazy';
+                mainImgEl.decoding  = 'async';
+                mainContainer.appendChild(mainImgEl);
+            }
+
+            if (isSold) {
+                var soldOverlay         = document.createElement('div');
+                soldOverlay.className   = 'product-sold-overlay';
+                soldOverlay.textContent = 'Sold';
+                mainContainer.appendChild(soldOverlay);
+            }
+
+            /* ── Info panel ── */
+            var infoEl = document.getElementById('product-info');
+
+            if (p.category) {
+                var catEl         = document.createElement('span');
+                catEl.className   = 'product-category';
+                catEl.textContent = catLabel(p.category);
+                infoEl.appendChild(catEl);
+            }
+
+            var nameEl         = document.createElement('h1');
+            nameEl.className   = 'product-name';
+            nameEl.textContent = p.name;
+            infoEl.appendChild(nameEl);
+
+            if (p.timber) {
+                var timberEl         = document.createElement('p');
+                timberEl.className   = 'product-timber';
+                timberEl.textContent = p.timber;
+                infoEl.appendChild(timberEl);
+            }
+
+            var descText = p.long_description || p.description;
+            if (descText) {
+                var descEl         = document.createElement('p');
+                descEl.className   = 'product-description';
+                descEl.textContent = descText;
+                infoEl.appendChild(descEl);
+            }
+
+            /* Specs (only render fields that have values) */
+            var specFields = [
+                { key: 'dimensions', label: 'Dimensions' },
+                { key: 'finish',     label: 'Finish' },
+                { key: 'weight',     label: 'Weight' }
+            ];
+            var hasSpecs = specFields.some(function (f) { return p[f.key]; });
+
+            if (hasSpecs) {
+                var specsList         = document.createElement('ul');
+                specsList.className   = 'product-specs';
+
+                specFields.forEach(function (f) {
+                    if (!p[f.key]) return;
+
+                    var li            = document.createElement('li');
+                    var labelSpan     = document.createElement('span');
+                    labelSpan.className   = 'product-spec-label';
+                    labelSpan.textContent = f.label;
+                    var valueSpan         = document.createElement('span');
+                    valueSpan.className   = 'product-spec-value';
+                    valueSpan.textContent = p[f.key];
+                    li.appendChild(labelSpan);
+                    li.appendChild(valueSpan);
+                    specsList.appendChild(li);
+                });
+
+                infoEl.appendChild(specsList);
+            }
+
+            var priceEl         = document.createElement('p');
+            priceEl.className   = 'product-price';
+            priceEl.textContent = '\u00a3' + p.price;
+            infoEl.appendChild(priceEl);
+
+            /* Buy / sold / contact button */
+            var buyEl;
+            if (isSold) {
+                buyEl           = document.createElement('span');
+                buyEl.className = 'product-buy product-buy-sold';
+                buyEl.textContent = 'Sold';
+            } else if (isSafeSumupUrl(p.sumup_url)) {
+                buyEl = document.createElement('a');
+                buyEl.className = 'product-buy';
+                buyEl.setAttribute('href', p.sumup_url);
+                buyEl.setAttribute('target', '_blank');
+                buyEl.setAttribute('rel', 'noopener noreferrer');
+                buyEl.textContent = 'Buy on SumUp \u2192';
+            } else {
+                buyEl = document.createElement('a');
+                buyEl.className = 'product-buy product-buy-contact';
+                buyEl.setAttribute('href', '../contact.html');
+                buyEl.textContent = 'Contact to purchase \u2192';
+            }
+            infoEl.appendChild(buyEl);
+
+            /* ── Gallery (shown when more than one safe image exists) ── */
+            var imageUrls = [p.image_url, p.image_url_2, p.image_url_3, p.image_url_4]
+                .map(resolveImageUrl)
+                .filter(isSafeImageUrl);
+
+            if (imageUrls.length > 1) {
+                var gallerySection = document.getElementById('product-gallery-section');
+                var galleryGrid    = document.getElementById('product-gallery-grid');
+
+                imageUrls.forEach(function (url, idx) {
+                    var thumbBtn = document.createElement('button');
+                    thumbBtn.className = 'product-gallery-thumb' + (idx === 0 ? ' active' : '');
+                    thumbBtn.setAttribute('type', 'button');
+                    thumbBtn.setAttribute('aria-label', p.name + ' \u2014 image ' + (idx + 1));
+
+                    var thumbImg        = document.createElement('img');
+                    thumbImg.src        = url;
+                    thumbImg.alt        = p.name + ' \u2014 image ' + (idx + 1);
+                    thumbImg.loading    = 'lazy';
+                    thumbImg.decoding   = 'async';
+                    thumbBtn.appendChild(thumbImg);
+
+                    /* Closure to capture url and button reference */
+                    (function (thumbUrl, btn) {
+                        btn.addEventListener('click', function () {
+                            if (mainImgEl) {
+                                mainImgEl.src = thumbUrl;
+                                mainImgEl.alt = p.name;
+                            }
+                            document.querySelectorAll('.product-gallery-thumb').forEach(function (t) {
+                                t.classList.remove('active');
+                            });
+                            btn.classList.add('active');
+                        });
+                    }(url, thumbBtn));
+
+                    galleryGrid.appendChild(thumbBtn);
+                });
+
+                gallerySection.style.display = 'block';
+            }
+
+            /* Show content */
+            loadingEl.style.display = 'none';
+            contentEl.style.display = '';
+        }
+    }());
+    </script>
+
+    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+    <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
+</body>
+</html>

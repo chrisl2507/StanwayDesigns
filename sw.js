@@ -1,7 +1,11 @@
-const CACHE_NAME = 'stanway-v2';
+const CACHE_NAME = 'stanway-v3';
 const PRECACHE = [
-  'styles-luxury.min.css',
-  'luxury.min.js',
+  'css/base.css',
+  'css/layout.css',
+  'css/components.css',
+  'css/pages.css',
+  'luxury.js',
+  'nav.js',
   'includes/images/Logo/Logo.webp'
 ];
 
