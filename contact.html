@@ -35,10 +35,6 @@
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/contact-page.css">
 
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-
     </head>
 <body>
     <!-- Navigation -->
@@ -139,7 +135,7 @@
                 <p class="coverage-note">Outside the area? Get in touch &mdash; it&rsquo;s worth asking.</p>
             </div>
             <div class="coverage-map-wrap">
-                <div id="coverage-map" aria-label="Map showing Stanway Designs service area around Nottingham" role="img"></div>
+                <img src="includes/images/Map/Map.PNG" alt="Map showing Stanway Designs service area around Nottingham" class="coverage-map-img">
             </div>
         </div>
     </section>
@@ -183,48 +179,7 @@
 
     <script src="luxury.js"></script>
 
-    <!-- Leaflet -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2GqaE=" crossorigin=""></script>
-
-    <script>
-    (function () {
-        var areaCentre = [53.002, -1.155];
-        var radiusMetres = 40234; // 25 miles
-
-        var map = L.map('coverage-map', {
-            center: areaCentre,
-            zoom: 9,
-            zoomControl: true,
-            scrollWheelZoom: false,
-            dragging: true,
-            attributionControl: true
-        });
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 18
-        }).addTo(map);
-
-        L.circle(areaCentre, {
-            radius: radiusMetres,
-            color: '#B8A470',
-            weight: 2,
-            fillColor: '#B8A470',
-            fillOpacity: 0.12,
-            dashArray: '6, 4'
-        }).addTo(map);
-
-        window.addEventListener('resize', function () {
-            map.invalidateSize();
-        });
-
-        // Force tile redraw after any opacity/visibility transition completes
-        setTimeout(function () { map.invalidateSize(); }, 400);
-    }());
-    </script>
-
-    <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
     <script type="speculationrules">{"prefetch":[{"source":"document","where":{"selector_matches":"a[href$='.html']"},"eagerness":"moderate"}]}</script>
 </body>
 </html>

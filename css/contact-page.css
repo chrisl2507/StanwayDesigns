@@ -150,19 +150,16 @@
             font-style: italic;
         }
 
-        #coverage-map {
-            height: 480px;
+        .coverage-map-img {
             width: 100%;
+            height: auto;
+            display: block;
             border-radius: 2px;
-            filter: grayscale(30%);
         }
 
         @media (max-width: 768px) {
             .coverage-map-inner {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
-            }
-            #coverage-map {
-                height: 320px;
             }
         }
