@@ -4,6 +4,12 @@
    Just basic navigation + subtle fade-ins
    ============================================ */
 
+// Mark JS as running so CSS can hide sections for fade-in. Without this
+// class, no-JS users see all content at full opacity.
+if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-fade');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // ===== NAVIGATION =====

@@ -22,7 +22,7 @@
         '<li><a href="' + r + 'about.html" class="nav-link">About</a></li>' +
         '<li><a href="' + r + 'contact.html" class="nav-link nav-cta">Contact</a></li>' +
         '</ul>' +
-        '<button class="menu-toggle"><span></span><span></span></button>' +
+        '<button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>' +
         '</div>' +
         '</nav>' +
         '<div class="mobile-menu">' +
