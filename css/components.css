@@ -1,9 +1,12 @@
 /* Stanway Designs — Components: buttons, hero, sections, philosophy, collections, workshop, gallery, process, contact, reviews 
    4. HERO SECTION
  */
+/* Hero — capped at 800px so 4K/ultrawide viewports don't push content
+   below the fold (L4). */
 .hero-luxury {
     position: relative;
     min-height: 100vh;
+    max-height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +78,7 @@
 
 .hero-subtitle {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 48px;
@@ -219,7 +222,7 @@ section {
 
 .section-desc {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.7;
     color: var(--text-dark);
     max-width: 600px;
@@ -272,6 +275,7 @@ section {
     line-height: 1.8;
     color: var(--text-dark);
     margin-bottom: 24px;
+    max-width: 65ch;
 }
 
 .text-link {
@@ -291,7 +295,7 @@ section {
 
 .text-link:hover {
     gap: 12px;
-    color: var(--coral);
+    color: var(--coral-text);
 }
 
 @media (min-width: 1024px) {
@@ -367,7 +371,7 @@ section {
 
 .collection-details p {
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 8px;
 }
@@ -466,7 +470,7 @@ section {
 
 .craft-text {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 48px;
@@ -516,7 +520,6 @@ section {
 .gallery-item {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     aspect-ratio: 4 / 3;
     background: var(--linen);
 }
@@ -745,9 +748,15 @@ a.contact-detail-card:hover {
 }
 
 .contact-detail-card__icon {
-    font-size: 1.4rem;
     flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--coral-text);
 }
+.contact-detail-card__icon svg { display: block; }
 
 .contact-detail-card__label {
     font-size: 11px;
@@ -765,7 +774,7 @@ a.contact-detail-card:hover {
 }
 
 a.contact-detail-card:hover .contact-detail-card__value {
-    color: var(--coral);
+    color: var(--coral-text);
 }
 
 .contact-map-wrap {
@@ -813,7 +822,7 @@ a.contact-detail-card:hover .contact-detail-card__value {
 }
 
 .contact-cta-link:hover {
-    color: var(--coral);
+    color: var(--coral-text);
 }
 
 @media (min-width: 768px) {
@@ -878,7 +887,7 @@ a.contact-detail-card:hover .contact-detail-card__value {
 }
 
 .contact-item a:hover {
-    color: var(--coral);
+    color: var(--coral-text);
 }
 
 /* Form Styles */
@@ -910,7 +919,7 @@ a.contact-detail-card:hover .contact-detail-card__value {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-bottom-color: var(--coral);
+    border-bottom-color: var(--coral-text);
 }
 
 .form-group label {
@@ -929,7 +938,7 @@ a.contact-detail-card:hover .contact-detail-card__value {
 .form-group textarea:focus + label {
     top: -8px;
     font-size: 11px;
-    color: var(--coral);
+    color: var(--coral-text);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -975,6 +984,21 @@ a.contact-detail-card:hover .contact-detail-card__value {
     display: none;
 }
 
+/* Desktop: drop horizontal scroll for a static 3-column grid (L3) */
+@media (min-width: 1024px) {
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: visible;
+        scroll-snap-type: none;
+    }
+    .reviews-grid .review-card {
+        flex: none;
+        max-width: none;
+        min-width: 0;
+    }
+}
+
 .review-card {
     background: var(--white);
     border-radius: 16px;
@@ -986,11 +1010,13 @@ a.contact-detail-card:hover .contact-detail-card__value {
 }
 
 .review-stars {
-    color: #c9a84c;
-    font-size: 16px;
-    letter-spacing: 2px;
+    color: var(--brass);
+    display: inline-flex;
+    gap: 2px;
     margin-bottom: 10px;
+    line-height: 1;
 }
+.review-stars svg { display: block; }
 
 .review-text {
     font-family: var(--font-heading);

@@ -276,3 +276,12 @@
         .woodturning-cta-section .btn-secondary:hover {
             color: var(--white);
         }
+
+/* T3 — list items wrap content in <a class="woodturning-list-link"> */
+.woodturning-list-item .woodturning-list-link {
+    display: contents;
+    color: inherit;
+    text-decoration: none;
+}
+.woodturning-list-item:hover .woodturning-list-name { color: var(--coral-dark); }
+.woodturning-list-arrow { color: var(--coral-text); }

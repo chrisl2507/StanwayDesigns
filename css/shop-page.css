@@ -71,6 +71,24 @@
             z-index: 10;
         }
 
+        .shop-filter-section {
+            position: relative;
+        }
+        /* L5 — gradient fade signals there's more to scroll on overflow */
+        .shop-filter-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            background: linear-gradient(to right, transparent, var(--warm-white));
+            pointer-events: none;
+        }
+        @media (min-width: 1024px) {
+            .shop-filter-section::after { display: none; }
+        }
+
         .shop-filter-inner {
             display: flex;
             gap: 0;
@@ -123,7 +141,7 @@
             padding: var(--space-3xl) 0;
             font-family: var(--font-body);
             font-size: 14px;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--mid-gray);
             letter-spacing: 1px;
         }
@@ -211,17 +229,41 @@
             position: relative;
             aspect-ratio: 4 / 3;
             overflow: hidden;
-            background: var(--shop-card-bg);
+            background: var(--linen);
             flex-shrink: 0;
+        }
+        /* T2 — skeleton shimmer until <img> loads. JS adds .loaded
+           when the image finishes decoding. */
+        .shop-card-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, var(--linen) 30%, var(--cream) 50%, var(--linen) 70%);
+            background-size: 200% 100%;
+            animation: shopSkeleton 1.4s ease-in-out infinite;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .shop-card-image.loaded::before { opacity: 0; }
+        @keyframes shopSkeleton {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .shop-card-image::before { animation: none; }
         }
 
         .shop-card-image img {
+            position: relative;
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.45s ease;
+            transition: transform 0.45s ease, opacity 0.3s ease;
+            opacity: 0;
         }
+        .shop-card-image.loaded img { opacity: 1; }
 
         .shop-card:not(.sold):hover .shop-card-image img {
             transform: scale(1.04);
@@ -282,7 +324,7 @@
         .shop-card-desc {
             font-family: var(--font-body);
             font-size: 14px;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.65;
             color: var(--mid-gray);
             margin: 0 0 0.75rem;

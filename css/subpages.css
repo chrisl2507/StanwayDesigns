@@ -26,7 +26,7 @@
     text-transform: uppercase;
     color: var(--mid-gray);
 }
-.sp-breadcrumb-parent { color: var(--mid-gray); text-decoration: none; transition: color 0.2s ease; }
+.sp-breadcrumb-parent { color: var(--mid-gray); text-decoration: none; transition: color 0.2s ease; min-height: 44px; display: inline-flex; align-items: center; }
 .sp-breadcrumb-parent:hover { color: var(--charcoal); }
 .sp-breadcrumb-sep { color: var(--light-gray); font-size: 10px; }
 .sp-breadcrumb-current { color: var(--charcoal); }
@@ -87,7 +87,7 @@
     letter-spacing: -0.5px;
     margin: 0;
 }
-.sp-intro-body p { font-family: var(--font-body); font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--mid-gray); margin: 0 0 1.25rem; }
+.sp-intro-body p { font-family: var(--font-body); font-size: 16px; font-weight: 400; line-height: 1.85; color: var(--mid-gray); margin: 0 0 1.25rem; }
 .sp-intro-body p:last-child { margin-bottom: 0; }
 
 .sp-detail-section { padding: var(--space-3xl) 0; background: var(--linen); }
@@ -107,7 +107,7 @@
 .sp-detail-text { display: flex; flex-direction: column; gap: 0.2rem; }
 .sp-detail-name { font-family: var(--font-heading); font-size: clamp(1.35rem, 2.5vw, 1.9rem); font-weight: 500; color: var(--text-dark); transition: color 0.2s ease; }
 .sp-detail-item:hover .sp-detail-name { color: var(--coral-dark); }
-.sp-detail-sub { font-family: var(--font-body); font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--mid-gray); }
+.sp-detail-sub { font-family: var(--font-body); font-size: 13px; font-weight: 400; line-height: 1.6; color: var(--mid-gray); }
 
 .sp-related-section { padding: var(--space-3xl) 0; background: var(--cream); }
 .sp-related-list { list-style: none; margin: var(--space-xl) 0 0; padding: 0; }
@@ -175,6 +175,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    min-height: 44px;
     font-family: var(--font-body);
     font-size: 12px;
     font-weight: 500;
@@ -248,7 +249,7 @@
 .sp-hero-price {
     font-family: var(--font-body);
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 2px;
     color: rgba(255,255,255,0.5);
     text-transform: uppercase;
@@ -281,7 +282,7 @@
 .sp-timber-note {
     font-family: var(--font-body);
     font-size: 11px;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--mid-gray);
     display: block;
     margin-top: 0.25rem;

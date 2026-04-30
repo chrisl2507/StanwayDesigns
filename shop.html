@@ -40,9 +40,7 @@
 <body>
     <!-- Navigation -->
     <script src="nav.js" data-root=""></script>
-    <script>document.querySelector('a[href="shop.html"].nav-link')?.classList.add('nav-active');</script>
-
-    <main>
+    <main id="main">
 
     <!-- Page Header -->
     <section class="shop-header">
@@ -89,18 +87,7 @@
     </section>
 
     <!-- Visit Full Shop -->
-    <section class="shop-full-section">
-        <div class="container-narrow">
-            <h2 class="shop-full-heading">See everything</h2>
-            <p class="shop-full-body">New pieces added as they leave the workshop.</p>
-            <a href="https://sumup.link/stanwaydesigns" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                <span class="btn-text">Visit the full shop</span>
-                <span class="btn-arrow">→</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Commission CTA -->
+    <!-- Commission CTA — promoted above the SumUp link (IA2) -->
     <section class="shop-cta-section">
         <div class="container-narrow">
             <div class="cta-content">
@@ -111,6 +98,17 @@
                     <span class="btn-arrow">→</span>
                 </a>
             </div>
+        </div>
+    </section>
+
+    <section class="shop-full-section">
+        <div class="container-narrow">
+            <h2 class="shop-full-heading">See everything</h2>
+            <p class="shop-full-body">New pieces added as they leave the workshop.</p>
+            <a href="https://sumup.link/stanwaydesigns" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                <span class="btn-text">Visit the full shop</span>
+                <span class="btn-arrow">→</span>
+            </a>
         </div>
     </section>
 
@@ -282,7 +280,16 @@
                 img.alt     = p.name;
                 img.loading = 'lazy';
                 img.decoding = 'async';
+                /* T2 — flag image as loaded so skeleton fades out */
+                if (img.complete && img.naturalWidth > 0) {
+                    imgWrap.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', function () { imgWrap.classList.add('loaded'); }, { once: true });
+                    img.addEventListener('error', function () { imgWrap.classList.add('loaded'); }, { once: true });
+                }
                 imgWrap.appendChild(img);
+            } else {
+                imgWrap.classList.add('loaded');
             }
 
             if (isSold) {

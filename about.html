@@ -38,9 +38,7 @@
 <body>
     <!-- Navigation -->
     <script src="nav.js" data-root=""></script>
-    <script>document.querySelector('a[href="about.html"].nav-link')?.classList.add('nav-active');</script>
-
-    <main>
+    <main id="main">
 
     <!-- Page Hero -->
     <section class="page-hero-luxury">
@@ -61,7 +59,7 @@
             <div class="story-grid">
                 <div class="story-quote">
                     <div class="maker-portrait">
-                        <img src="includes/images/Max_Stanway/Max.webp" width="1148" height="2040" alt="Max Stanway in his Nottingham workshop" loading="lazy" decoding="async" srcset="includes/images/Max_Stanway/Max-400w.webp 400w, includes/images/Max_Stanway/Max-800w.webp 800w, includes/images/Max_Stanway/Max.webp 1148w" sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="includes/images/Max_Stanway/Max.webp" width="1148" height="2040" alt="Max Stanway in his Nottingham workshop" loading="eager" fetchpriority="high" decoding="async" srcset="includes/images/Max_Stanway/Max-400w.webp 400w, includes/images/Max_Stanway/Max-800w.webp 800w, includes/images/Max_Stanway/Max.webp 1148w" sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     </div>
                     <blockquote>
                         "The craft runs in the family"

@@ -51,7 +51,7 @@
     padding: var(--space-3xl) 0;
     font-family: var(--font-body);
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--mid-gray);
     letter-spacing: 1px;
 }
@@ -190,7 +190,7 @@
 .product-description {
     font-family: var(--font-body);
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.75;
     color: var(--mid-gray);
     margin: 0 0 1.75rem;

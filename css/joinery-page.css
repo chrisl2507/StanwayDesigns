@@ -213,3 +213,13 @@
         .joinery-cta-section .btn-primary::before {
             background: rgba(255, 255, 255, 0.1);
         }
+
+/* T3 — list items now wrap content in <a class="joinery-list-link">.
+   display: contents preserves the existing flex layout on the <li>. */
+.joinery-list-item .joinery-list-link {
+    display: contents;
+    color: inherit;
+    text-decoration: none;
+}
+.joinery-list-item:hover .joinery-list-name { color: var(--coral-dark); }
+.joinery-list-arrow { color: var(--coral-text); }

@@ -310,3 +310,12 @@
         .furniture-cta-section .btn-primary::before {
             background: rgba(255, 255, 255, 0.08);
         }
+
+/* T3 — list items wrap content in <a class="furniture-cat-link"> */
+.furniture-cat-item .furniture-cat-link {
+    display: contents;
+    color: inherit;
+    text-decoration: none;
+}
+.furniture-cat-item:hover .furniture-cat-name { color: var(--coral-dark); }
+.furniture-cat-arrow { color: var(--coral-text); }

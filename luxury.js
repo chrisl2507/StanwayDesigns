@@ -37,21 +37,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // Mobile menu toggle
+    // Mobile menu — open/close with full a11y wiring
     if (menuToggle && mobileMenu) {
+        const closeBtn = mobileMenu.querySelector('.mobile-close');
+        const focusable = () => mobileMenu.querySelectorAll('a, button');
+
+        function openMenu() {
+            menuToggle.classList.add('active');
+            mobileMenu.classList.add('active');
+            mobileMenu.removeAttribute('inert');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            menuToggle.setAttribute('aria-label', 'Close menu');
+            document.body.style.overflow = 'hidden';
+            const first = focusable()[0];
+            if (first) first.focus();
+        }
+
+        function closeMenu() {
+            menuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileMenu.setAttribute('inert', '');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            document.body.style.overflow = '';
+            menuToggle.focus();
+        }
+
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            if (mobileMenu.classList.contains('active')) closeMenu();
+            else openMenu();
         });
 
-        // Close mobile menu when link is clicked
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+        // Backdrop click — only when the click target IS the dialog itself
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) closeMenu();
+        });
+
+        // Close on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Escape to close + Tab focus trap while open
+        document.addEventListener('keydown', (e) => {
+            if (!mobileMenu.classList.contains('active')) return;
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closeMenu();
+                return;
+            }
+            if (e.key === 'Tab') {
+                const items = focusable();
+                if (!items.length) return;
+                const first = items[0];
+                const last = items[items.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
         });
     }
 
@@ -100,8 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalSlides = slides.length;
 
         function getVisibleSlides() {
-            if (window.innerWidth >= 1024) return 1;
-            if (window.innerWidth >= 768) return 2;
+            // P2 — single-up at every breakpoint so each timber gets a moment
             return 1;
         }
 
