@@ -39,9 +39,7 @@
 <body>
     <!-- Navigation -->
     <script src="nav.js" data-root=""></script>
-    <script>document.querySelector('a[href="woodturning.html"].nav-link')?.classList.add('nav-active');</script>
-
-    <main>
+    <main id="main">
 
     <!-- Hero -->
     <section class="woodturning-hero">
@@ -82,13 +80,15 @@
             </div>
 
             <ul class="woodturning-list">
-                <li class="woodturning-list-item" style="cursor: pointer;" onclick="location.href='woodturning/ring-boxes.html'">
-                    <span class="woodturning-list-num">01</span>
-                    <span class="woodturning-list-text">
-                        <a href="woodturning/ring-boxes.html" class="woodturning-list-name" style="text-decoration: none; color: inherit;">Custom Ring Boxes</a>
-                        <span class="woodturning-list-sub">Commissioned engagement &amp; wedding ring boxes</span>
-                    </span>
-                    <span class="woodturning-list-desc">Precision-turned individually in premium timber. Fitted velvet or suede interior, personalisation available. <span style="color: var(--coral-dark);">View details →</span></span>
+                <li class="woodturning-list-item">
+                    <a href="woodturning/ring-boxes.html" class="woodturning-list-link">
+                        <span class="woodturning-list-num">01</span>
+                        <span class="woodturning-list-text">
+                            <span class="woodturning-list-name">Custom Ring Boxes</span>
+                            <span class="woodturning-list-sub">Commissioned engagement &amp; wedding ring boxes</span>
+                        </span>
+                        <span class="woodturning-list-desc">Precision-turned individually in premium timber. Fitted velvet or suede interior, personalisation available. <span class="woodturning-list-arrow">View details →</span></span>
+                    </a>
                 </li>
                 <li class="woodturning-list-item">
                     <span class="woodturning-list-num">02</span>

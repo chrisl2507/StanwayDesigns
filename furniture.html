@@ -39,9 +39,7 @@
 <body>
     <!-- Navigation -->
     <script src="nav.js" data-root=""></script>
-    <script>document.querySelector('a[href="furniture.html"].nav-link')?.classList.add('nav-active');</script>
-
-    <main>
+    <main id="main">
 
     <!-- Page Header -->
     <section class="furniture-header">
@@ -114,37 +112,45 @@
             </div>
 
             <ul class="furniture-cat-list">
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/dining-tables.html'">
-                    <span class="furniture-cat-num">01</span>
-                    <span class="furniture-cat-text">
-                        <a href="furniture/dining-tables.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Dining Tables</a>
-                        <span class="furniture-cat-detail">The centrepiece of the room. Solid timber, live edge, or traditional form.</span>
-                    </span>
-                    <span class="furniture-cat-desc">From four-seater to banquet scale. Leg style, finish, and timber all to brief. <span style="color: var(--coral-dark);">View details →</span></span>
+                <li class="furniture-cat-item">
+                    <a href="furniture/dining-tables.html" class="furniture-cat-link">
+                        <span class="furniture-cat-num">01</span>
+                        <span class="furniture-cat-text">
+                            <span class="furniture-cat-name">Dining Tables</span>
+                            <span class="furniture-cat-detail">The centrepiece of the room. Solid timber, live edge, or traditional form.</span>
+                        </span>
+                        <span class="furniture-cat-desc">From four-seater to banquet scale. Leg style, finish, and timber all to brief. <span class="furniture-cat-arrow">View details →</span></span>
+                    </a>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/gaming-tables.html'">
-                    <span class="furniture-cat-num">02</span>
-                    <span class="furniture-cat-text">
-                        <a href="furniture/gaming-tables.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Table Top Gaming Tables</a>
-                        <span class="furniture-cat-detail">Purpose-built for play. Padded surfaces, integrated storage, dining topper.</span>
-                    </span>
-                    <span class="furniture-cat-desc">Warhammer 40k, D&amp;D, and any tabletop format. Size, felt colour, and features all configurable. <span style="color: var(--coral-dark);">View details →</span></span>
+                <li class="furniture-cat-item">
+                    <a href="furniture/gaming-tables.html" class="furniture-cat-link">
+                        <span class="furniture-cat-num">02</span>
+                        <span class="furniture-cat-text">
+                            <span class="furniture-cat-name">Table Top Gaming Tables</span>
+                            <span class="furniture-cat-detail">Purpose-built for play. Padded surfaces, integrated storage, dining topper.</span>
+                        </span>
+                        <span class="furniture-cat-desc">Warhammer 40k, D&amp;D, and any tabletop format. Size, felt colour, and features all configurable. <span class="furniture-cat-arrow">View details →</span></span>
+                    </a>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/bedroom.html'">
-                    <span class="furniture-cat-num">03</span>
-                    <span class="furniture-cat-text">
-                        <a href="furniture/bedroom.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Bedroom Furniture</a>
-                        <span class="furniture-cat-detail">Bed frames, dressers, bedside pieces. Designed as a set or individually.</span>
-                    </span>
-                    <span class="furniture-cat-desc">Solid timber. Storage beds, platform builds, or upholstered headboards in timber frames. <span style="color: var(--coral-dark);">View details →</span></span>
+                <li class="furniture-cat-item">
+                    <a href="furniture/bedroom.html" class="furniture-cat-link">
+                        <span class="furniture-cat-num">03</span>
+                        <span class="furniture-cat-text">
+                            <span class="furniture-cat-name">Bedroom Furniture</span>
+                            <span class="furniture-cat-detail">Bed frames, dressers, bedside pieces. Designed as a set or individually.</span>
+                        </span>
+                        <span class="furniture-cat-desc">Solid timber. Storage beds, platform builds, or upholstered headboards in timber frames. <span class="furniture-cat-arrow">View details →</span></span>
+                    </a>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/living-room.html'">
-                    <span class="furniture-cat-num">04</span>
-                    <span class="furniture-cat-text">
-                        <a href="furniture/living-room.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Living Room</a>
-                        <span class="furniture-cat-detail">Coffee tables, media units, console tables, shelving.</span>
-                    </span>
-                    <span class="furniture-cat-desc">Pieces that anchor a room without competing with it. Simple forms, considered proportions. <span style="color: var(--coral-dark);">View details →</span></span>
+                <li class="furniture-cat-item">
+                    <a href="furniture/living-room.html" class="furniture-cat-link">
+                        <span class="furniture-cat-num">04</span>
+                        <span class="furniture-cat-text">
+                            <span class="furniture-cat-name">Living Room</span>
+                            <span class="furniture-cat-detail">Coffee tables, media units, console tables, shelving.</span>
+                        </span>
+                        <span class="furniture-cat-desc">Pieces that anchor a room without competing with it. Simple forms, considered proportions. <span class="furniture-cat-arrow">View details →</span></span>
+                    </a>
                 </li>
                 <li class="furniture-cat-item">
                     <span class="furniture-cat-num">05</span>
@@ -154,13 +160,15 @@
                     </span>
                     <span class="furniture-cat-desc">Hard-working pieces finished to the same standard as everything else. <span style="color: var(--mid-gray); font-style: italic;">Coming soon</span></span>
                 </li>
-                <li class="furniture-cat-item" style="cursor: pointer;" onclick="location.href='furniture/statement.html'">
-                    <span class="furniture-cat-num">06</span>
-                    <span class="furniture-cat-text">
-                        <a href="furniture/statement.html" class="furniture-cat-name" style="text-decoration: none; color: inherit;">Statement Commissions</a>
-                        <span class="furniture-cat-detail">One-off pieces designed entirely to brief.</span>
-                    </span>
-                    <span class="furniture-cat-desc">If you have an idea and don&rsquo;t know what category it fits, get in touch. <span style="color: var(--coral-dark);">View details →</span></span>
+                <li class="furniture-cat-item">
+                    <a href="furniture/statement.html" class="furniture-cat-link">
+                        <span class="furniture-cat-num">06</span>
+                        <span class="furniture-cat-text">
+                            <span class="furniture-cat-name">Statement Commissions</span>
+                            <span class="furniture-cat-detail">One-off pieces designed entirely to brief.</span>
+                        </span>
+                        <span class="furniture-cat-desc">If you have an idea and don&rsquo;t know what category it fits, get in touch. <span class="furniture-cat-arrow">View details →</span></span>
+                    </a>
                 </li>
             </ul>
         </div>

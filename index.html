@@ -120,12 +120,12 @@
     <!-- Navigation -->
     <script src="nav.js" data-root=""></script>
 
-    <main>
+    <main id="main">
 
     <!-- Hero Section -->
     <section id="home" class="hero-luxury">
         <div class="hero-bg">
-            <img class="hero-image" src="includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp" sizes="100vw" alt="" width="1536" height="2048" fetchpriority="high">
+            <img class="hero-image" src="includes/images/Bespoke/The_Odyssey/The_Odyssey_1-800w.webp" srcset="includes/images/Bespoke/The_Odyssey/The_Odyssey_1-400w.webp 400w, includes/images/Bespoke/The_Odyssey/The_Odyssey_1-800w.webp 800w, includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp 1536w" sizes="100vw" alt="" width="1536" height="2048" fetchpriority="high">
             <div class="hero-overlay"></div>
         </div>
 
@@ -326,6 +326,14 @@
                 </div>
             </div>
 
+            <!-- IA1 — see-everything CTA below the recent grid -->
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <a href="gallery.html" class="btn-primary">
+                    <span class="btn-text">See the full gallery</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -339,31 +347,31 @@
 
             <div class="reviews-grid">
                 <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="review-stars" aria-label="5 out of 5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg></div>
                     <p class="review-text">"Max created the most incredible and amazing bespoke ring box (Pok&eacute;mon inspired) for our wedding and the end result was beyond our wildest dreams. Cannot recommend enough!"</p>
                     <span class="review-author">&mdash; Chris Lillico, Google Review</span>
                 </div>
 
                 <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="review-stars" aria-label="5 out of 5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg></div>
                     <p class="review-text">"I hired Max to help with some furniture fitting. He did a great job and was very professional and respectful. As well as this he fixed a broken stair which was dangerous and it feels really solid now. I would definitely recommend Stanway Designs to friends and family."</p>
                     <span class="review-author">&mdash; Sofia G, Google Review</span>
                 </div>
 
                 <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="review-stars" aria-label="5 out of 5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg></div>
                     <p class="review-text">"Max is great. Made some lovely shelves for an old doorway in my kitchen that look much more expensive than they are. I am really impressed with them. He also hung a couple of pictures and assembled a flat pack wardrobe for me, and cut a better quality metal hanging bar for it when he noticed what rubbish quality the one it came with was. A nice gesture that was much appreciated. He is a very friendly and skilled young man - thanks Max!"</p>
                     <span class="review-author">&mdash; Claire Hillier, Google Review</span>
                 </div>
 
                 <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="review-stars" aria-label="5 out of 5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg></div>
                     <p class="review-text">"Max provided a very high quality professional service. He was very patient multiple times when I changed my mind and the end product was exceptional. Highly recommended."</p>
                     <span class="review-author">&mdash; Atinuke, Worksop &mdash; MyBuilder Review, Feb 2026</span>
                 </div>
 
                 <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="review-stars" aria-label="5 out of 5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 14.94 8.95 22 9.97l-5.39 4.7L18.18 22 12 18.27 5.82 22l1.57-7.33L2 9.97l7.06-1.02z"/></svg></div>
                     <p class="review-text">"Max was very professional and also had really good attention to detail &mdash; I'm very grateful for the work carried out and would definitely recommend him to others."</p>
                     <span class="review-author">&mdash; Gabriella, Sheffield &mdash; MyBuilder Review, Aug 2025</span>
                 </div>

@@ -1,9 +1,10 @@
 /* Stanway Designs — Pages: page-hero, about, gallery, blog, products, gallery-filters */
 
-/* Page Hero Luxury */
+/* Page Hero Luxury — capped so the hero doesn't fill 4K/ultrawide viewports (L4) */
 .page-hero-luxury {
     position: relative;
     min-height: 60vh;
+    max-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +32,7 @@
 
 .page-hero-subtitle {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -63,6 +64,7 @@
     line-height: 1.8;
     color: var(--text-dark);
     margin-bottom: 24px;
+    max-width: 65ch;
 }
 
 @media (min-width: 1024px) {
@@ -156,9 +158,10 @@
 
 .workshop-text {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
+    max-width: 65ch;
 }
 
 /* Materials Process Section */
@@ -211,7 +214,7 @@
 .material-nav-btn:hover {
     background: var(--coral);
     color: var(--white);
-    border-color: var(--coral);
+    border-color: var(--coral-text);
 }
 
 .material-nav-btn:disabled {
@@ -298,22 +301,34 @@
     margin-top: var(--space-xl);
 }
 
+/* Material dot — visible 10px dot rendered via ::before, but the
+   button itself has a 44x44 hit area for touch targets (T1). */
 .material-dot {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-dot::before {
+    content: '';
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: var(--light-gray);
-    border: none;
-    cursor: pointer;
     transition: all var(--transition-base);
-    padding: 0;
 }
 
-.material-dot:hover {
+.material-dot:hover::before {
     background: var(--coral-light);
 }
 
-.material-dot.active {
+.material-dot.active::before {
     background: var(--coral);
     width: 32px;
     border-radius: 5px;
@@ -332,12 +347,8 @@
     margin-bottom: 16px;
 }
 
-@media (min-width: 768px) {
-    .material-slide {
-        flex: 0 0 calc(50% - 12px);
-        max-width: calc(50% - 12px);
-    }
-}
+/* P2 — single-slide carousel even on tablet+ keeps the timber sample
+   in focus and reduces eager-loaded images on first visit. */
 
 @media (min-width: 1024px) {
     .material-slide {
@@ -375,6 +386,9 @@
     line-height: 1.8;
     color: var(--text-dark);
     margin-bottom: 24px;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .location-content .btn-primary {
@@ -390,7 +404,7 @@
 
 .services-intro-text {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8;
     color: var(--text-dark);
     max-width: 700px;
@@ -823,7 +837,7 @@
 }
 
 .blog-back-link:hover {
-    color: var(--coral);
+    color: var(--coral-text);
     gap: 12px;
 }
 
@@ -899,7 +913,7 @@
 }
 
 .blog-nav-link:hover {
-    color: var(--coral);
+    color: var(--coral-text);
     gap: 12px;
 }
 
@@ -1030,7 +1044,7 @@
     font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 600;
-    color: var(--coral);
+    color: var(--coral-text);
     display: block;
     margin-bottom: 16px;
 }
@@ -1074,7 +1088,7 @@
 }
 
 .product-back-link:hover {
-    color: var(--coral);
+    color: var(--coral-text);
     gap: 12px;
 }
 
@@ -1091,7 +1105,7 @@
     font-family: var(--font-heading);
     font-size: 24px;
     font-weight: 600;
-    color: var(--coral);
+    color: var(--coral-text);
     margin-top: 16px;
 }
 
@@ -1194,7 +1208,8 @@
 .gallery-filter-btn {
     background: none;
     border: 1px solid var(--light-gray);
-    padding: 10px 24px;
+    padding: 12px 20px;
+    min-height: 44px;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -1205,13 +1220,13 @@
 }
 
 .gallery-filter-btn:hover {
-    border-color: var(--coral);
-    color: var(--coral);
+    border-color: var(--coral-text);
+    color: var(--coral-text);
 }
 
 .gallery-filter-btn.active {
     background: var(--coral);
-    border-color: var(--coral);
+    border-color: var(--coral-text);
     color: var(--white);
 }
 
