@@ -1,6 +1,6 @@
-/* Stanway Designs — restoration.html specific styles */
+/* Stanway Designs - restoration.html specific styles */
 
-/* Hero — bottom-left headline */
+/* Hero - bottom-left headline */
         .restoration-hero {
             position: relative;
             height: 100svh;
@@ -70,7 +70,7 @@
             color: rgba(255, 255, 255, 0.55);
         }
 
-        /* Intro — asymmetric two-column */
+        /* Intro - asymmetric two-column */
         .restoration-intro-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-white);
@@ -110,7 +110,7 @@
             }
         }
 
-        /* Services list — numbered minimal */
+        /* Services list - numbered minimal */
         .restoration-services-section {
             padding: var(--space-3xl) 0;
             background: var(--linen);
@@ -228,7 +228,7 @@
             font-style: italic;
         }
 
-        /* CTA — dark background */
+        /* CTA - dark background */
         .restoration-cta-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-brown);

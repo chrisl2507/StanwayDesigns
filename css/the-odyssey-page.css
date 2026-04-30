@@ -1,14 +1,14 @@
-/* Stanway Designs — furniture/the-odyssey.html overrides
+/* Stanway Designs - furniture/the-odyssey.html overrides
    Base styling lives in subpages.css. This file is the diff. */
 
-/* Hero — image biased upward, larger title with bottom margin for price */
+/* Hero - image biased upward, larger title with bottom margin for price */
 .sp-hero-image img { object-position: center 30%; }
 .sp-hero-title {
     font-size: clamp(3.5rem, 9vw, 7rem);
     margin: 0 0 0.75rem;
 }
 
-/* Gallery — 2/4 columns, 3:4 portrait tiles, brass label / white title */
+/* Gallery - 2/4 columns, 3:4 portrait tiles, brass label / white title */
 .sp-gallery-section { padding: var(--space-3xl) 0; background: var(--charcoal); }
 .sp-gallery-section .section-label { color: var(--brass); }
 .sp-gallery-section .section-title { color: var(--white); }

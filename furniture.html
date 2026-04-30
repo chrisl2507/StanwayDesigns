@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/subpages.css">
     <link rel="stylesheet" href="css/furniture-page.css">
     </head>
 <body>
@@ -46,58 +47,54 @@
         <div class="container">
             <span class="furniture-header-label">Stanway Designs</span>
             <h1 class="furniture-header-title">Furniture</h1>
-            <p class="furniture-header-sub">Bespoke commissions in premium timber &mdash; every piece starts with a conversation. Nothing leaves the workshop unless it&rsquo;s right.</p>
+            <p class="furniture-header-sub">Bespoke commissions in premium timber - every piece starts with a conversation. Nothing leaves the workshop unless it&rsquo;s right.</p>
         </div>
     </section>
 
-    <!-- The Odyssey — Cinematic Feature -->
-    <section class="odyssey-feature">
-        <div class="odyssey-feature-image">
-            <img src="includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp" alt="" width="1536" height="2048" fetchpriority="high" srcset="includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp 1536w" sizes="100vw">
-        </div>
-        <div class="odyssey-feature-overlay"></div>
-        <div class="odyssey-feature-content">
-            <div class="odyssey-feature-text">
-                <h2 class="odyssey-feature-title">The Odyssey</h2>
-                <p class="odyssey-feature-desc">Max&rsquo;s signature dining table &mdash; a large-format bespoke commission in solid English walnut with a live-edge slab top, hand-finished over weeks. Built for the room it lives in. Designed to outlast it.</p>
-            </div>
-            <div class="odyssey-feature-cta">
-                <a href="furniture/the-odyssey.html" class="btn-primary" style="margin-bottom: 0.75rem; display: block;">
-                    <span class="btn-text">View The Odyssey</span>
-                    <span class="btn-arrow">→</span>
-                </a>
-                <a href="contact.html" class="btn-primary">
-                    <span class="btn-text">Commission a Table</span>
-                    <span class="btn-arrow">→</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gaming Tables Feature -->
-    <section class="gaming-feature-section">
+    <!-- The Odyssey - Cinematic Feature -->
+    <!-- Featured Commissions -->
+    <section class="featured-commissions-section">
         <div class="container">
-            <div class="gaming-feature-grid">
-                <div class="gaming-feature-image-wrap">
-                    <img src="includes/images/Gaming Table/Table 1.webp" alt="Custom gaming table — recessed play surface with removable dining topper" loading="lazy" decoding="async" width="2048" height="1536">
-                </div>
-                <div class="gaming-feature-text">
-                    <span class="section-label">Featured category</span>
-                    <h2 class="gaming-feature-heading">Built for the Game</h2>
-                    <span class="section-label" style="display: block; color: var(--coral-dark); margin-bottom: 1.5rem;">Table Top Gaming Tables</span>
-                    <p>Purpose-built gaming tables are a serious commission. A recessed play surface at the right depth, padded felt or neoprene in the colour of your choice, integrated trays for dice, cards, and tokens &mdash; and a removable cover that converts the whole thing back into a dining table.</p>
-                    <p>Designed with the game in mind. Built with the same craft as everything else in the workshop &mdash; solid timber, hand-finished, made to last the campaigns.</p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="furniture/gaming-tables.html" class="btn-primary">
-                            <span class="btn-text">View Gaming Tables</span>
-                            <span class="btn-arrow">→</span>
-                        </a>
-                        <a href="contact.html" class="btn-primary">
-                            <span class="btn-text">Commission one</span>
-                            <span class="btn-arrow">→</span>
-                        </a>
-                    </div>
-                </div>
+            <div class="section-header-center">
+                <span class="section-label">Featured commissions</span>
+                <h2 class="section-title">The flagship pieces</h2>
+                <p class="section-desc">Two of the most ambitious commissions to come out of the workshop.</p>
+            </div>
+
+            <div class="featured-commissions-grid">
+
+                <!-- The Odyssey -->
+                <article class="featured-commission-card">
+                    <a href="furniture/the-odyssey.html" class="featured-commission-link">
+                        <div class="featured-commission-image">
+                            <img src="includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp" alt="The Odyssey - bespoke storage and display piece" loading="lazy" decoding="async" width="1536" height="2048" srcset="includes/images/Bespoke/The_Odyssey/The_Odyssey_1-400w.webp 400w, includes/images/Bespoke/The_Odyssey/The_Odyssey_1-800w.webp 800w, includes/images/Bespoke/The_Odyssey/The_Odyssey_1.webp 1536w" sizes="(max-width: 768px) 100vw, 50vw">
+                        </div>
+                        <div class="featured-commission-content">
+                            <span class="featured-commission-label">Storage &amp; Display</span>
+                            <h3 class="featured-commission-title">The Odyssey</h3>
+                            <p class="featured-commission-desc">Max&rsquo;s signature storage and display piece - solid timber, traditional joinery, made to order in your choice of African Padauk, White Oak, Beech, English Yew, or Cherry.</p>
+                            <p class="featured-commission-price">From &pound;2,500</p>
+                            <span class="featured-commission-cta">View The Odyssey <span aria-hidden="true">&rarr;</span></span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Gaming Tables -->
+                <article class="featured-commission-card">
+                    <a href="furniture/gaming-tables.html" class="featured-commission-link">
+                        <div class="featured-commission-image">
+                            <img src="includes/images/Gaming Table/Table 1.webp" alt="Custom gaming table - recessed play surface with removable dining topper" loading="lazy" decoding="async" width="2048" height="1536" sizes="(max-width: 768px) 100vw, 50vw">
+                        </div>
+                        <div class="featured-commission-content">
+                            <span class="featured-commission-label">Tabletop Gaming</span>
+                            <h3 class="featured-commission-title">Gaming Tables</h3>
+                            <p class="featured-commission-desc">Purpose-built for Warhammer, D&amp;D, and tabletop gaming. Recessed play surface, integrated trays, removable dining topper - a proper piece of furniture first.</p>
+                            <p class="featured-commission-price">From &pound;8,000</p>
+                            <span class="featured-commission-cta">View Gaming Tables <span aria-hidden="true">&rarr;</span></span>
+                        </div>
+                    </a>
+                </article>
+
             </div>
         </div>
     </section>
@@ -186,7 +183,7 @@
             <div class="process-timeline">
                 <div class="process-step-card">
                     <h3>Consultation</h3>
-                    <p>We talk through what you&rsquo;re after &mdash; what the piece is for, the space it&rsquo;s going in, any ideas you have. In person, over the phone, or by email.</p>
+                    <p>We talk through what you&rsquo;re after - what the piece is for, the space it&rsquo;s going in, any ideas you have. In person, over the phone, or by email.</p>
                 </div>
                 <div class="process-step-card">
                     <h3>Design &amp; Drawing</h3>
@@ -194,7 +191,7 @@
                 </div>
                 <div class="process-step-card">
                     <h3>Workshop Build</h3>
-                    <p>Your piece is made by hand in my Nottingham workshop. I&rsquo;ll send progress photos along the way. Timeline varies by complexity &mdash; I&rsquo;ll be clear at the start.</p>
+                    <p>Your piece is made by hand in my Nottingham workshop. I&rsquo;ll send progress photos along the way. Timeline varies by complexity - I&rsquo;ll be clear at the start.</p>
                 </div>
                 <div class="process-step-card">
                     <h3>Delivery &amp; Installation</h3>

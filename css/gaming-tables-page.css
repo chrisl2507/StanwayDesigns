@@ -1,7 +1,7 @@
-/* Stanway Designs — furniture/gaming-tables.html overrides
+/* Stanway Designs - furniture/gaming-tables.html overrides
    Base styling lives in subpages.css. This file is the diff. */
 
-/* Hero — taller frame, center-aligned image, slightly heavier overlay */
+/* Hero - taller frame, center-aligned image, slightly heavier overlay */
 .sp-hero { min-height: 55vh; max-height: 65vh; }
 .sp-hero-image img { object-position: center center; }
 .sp-hero-overlay {
@@ -14,7 +14,7 @@
 }
 .sp-hero-title { margin: 0 0 0.75rem; }
 
-/* Gallery — 1/3 columns, 4:3 tiles */
+/* Gallery - 1/3 columns, 4:3 tiles */
 .sp-gallery-section { padding: var(--space-3xl) 0; background: var(--charcoal); }
 .sp-gallery-grid {
     display: grid;

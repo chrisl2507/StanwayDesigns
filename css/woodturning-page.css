@@ -1,6 +1,6 @@
-/* Stanway Designs — woodturning.html specific styles */
+/* Stanway Designs - woodturning.html specific styles */
 
-/* Hero — bottom-left headline (matches joinery.html pattern) */
+/* Hero - bottom-left headline (matches joinery.html pattern) */
         .woodturning-hero {
             position: relative;
             height: 100svh;
@@ -70,7 +70,7 @@
             color: rgba(255, 255, 255, 0.55);
         }
 
-        /* Intro — asymmetric two-column */
+        /* Intro - asymmetric two-column */
         .woodturning-intro-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-white);
@@ -110,7 +110,7 @@
             }
         }
 
-        /* Product categories — numbered minimal list */
+        /* Product categories - numbered minimal list */
         .woodturning-categories-section {
             padding: var(--space-3xl) 0;
             background: var(--linen);
@@ -202,7 +202,7 @@
             }
         }
 
-        /* Materials note — single column, generous whitespace */
+        /* Materials note - single column, generous whitespace */
         .woodturning-materials-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-white);
@@ -225,7 +225,7 @@
             color: var(--mid-gray);
         }
 
-        /* Shop CTA — two actions side by side */
+        /* Shop CTA - two actions side by side */
         .woodturning-cta-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-brown);
@@ -277,7 +277,7 @@
             color: var(--white);
         }
 
-/* T3 — list items wrap content in <a class="woodturning-list-link"> */
+/* T3 - list items wrap content in <a class="woodturning-list-link"> */
 .woodturning-list-item .woodturning-list-link {
     display: contents;
     color: inherit;

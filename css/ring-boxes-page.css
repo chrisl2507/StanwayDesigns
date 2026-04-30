@@ -1,4 +1,4 @@
-/* Stanway Designs — woodturning/ring-boxes.html specific styles */
+/* Stanway Designs - woodturning/ring-boxes.html specific styles */
 
 /* Breadcrumb back link */
         .ringbox-breadcrumb {
@@ -39,11 +39,12 @@
             transform: translateX(-3px);
         }
 
-        /* Hero — bottom-left, intimate scale */
+        /* Hero - bottom-left, intimate scale */
         .ringbox-hero {
             position: relative;
             height: 90svh;
             min-height: 500px;
+            margin-top: var(--nav-height, 72px);
             overflow: hidden;
             background-color: #1C1C1C;
         }
@@ -111,7 +112,7 @@
             line-height: 1.6;
         }
 
-        /* Intro — asymmetric */
+        /* Intro - asymmetric */
         .ringbox-intro-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-white);
@@ -151,7 +152,7 @@
             }
         }
 
-        /* Options — numbered minimal list */
+        /* Options - numbered minimal list */
         .ringbox-options-section {
             padding: var(--space-3xl) 0;
             background: var(--linen);
@@ -222,7 +223,7 @@
             }
         }
 
-        /* Process — 3 steps horizontal */
+        /* Process - 3 steps horizontal */
         .ringbox-process-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-white);
@@ -278,7 +279,7 @@
             font-style: italic;
         }
 
-        /* Gallery strip — 3 images horizontal */
+        /* Gallery strip - 3 images horizontal */
         .ringbox-gallery-section {
             padding: var(--space-2xl) 0;
             background: var(--linen);

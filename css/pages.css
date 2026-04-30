@@ -1,6 +1,7 @@
-/* Stanway Designs — Pages: page-hero, about, gallery, blog, products, gallery-filters */
+/* Stanway Designs - Pages: page-hero, about, gallery, blog, products, gallery-filters */
 
-/* Page Hero Luxury — capped so the hero doesn't fill 4K/ultrawide viewports (L4) */
+/* Page Hero Luxury - sits below the fixed nav (#5, Approach A) and
+   capped so it doesn't fill 4K/ultrawide viewports (L4). */
 .page-hero-luxury {
     position: relative;
     min-height: 60vh;
@@ -8,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 72px;
+    margin-top: var(--nav-height, 72px);
     overflow: hidden;
 }
 
@@ -301,7 +302,7 @@
     margin-top: var(--space-xl);
 }
 
-/* Material dot — visible 10px dot rendered via ::before, but the
+/* Material dot - visible 10px dot rendered via ::before, but the
    button itself has a 44x44 hit area for touch targets (T1). */
 .material-dot {
     width: 44px;
@@ -347,7 +348,7 @@
     margin-bottom: 16px;
 }
 
-/* P2 — single-slide carousel even on tablet+ keeps the timber sample
+/* P2 - single-slide carousel even on tablet+ keeps the timber sample
    in focus and reduces eager-loaded images on first visit. */
 
 @media (min-width: 1024px) {
@@ -644,7 +645,7 @@
         gap: 8px;
     }
 
-    /* Reset wide/tall spans on mobile — all items same ratio in 2-col grid */
+    /* Reset wide/tall spans on mobile - all items same ratio in 2-col grid */
     .gallery-item.wide,
     .gallery-item.tall {
         grid-column: span 1;
@@ -672,7 +673,7 @@
         letter-spacing: 0.5px;
     }
 
-    /* Hide hover overlay on mobile — no hover state exists */
+    /* Hide hover overlay on mobile - no hover state exists */
     .gallery-info {
         display: none;
     }

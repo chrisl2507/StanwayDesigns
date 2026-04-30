@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product | Stanway Designs</title>
-    <meta name="description" content="Handcrafted woodturning and timber pieces by Stanway Designs — made by hand in Nottingham.">
+    <meta name="description" content="Handcrafted woodturning and timber pieces by Stanway Designs - made by hand in Nottingham.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://www.stanwaydesigns.co.uk/shop.html">
 
@@ -48,7 +48,7 @@
 
     <!-- Not found state (hidden until needed) -->
     <div class="product-not-found" id="product-not-found" style="display:none">
-        <p>This piece isn&rsquo;t available &mdash; it may have sold or been removed.</p>
+        <p>This piece isn&rsquo;t available - it may have sold or been removed.</p>
         <p><a href="../shop.html">Back to the shop</a></p>
     </div>
 
@@ -242,7 +242,7 @@
             breadcrumbEl.textContent  = 'Not found';
         }
 
-        /* ── Read and validate slug from URL — never inserted into DOM ── */
+        /* ── Read and validate slug from URL - never inserted into DOM ── */
         var slug = new URLSearchParams(window.location.search).get('p');
 
         if (!isValidSlug(slug)) {
@@ -270,7 +270,7 @@
                             return obj;
                         });
 
-                    /* Match by slug (case-insensitive) — slug never written to DOM */
+                    /* Match by slug (case-insensitive) - slug never written to DOM */
                     var slugLower = slug.toLowerCase();
                     var product = null;
                     for (var i = 0; i < products.length; i++) {
@@ -289,10 +289,10 @@
         function renderProduct(p) {
             var isSold = ['true','yes','1','sold'].indexOf((p.sold || '').trim().toLowerCase()) !== -1;
 
-            /* Page title — from CSV row, not from URL param */
+            /* Page title - from CSV row, not from URL param */
             document.title = p.name + ' | Stanway Designs';
 
-            /* Breadcrumb — from CSV row */
+            /* Breadcrumb - from CSV row */
             breadcrumbEl.textContent = p.name;
 
             /* ── Main image ── */

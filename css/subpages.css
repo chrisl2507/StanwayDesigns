@@ -1,9 +1,6 @@
-/* Stanway Designs — Subpages: sp-* shared template + wardrobe-* + process-timeline */
+/* Stanway Designs - Subpages: sp-* shared template + wardrobe-* + process-timeline */
 
-/* ============================================
-   BRASS TOKEN
-   ============================================ */
-:root { --brass: #B8A470; }
+/* (--brass token now lives in base.css :root) */
 
 /* ============================================
    SP-* SHARED SUBPAGE TEMPLATE
@@ -35,6 +32,7 @@
     position: relative;
     min-height: 50vh;
     max-height: 60vh;
+    margin-top: var(--nav-height, 72px);
     overflow: hidden;
     background-color: #1C1C1C;
     display: flex;
