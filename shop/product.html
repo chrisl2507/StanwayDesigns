@@ -6,6 +6,7 @@
     <title>Product | Stanway Designs</title>
     <meta name="description" content="Handcrafted woodturning and timber pieces by Stanway Designs — made by hand in Nottingham.">
     <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.stanwaydesigns.co.uk/shop.html">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="../includes/images/Logo/Logo.webp">
@@ -129,6 +130,7 @@
     <script src="../luxury.js"></script>
 
     <script>
+    // CWV: yields before CSV parse to keep INP low
     (function () {
         var SHEET_ID = '19iJBDROuyRY3hUqzEa2Em6-LcgDhuR3CWuIbGtdL8pE';
         var CSV_URL  = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv';
@@ -248,8 +250,9 @@
         if (!isValidSlug(slug)) {
             showNotFound();
         } else {
-            /* ── Fetch CSV ── */
-            fetch(CSV_URL)
+            /* ── Fetch CSV (yielded to keep INP low) ── */
+            var idle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1); };
+            idle(function () { fetch(CSV_URL)
                 .then(function (res) {
                     if (!res.ok) throw new Error('HTTP ' + res.status);
                     return res.text();
@@ -281,11 +284,12 @@
                     renderProduct(product);
                 })
                 .catch(function () { showNotFound(); });
+            });
         }
 
         /* ── Render product ── */
         function renderProduct(p) {
-            var isSold = p.sold === 'TRUE';
+            var isSold = ['true','yes','1','sold'].indexOf((p.sold || '').trim().toLowerCase()) !== -1;
 
             /* Page title — from CSV row, not from URL param */
             document.title = p.name + ' | Stanway Designs';

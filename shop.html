@@ -10,10 +10,13 @@
     <meta property="og:title" content="Shop | Stanway Designs | Nottingham">
     <meta property="og:description" content="Shop handcrafted woodturning and timber pieces by Stanway Designs. Bowls, vessels, ring boxes and homeware — new stock added regularly.">
     <meta property="og:url" content="https://www.stanwaydesigns.co.uk/shop.html">
+    <link rel="canonical" href="https://www.stanwaydesigns.co.uk/shop.html">
+    <meta property="og:image" content="https://www.stanwaydesigns.co.uk/includes/images/Bespoke/Bowl_1.webp">
     <meta property="og:site_name" content="Stanway Designs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Shop | Stanway Designs | Nottingham">
     <meta name="twitter:description" content="Shop handcrafted woodturning and timber pieces by Stanway Designs. Bowls, vessels, ring boxes and homeware — new stock added regularly.">
+    <meta name="twitter:image" content="https://www.stanwaydesigns.co.uk/includes/images/Bespoke/Bowl_1.webp">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="includes/images/Logo/Logo.webp">
@@ -151,6 +154,7 @@
     <script src="luxury.js"></script>
 
     <script>
+    // CWV: yields before CSV parse to keep INP low
     (function () {
         var SHEET_ID = '19iJBDROuyRY3hUqzEa2Em6-LcgDhuR3CWuIbGtdL8pE';
         var CSV_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv';
@@ -253,7 +257,7 @@
 
         /* ── Build a single product card DOM node ── */
         function buildCard(p) {
-            var isSold  = p.sold === 'TRUE';
+            var isSold  = ['true','yes','1','sold'].indexOf((p.sold || '').trim().toLowerCase()) !== -1;
             var imgUrl  = resolveImageUrl(p.image_url);
 
             var article = document.createElement('article');
@@ -392,7 +396,8 @@
         });
 
         /* ── Fetch & parse CSV ── */
-        fetch(CSV_URL)
+        var idle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1); };
+        idle(function () { fetch(CSV_URL)
             .then(function (res) {
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 return res.text();
@@ -424,6 +429,7 @@
                 loading.style.display = 'none';
                 errorEl.style.display = 'block';
             });
+        });
     }());
     </script>
 

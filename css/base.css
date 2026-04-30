@@ -155,25 +155,27 @@ button {
     transform: none;
 }
 
-/* Simple fade for sections - applied via CSS to avoid visible→invisible flash */
+/* Simple fade for sections - opacity:0 only when JS is active so no-JS users see content */
 section,
 .gallery-item,
 .service-card,
 .blog-post-card,
 .product-card,
 .collection-card {
-    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-section.visible,
-.gallery-item.visible,
-.service-card.visible,
-.blog-post-card.visible,
-.product-card.visible,
-.collection-card.visible,
-.hero-luxury,
-.page-hero-luxury {
+.js-fade section:not(.visible),
+.js-fade .gallery-item:not(.visible),
+.js-fade .service-card:not(.visible),
+.js-fade .blog-post-card:not(.visible),
+.js-fade .product-card:not(.visible),
+.js-fade .collection-card:not(.visible) {
+    opacity: 0;
+}
+
+.js-fade .hero-luxury,
+.js-fade .page-hero-luxury {
     opacity: 1;
 }
 
