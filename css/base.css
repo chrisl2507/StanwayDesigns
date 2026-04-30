@@ -1,7 +1,7 @@
-/* Stanway Designs — Base: variables, reset, containers, utility */
+/* Stanway Designs - Base: variables, reset, containers, utility */
 
 /* ============================================
-   STANWAY DESIGNS — WARM EDITION
+   STANWAY DESIGNS - WARM EDITION
    Personal · Warm · Coral-Forward
    ============================================ */
 
@@ -41,6 +41,7 @@
     --coral-dark: #E17A5A;
     --coral-text: #C45F3F;
     --brass: #B8A470;
+    --nav-height: 72px;
     --warm-brown: #2C2420;
     --text-dark: #3D3530;
     --mid-gray: #6B5E56;
@@ -226,7 +227,7 @@ section,
 }
 
 /* ============================================
-   FOCUS RINGS — keyboard-only via :focus-visible
+   FOCUS RINGS - keyboard-only via :focus-visible
    ============================================ */
 *:focus { outline: none; }
 *:focus-visible {

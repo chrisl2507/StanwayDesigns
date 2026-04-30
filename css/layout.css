@@ -1,4 +1,4 @@
-/* Stanway Designs — Layout: navigation, footer */
+/* Stanway Designs - Layout: navigation, footer */
 
 /* Nav active state */
 .nav-link.nav-active { color: var(--coral-dark); }
@@ -14,11 +14,27 @@
     z-index: 1000;
     background: rgba(250, 248, 244, 0.95);
     border-bottom: 1px solid var(--light-gray);
-    transition: box-shadow var(--transition-base);
+    transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .luxury-nav.scrolled {
     box-shadow: 0 2px 20px rgba(44, 36, 32, 0.08);
+}
+
+/* Approach B (#5) - on pages with full-bleed cinematic heroes the nav
+   floats transparently over the hero, then picks up its solid bg as
+   soon as the user scrolls (the existing .scrolled class). */
+body.has-overlay-nav .luxury-nav:not(.scrolled) {
+    background: transparent;
+    border-bottom-color: transparent;
+}
+body.has-overlay-nav .luxury-nav:not(.scrolled) .nav-link,
+body.has-overlay-nav .luxury-nav:not(.scrolled) .logo-text,
+body.has-overlay-nav .luxury-nav:not(.scrolled) .logo-sub {
+    color: var(--white);
+}
+body.has-overlay-nav .luxury-nav:not(.scrolled) .menu-toggle span {
+    background: var(--white);
 }
 
 .nav-container {
@@ -179,11 +195,20 @@
     background: var(--warm-brown);
     z-index: 999;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    /* Push content past the fixed header so the first link isn't clipped */
+    padding-top: calc(var(--nav-height, 72px) + 2rem);
+    padding-bottom: 2rem;
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-smooth);
+}
+
+.mobile-nav {
+    width: 100%;
+    max-width: 100%;
 }
 
 .mobile-menu.active {
@@ -223,13 +248,19 @@
 
 .mobile-link {
     font-family: var(--font-heading);
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 500;
     color: var(--white);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    text-align: center;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s, transform 0.5s, color var(--transition-base);
+}
+
+@media (min-width: 480px) {
+    .mobile-link { font-size: 32px; letter-spacing: 1.5px; }
 }
 
 .mobile-menu.active .mobile-link {
@@ -398,10 +429,11 @@
 
 .mobile-dropdown-toggle {
     font-family: var(--font-heading);
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 500;
     color: var(--white);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 1.15;
     background: none;
     border: none;
     cursor: pointer;

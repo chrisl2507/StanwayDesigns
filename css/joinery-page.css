@@ -1,6 +1,6 @@
-/* Stanway Designs — joinery.html specific styles */
+/* Stanway Designs - joinery.html specific styles */
 
-/* Joinery hero — bottom-left headline */
+/* Joinery hero - bottom-left headline */
         .joinery-hero {
             position: relative;
             height: 100svh;
@@ -70,7 +70,7 @@
             color: rgba(255, 255, 255, 0.55);
         }
 
-        /* Joinery intro — asymmetric */
+        /* Joinery intro - asymmetric */
         .joinery-intro-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-white);
@@ -110,7 +110,7 @@
             }
         }
 
-        /* Joinery services list — numbered, minimal */
+        /* Joinery services list - numbered, minimal */
         .joinery-services-section {
             padding: var(--space-3xl) 0;
             background: var(--linen);
@@ -189,7 +189,7 @@
             }
         }
 
-        /* Joinery CTA — dark background */
+        /* Joinery CTA - dark background */
         .joinery-cta-section {
             padding: var(--space-3xl) 0;
             background: var(--warm-brown);
@@ -214,7 +214,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-/* T3 — list items now wrap content in <a class="joinery-list-link">.
+/* T3 - list items now wrap content in <a class="joinery-list-link">.
    display: contents preserves the existing flex layout on the <li>. */
 .joinery-list-item .joinery-list-link {
     display: contents;

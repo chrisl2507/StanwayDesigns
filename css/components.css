@@ -1,7 +1,7 @@
-/* Stanway Designs — Components: buttons, hero, sections, philosophy, collections, workshop, gallery, process, contact, reviews 
+/* Stanway Designs - Components: buttons, hero, sections, philosophy, collections, workshop, gallery, process, contact, reviews 
    4. HERO SECTION
  */
-/* Hero — capped at 800px so 4K/ultrawide viewports don't push content
+/* Hero - capped at 800px so 4K/ultrawide viewports don't push content
    below the fold (L4). */
 .hero-luxury {
     position: relative;
@@ -605,71 +605,11 @@ section {
     margin-top: var(--space-2xl);
 }
 
-.process-step-card {
-    background: var(--coral);
-    border-radius: 16px;
-    padding: var(--space-xl);
-    color: var(--white);
-}
-
-.process-step-card h3 {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 12px;
-}
-
-.process-step-card p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Legacy process-timeline styles */
-.process-timeline {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-    margin-top: var(--space-2xl);
-}
-
-.process-step {
-    position: relative;
-    background: var(--coral);
-    border-radius: 16px;
-    padding: var(--space-xl);
-    display: block;
-}
-
-.step-number {
-    display: none;
-}
-
-.step-content h3 {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 12px;
-}
-
-.step-content p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.step-line {
-    display: none;
-}
+/* .process-step-card / .process-step / .process-timeline are defined
+   once in subpages.css (warm-white, brass top border). subpages.css
+   is linked from every page that uses the pattern. */
 
 @media (min-width: 1024px) {
-    .process-timeline {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-lg);
-    }
-
     .process-steps {
         grid-template-columns: repeat(2, 1fr);
     }

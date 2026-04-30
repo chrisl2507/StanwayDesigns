@@ -1,4 +1,4 @@
-/* Stanway Designs — shop.html specific styles */
+/* Stanway Designs - shop.html specific styles */
 
 /* ── Local token ── */
         :root {
@@ -74,7 +74,7 @@
         .shop-filter-section {
             position: relative;
         }
-        /* L5 — gradient fade signals there's more to scroll on overflow */
+        /* L5 - gradient fade signals there's more to scroll on overflow */
         .shop-filter-section::after {
             content: '';
             position: absolute;
@@ -232,7 +232,7 @@
             background: var(--linen);
             flex-shrink: 0;
         }
-        /* T2 — skeleton shimmer until <img> loads. JS adds .loaded
+        /* T2 - skeleton shimmer until <img> loads. JS adds .loaded
            when the image finishes decoding. */
         .shop-card-image::before {
             content: '';

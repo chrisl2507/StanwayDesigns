@@ -1,5 +1,5 @@
 /* ============================================
-   STANWAY DESIGNS — Simplified JS
+   STANWAY DESIGNS - Simplified JS
    No GSAP, no parallax, no counter animations
    Just basic navigation + subtle fade-ins
    ============================================ */
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // Mobile menu — open/close with full a11y wiring
+    // Mobile menu - open/close with full a11y wiring
     if (menuToggle && mobileMenu) {
         const closeBtn = mobileMenu.querySelector('.mobile-close');
         const focusable = () => mobileMenu.querySelectorAll('a, button');
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
-        // Backdrop click — only when the click target IS the dialog itself
+        // Backdrop click - only when the click target IS the dialog itself
         mobileMenu.addEventListener('click', (e) => {
             if (e.target === mobileMenu) closeMenu();
         });
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalSlides = slides.length;
 
         function getVisibleSlides() {
-            // P2 — single-up at every breakpoint so each timber gets a moment
+            // P2 - single-up at every breakpoint so each timber gets a moment
             return 1;
         }
 

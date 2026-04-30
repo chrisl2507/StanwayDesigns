@@ -1,4 +1,4 @@
-/* nav.js — shared navigation
+/* nav.js - shared navigation
    Root pages:    <script src="nav.js" data-root=""></script>
    Subdir pages:  <script src="../nav.js" data-root="../"></script>
 */
