@@ -2,6 +2,7 @@
 
 These pages render with a black hero background until a photo is added at the path shown.
 
+- /furniture.html → includes/images/furniture-hero.webp
 - /joinery.html → includes/images/joinery-hero.webp
 - /restoration.html → includes/images/restoration-hero.webp
 - /woodturning.html → includes/images/woodturning-hero.webp
