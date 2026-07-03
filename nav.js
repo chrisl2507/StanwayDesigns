@@ -20,6 +20,7 @@
         '<li><a href="' + r + 'restoration.html" class="nav-link" data-section="restoration">Restoration &amp; Repair</a></li>' +
         '<li><a href="' + r + 'gallery.html" class="nav-link" data-section="gallery">Gallery</a></li>' +
         '<li><a href="' + r + 'shop.html" class="nav-link" data-section="shop">Shop</a></li>' +
+        '<li><a href="' + r + 'blog.html" class="nav-link" data-section="blog">Blog</a></li>' +
         '<li><a href="' + r + 'about.html" class="nav-link" data-section="about">About</a></li>' +
         '<li><a href="' + r + 'contact.html" class="nav-link nav-cta" data-section="contact">Contact</a></li>' +
         '</ul>' +
@@ -37,6 +38,7 @@
         '<a href="' + r + 'restoration.html" class="mobile-link" data-section="restoration">Restoration &amp; Repair</a>' +
         '<a href="' + r + 'gallery.html" class="mobile-link" data-section="gallery">Gallery</a>' +
         '<a href="' + r + 'shop.html" class="mobile-link" data-section="shop">Shop</a>' +
+        '<a href="' + r + 'blog.html" class="mobile-link" data-section="blog">Blog</a>' +
         '<a href="' + r + 'about.html" class="mobile-link" data-section="about">About</a>' +
         '<a href="' + r + 'contact.html" class="mobile-link" data-section="contact">Contact</a>' +
         '</nav>' +
