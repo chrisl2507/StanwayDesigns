@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /includes/
 Sitemap: https://www.stanwaydesigns.co.uk/sitemap.xml

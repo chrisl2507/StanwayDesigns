@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stanway-v3';
+const CACHE_NAME = 'stanway-v4';
 const PRECACHE = [
   'css/base.css',
   'css/layout.css',
@@ -36,7 +36,7 @@ self.addEventListener('fetch', e => {
         caches.open(CACHE_NAME).then(cache =>
           cache.match(e.request).then(cached => {
             const fetched = fetch(e.request).then(response => {
-              cache.put(e.request, response.clone());
+              if (response.ok) cache.put(e.request, response.clone());
               return response;
             });
             return cached || fetched;
@@ -53,8 +53,10 @@ self.addEventListener('fetch', e => {
     e.respondWith(
       fetch(e.request)
         .then(response => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          }
           return response;
         })
         .catch(() => caches.match(e.request))
@@ -70,7 +72,7 @@ self.addEventListener('fetch', e => {
         return fetch(e.request).then(response => {
           if (response.ok) cache.put(e.request, response.clone());
           return response;
-        });
+        }).catch(() => new Response('', { status: 504, statusText: 'Offline' }));
       })
     )
   );

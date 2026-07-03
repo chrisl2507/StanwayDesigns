@@ -6,3 +6,18 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://drive.google.com https://lh3.googleusercontent.com https://*.googleusercontent.com; connect-src 'self' https://docs.google.com; form-action 'self' https://*.netlify.com; frame-ancestors 'none'; base-uri 'self'
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin
+
+/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/luxury.js
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/nav.js
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/sw.js
+  Cache-Control: no-cache
+
+/includes/images/*
+  Cache-Control: public, max-age=2592000
